@@ -1,0 +1,793 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 5; ]
+class Ring{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 5; ]
+    <init> {
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 12 16 ]
+        %tmp.2 = 2;
+        %tmp.1 = newa Array<Array<String>> %tmp.2;
+        putv self :lapValue %tmp.1;
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 8; @position = 16; ]
+    private
+    var status = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 9; @position = 16; ]
+    private
+    var counter = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 10; @position = 18; ]
+    private
+    const FRAMES = 20;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 11; @position = 16; ]
+    private
+    var anim = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 12; @position = 16; ]
+    private
+    var lapValue as Array<Array<String>>;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 14; ]
+    function initialize() as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_14_26_17_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 15 8 ]
+        %tmp.1 = 0;
+        putv self :status %tmp.1;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_14_26_17_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 21; ]
+    function setStatus(param_status as Number) {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_21_47_40_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 22 8 ]
+        %tmp.2 = lgetv %param_status;
+        putv self :status %tmp.2;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 23 8 ]
+        %tmp.3 = 0;
+        putv self :counter %tmp.3;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 24 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_8_29_8_if_stmt:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_11_24_57_begin:
+        %tmp.5 = getv ? :status;
+        %tmp.6 = 3;
+        %tmp.7 = eq %tmp.5 %tmp.6;
+        bf %tmp.7 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_8_29_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_26_24_57_true:
+        %tmp.9 = getv ? :Properties;
+        %tmp.10 = getv function %tmp.9 :getValue;
+        %tmp.11 = "LapScreen";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        push %tmp.12;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_26_24_57_end:
+        %tmp.13 = phi [%tmp.7 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_11_24_57_begin] [%tmp.12 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_26_24_57_true] [%tmp.13 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_26_24_57_end];
+        bf %tmp.13 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_8_29_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_8_29_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_60_29_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 25 12 ]
+        %tmp.14 = -20;
+        putv self :counter %tmp.14;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 26 12 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_60_29_8_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_60_29_8_stop" ]
+        %field.1 = local;
+        %tmp.16 = getv ? :Properties;
+        %tmp.17 = getv function %tmp.16 :getValue;
+        %tmp.18 = "LapScreenField";
+        %tmp.19 = invoke %tmp.16 %tmp.17(%tmp.18);
+        lputv %field.1 %tmp.19;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 27 12 ]
+        %tmp.20 = getv self :lapValue;
+        %tmp.21 = self;
+        %tmp.22 = getv function %tmp.21 :getApp;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        %tmp.24 = getv %tmp.23 :sportData;
+        %tmp.25 = getv function %tmp.24 :getMetric;
+        %tmp.26 = 2;
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        %tmp.28 = 0;
+        aputv %tmp.20 %tmp.28 %tmp.27;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 28 12 ]
+        %tmp.29 = getv self :lapValue;
+        %tmp.30 = self;
+        %tmp.31 = getv function %tmp.30 :getApp;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = getv %tmp.32 :sportData;
+        %tmp.34 = getv function %tmp.33 :getMetric;
+        %tmp.36 = lgetv %field.1;
+        %tmp.37 = invoke %tmp.33 %tmp.34(%tmp.36);
+        %tmp.38 = 1;
+        aputv %tmp.29 %tmp.38 %tmp.37;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_60_29_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_8_29_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_24_8_29_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 30 8 ]
+        %tmp.39 = 0;
+        putv self :anim %tmp.39;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 32 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_21_47_40_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_21_47_40_4_stop" ]
+        %app.2 = local;
+        %tmp.40 = self;
+        %tmp.41 = getv function %tmp.40 :getApp;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        lputv %app.2 %tmp.42;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 34 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_8_39_8_if_stmt:
+        %tmp.44 = getv ? :status;
+        %tmp.45 = 0;
+        %tmp.46 = ne %tmp.44 %tmp.45;
+        bf %tmp.46 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_8_39_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_8_39_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_24_36_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 35 12 ]
+        %tmp.47 = lgetv %app.2;
+        %tmp.48 = true;
+        putv %tmp.47 :ringAnimation %tmp.48;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_24_36_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_8_39_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_8_39_8_if_false:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_37_13_39_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 38 12 ]
+        %tmp.49 = lgetv %app.2;
+        %tmp.50 = false;
+        putv %tmp.49 :ringAnimation %tmp.50;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_37_13_39_8_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_34_8_39_8_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_21_47_40_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 45; ]
+    function draw(dc as Dc) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 46 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_8_48_8_if_stmt:
+        %tmp.2 = getv ? :status;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_8_48_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_8_48_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_24_48_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 47 12 ]
+        ret ?;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_24_48_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_8_48_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_46_8_48_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 50 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_stop" ]
+        %width.1 = local;
+        %tmp.5 = lgetv %dc;
+        %tmp.6 = getv function %tmp.5 :getWidth;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %width.1 %tmp.7;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 51 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_stop" ]
+        %height.2 = local;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = getv function %tmp.8 :getHeight;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        lputv %height.2 %tmp.10;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 54 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_stop" ]
+        %backgroundColor.3 = local;
+        %tmp.11 = getm $.Toybox.Graphics;
+        %tmp.12 = getv %tmp.11 :COLOR_LT_GRAY;
+        lputv %backgroundColor.3 %tmp.12;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 55 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_stop" ]
+        %foregroundColor.4 = local;
+        %tmp.13 = getm $.Toybox.Graphics;
+        %tmp.14 = getv %tmp.13 :COLOR_BLACK;
+        lputv %foregroundColor.4 %tmp.14;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 62 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_8_68_8_if_stmt:
+        %tmp.16 = getv ? :status;
+        %tmp.17 = 3;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        bf %tmp.18 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_8_68_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_8_68_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_24_68_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 63 12 ]
+        %tmp.19 = lgetv %dc;
+        %tmp.20 = getv function %tmp.19 :setColor;
+        %tmp.22 = lgetv %backgroundColor.3;
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :COLOR_TRANSPARENT;
+        invoke %tmp.19 %tmp.20(%tmp.22, %tmp.24);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 64 12 ]
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = getv function %tmp.25 :fillRoundedRectangle;
+        %tmp.28 = lgetv %width.1;
+        %tmp.29 = 2;
+        %tmp.30 = div %tmp.28 %tmp.29;
+        %tmp.32 = lgetv %width.1;
+        %tmp.33 = 0.2;
+        %tmp.34 = mul %tmp.32 %tmp.33;
+        %tmp.35 = sub %tmp.30 %tmp.34;
+        %tmp.37 = lgetv %height.2;
+        %tmp.38 = 2;
+        %tmp.39 = div %tmp.37 %tmp.38;
+        %tmp.41 = lgetv %height.2;
+        %tmp.42 = 0.2;
+        %tmp.43 = mul %tmp.41 %tmp.42;
+        %tmp.44 = sub %tmp.39 %tmp.43;
+        %tmp.46 = lgetv %width.1;
+        %tmp.47 = 0.4;
+        %tmp.48 = mul %tmp.46 %tmp.47;
+        %tmp.50 = lgetv %height.2;
+        %tmp.51 = 0.4;
+        %tmp.52 = mul %tmp.50 %tmp.51;
+        %tmp.54 = lgetv %height.2;
+        %tmp.55 = 0.05;
+        %tmp.56 = mul %tmp.54 %tmp.55;
+        invoke %tmp.25 %tmp.26(%tmp.35, %tmp.44, %tmp.48, %tmp.52, %tmp.56);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 65 12 ]
+        %tmp.57 = lgetv %dc;
+        %tmp.58 = getv function %tmp.57 :setPenWidth;
+        %tmp.60 = lgetv %width.1;
+        %tmp.61 = 0.01;
+        %tmp.62 = mul %tmp.60 %tmp.61;
+        invoke %tmp.57 %tmp.58(%tmp.62);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 66 12 ]
+        %tmp.63 = lgetv %dc;
+        %tmp.64 = getv function %tmp.63 :setColor;
+        %tmp.66 = lgetv %foregroundColor.4;
+        %tmp.67 = getm $.Toybox.Graphics;
+        %tmp.68 = getv %tmp.67 :COLOR_TRANSPARENT;
+        invoke %tmp.63 %tmp.64(%tmp.66, %tmp.68);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 67 12 ]
+        %tmp.69 = lgetv %dc;
+        %tmp.70 = getv function %tmp.69 :drawRoundedRectangle;
+        %tmp.72 = lgetv %width.1;
+        %tmp.73 = 2;
+        %tmp.74 = div %tmp.72 %tmp.73;
+        %tmp.76 = lgetv %width.1;
+        %tmp.77 = 0.2;
+        %tmp.78 = mul %tmp.76 %tmp.77;
+        %tmp.79 = sub %tmp.74 %tmp.78;
+        %tmp.81 = lgetv %height.2;
+        %tmp.82 = 2;
+        %tmp.83 = div %tmp.81 %tmp.82;
+        %tmp.85 = lgetv %height.2;
+        %tmp.86 = 0.2;
+        %tmp.87 = mul %tmp.85 %tmp.86;
+        %tmp.88 = sub %tmp.83 %tmp.87;
+        %tmp.90 = lgetv %width.1;
+        %tmp.91 = 0.4;
+        %tmp.92 = mul %tmp.90 %tmp.91;
+        %tmp.94 = lgetv %height.2;
+        %tmp.95 = 0.4;
+        %tmp.96 = mul %tmp.94 %tmp.95;
+        %tmp.98 = lgetv %height.2;
+        %tmp.99 = 0.05;
+        %tmp.100 = mul %tmp.98 %tmp.99;
+        invoke %tmp.69 %tmp.70(%tmp.79, %tmp.88, %tmp.92, %tmp.96, %tmp.100);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_24_68_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_8_68_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_62_8_68_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 71 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_8_108_8_if_stmt:
+        %tmp.102 = getv ? :status;
+        %tmp.103 = 1;
+        %tmp.104 = eq %tmp.102 %tmp.103;
+        bf %tmp.104 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_8_108_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_8_108_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_24_78_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 72 12 ]
+        %tmp.105 = lgetv %dc;
+        %tmp.106 = getv function %tmp.105 :setColor;
+        %tmp.107 = getm $.Toybox.Graphics;
+        %tmp.108 = getv %tmp.107 :COLOR_RED;
+        %tmp.109 = getm $.Toybox.Graphics;
+        %tmp.110 = getv %tmp.109 :COLOR_TRANSPARENT;
+        invoke %tmp.105 %tmp.106(%tmp.108, %tmp.110);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 73 12 ]
+        %tmp.111 = lgetv %dc;
+        %tmp.112 = getv function %tmp.111 :fillRectangle;
+        %tmp.114 = lgetv %width.1;
+        %tmp.115 = 2;
+        %tmp.116 = div %tmp.114 %tmp.115;
+        %tmp.118 = lgetv %width.1;
+        %tmp.119 = 0.1;
+        %tmp.120 = mul %tmp.118 %tmp.119;
+        %tmp.121 = sub %tmp.116 %tmp.120;
+        %tmp.123 = lgetv %height.2;
+        %tmp.124 = 2;
+        %tmp.125 = div %tmp.123 %tmp.124;
+        %tmp.127 = lgetv %height.2;
+        %tmp.128 = 0.1;
+        %tmp.129 = mul %tmp.127 %tmp.128;
+        %tmp.130 = sub %tmp.125 %tmp.129;
+        %tmp.132 = lgetv %width.1;
+        %tmp.133 = 0.2;
+        %tmp.134 = mul %tmp.132 %tmp.133;
+        %tmp.136 = lgetv %height.2;
+        %tmp.137 = 0.2;
+        %tmp.138 = mul %tmp.136 %tmp.137;
+        invoke %tmp.111 %tmp.112(%tmp.121, %tmp.130, %tmp.134, %tmp.138);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 74 12 ]
+        %tmp.139 = lgetv %dc;
+        %tmp.140 = getv function %tmp.139 :setPenWidth;
+        %tmp.142 = lgetv %width.1;
+        %tmp.143 = 0.01;
+        %tmp.144 = mul %tmp.142 %tmp.143;
+        invoke %tmp.139 %tmp.140(%tmp.144);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 75 12 ]
+        %tmp.145 = lgetv %dc;
+        %tmp.146 = getv function %tmp.145 :setColor;
+        %tmp.148 = lgetv %foregroundColor.4;
+        %tmp.149 = getm $.Toybox.Graphics;
+        %tmp.150 = getv %tmp.149 :COLOR_TRANSPARENT;
+        invoke %tmp.145 %tmp.146(%tmp.148, %tmp.150);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 76 12 ]
+        %tmp.151 = lgetv %dc;
+        %tmp.152 = getv function %tmp.151 :drawRectangle;
+        %tmp.154 = lgetv %width.1;
+        %tmp.155 = 2;
+        %tmp.156 = div %tmp.154 %tmp.155;
+        %tmp.158 = lgetv %width.1;
+        %tmp.159 = 0.1;
+        %tmp.160 = mul %tmp.158 %tmp.159;
+        %tmp.161 = sub %tmp.156 %tmp.160;
+        %tmp.163 = lgetv %height.2;
+        %tmp.164 = 2;
+        %tmp.165 = div %tmp.163 %tmp.164;
+        %tmp.167 = lgetv %height.2;
+        %tmp.168 = 0.1;
+        %tmp.169 = mul %tmp.167 %tmp.168;
+        %tmp.170 = sub %tmp.165 %tmp.169;
+        %tmp.172 = lgetv %width.1;
+        %tmp.173 = 0.2;
+        %tmp.174 = mul %tmp.172 %tmp.173;
+        %tmp.176 = lgetv %height.2;
+        %tmp.177 = 0.2;
+        %tmp.178 = mul %tmp.176 %tmp.177;
+        invoke %tmp.151 %tmp.152(%tmp.161, %tmp.170, %tmp.174, %tmp.178);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 77 12 ]
+        %tmp.179 = lgetv %dc;
+        %tmp.180 = getv function %tmp.179 :setColor;
+        %tmp.181 = getm $.Toybox.Graphics;
+        %tmp.182 = getv %tmp.181 :COLOR_RED;
+        %tmp.183 = getm $.Toybox.Graphics;
+        %tmp.184 = getv %tmp.183 :COLOR_TRANSPARENT;
+        invoke %tmp.179 %tmp.180(%tmp.182, %tmp.184);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_24_78_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_8_108_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_8_108_8_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 78 15 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_15_108_8_if_stmt:
+        %tmp.186 = getv ? :status;
+        %tmp.187 = 2;
+        %tmp.188 = eq %tmp.186 %tmp.187;
+        bf %tmp.188 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_15_108_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_15_108_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_31_85_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 79 12 ]
+        %tmp.189 = lgetv %dc;
+        %tmp.190 = getv function %tmp.189 :setColor;
+        %tmp.192 = lgetv %foregroundColor.4;
+        %tmp.193 = getm $.Toybox.Graphics;
+        %tmp.194 = getv %tmp.193 :COLOR_TRANSPARENT;
+        invoke %tmp.189 %tmp.190(%tmp.192, %tmp.194);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 80 12 ]
+        %tmp.195 = lgetv %dc;
+        %tmp.196 = getv function %tmp.195 :fillPolygon;
+        %tmp.197 = newa 3;
+        %tmp.198 = newa 2;
+        %tmp.200 = lgetv %width.1;
+        %tmp.201 = 0.395;
+        %tmp.202 = mul %tmp.200 %tmp.201;
+        %tmp.203 = dup %tmp.198;
+        %tmp.204 = aputv %tmp.203 0 %tmp.202;
+        %tmp.206 = lgetv %height.2;
+        %tmp.207 = 0.615;
+        %tmp.208 = mul %tmp.206 %tmp.207;
+        %tmp.209 = dup %tmp.204;
+        %tmp.210 = aputv %tmp.209 1 %tmp.208;
+        %tmp.211 = dup %tmp.197;
+        %tmp.212 = aputv %tmp.211 0 %tmp.210;
+        %tmp.213 = newa 2;
+        %tmp.215 = lgetv %width.1;
+        %tmp.216 = 0.395;
+        %tmp.217 = mul %tmp.215 %tmp.216;
+        %tmp.218 = dup %tmp.213;
+        %tmp.219 = aputv %tmp.218 0 %tmp.217;
+        %tmp.221 = lgetv %height.2;
+        %tmp.222 = 0.39;
+        %tmp.223 = mul %tmp.221 %tmp.222;
+        %tmp.224 = dup %tmp.219;
+        %tmp.225 = aputv %tmp.224 1 %tmp.223;
+        %tmp.226 = dup %tmp.212;
+        %tmp.227 = aputv %tmp.226 1 %tmp.225;
+        %tmp.228 = newa 2;
+        %tmp.230 = lgetv %width.1;
+        %tmp.231 = 0.615;
+        %tmp.232 = mul %tmp.230 %tmp.231;
+        %tmp.233 = dup %tmp.228;
+        %tmp.234 = aputv %tmp.233 0 %tmp.232;
+        %tmp.236 = lgetv %height.2;
+        %tmp.237 = 2;
+        %tmp.238 = div %tmp.236 %tmp.237;
+        %tmp.239 = dup %tmp.234;
+        %tmp.240 = aputv %tmp.239 1 %tmp.238;
+        %tmp.241 = dup %tmp.227;
+        %tmp.242 = aputv %tmp.241 2 %tmp.240;
+        invoke %tmp.195 %tmp.196(%tmp.242);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 81 12 ]
+        %tmp.243 = lgetv %dc;
+        %tmp.244 = getv function %tmp.243 :setColor;
+        %tmp.245 = getm $.Toybox.Graphics;
+        %tmp.246 = getv %tmp.245 :COLOR_GREEN;
+        %tmp.247 = getm $.Toybox.Graphics;
+        %tmp.248 = getv %tmp.247 :COLOR_TRANSPARENT;
+        invoke %tmp.243 %tmp.244(%tmp.246, %tmp.248);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 82 12 ]
+        %tmp.249 = lgetv %dc;
+        %tmp.250 = getv function %tmp.249 :fillPolygon;
+        %tmp.251 = newa 3;
+        %tmp.252 = newa 2;
+        %tmp.254 = lgetv %width.1;
+        %tmp.255 = 0.4;
+        %tmp.256 = mul %tmp.254 %tmp.255;
+        %tmp.257 = dup %tmp.252;
+        %tmp.258 = aputv %tmp.257 0 %tmp.256;
+        %tmp.260 = lgetv %height.2;
+        %tmp.261 = 0.6;
+        %tmp.262 = mul %tmp.260 %tmp.261;
+        %tmp.263 = dup %tmp.258;
+        %tmp.264 = aputv %tmp.263 1 %tmp.262;
+        %tmp.265 = dup %tmp.251;
+        %tmp.266 = aputv %tmp.265 0 %tmp.264;
+        %tmp.267 = newa 2;
+        %tmp.269 = lgetv %width.1;
+        %tmp.270 = 0.4;
+        %tmp.271 = mul %tmp.269 %tmp.270;
+        %tmp.272 = dup %tmp.267;
+        %tmp.273 = aputv %tmp.272 0 %tmp.271;
+        %tmp.275 = lgetv %height.2;
+        %tmp.276 = 0.4;
+        %tmp.277 = mul %tmp.275 %tmp.276;
+        %tmp.278 = dup %tmp.273;
+        %tmp.279 = aputv %tmp.278 1 %tmp.277;
+        %tmp.280 = dup %tmp.266;
+        %tmp.281 = aputv %tmp.280 1 %tmp.279;
+        %tmp.282 = newa 2;
+        %tmp.284 = lgetv %width.1;
+        %tmp.285 = 0.6;
+        %tmp.286 = mul %tmp.284 %tmp.285;
+        %tmp.287 = dup %tmp.282;
+        %tmp.288 = aputv %tmp.287 0 %tmp.286;
+        %tmp.290 = lgetv %height.2;
+        %tmp.291 = 2;
+        %tmp.292 = div %tmp.290 %tmp.291;
+        %tmp.293 = dup %tmp.288;
+        %tmp.294 = aputv %tmp.293 1 %tmp.292;
+        %tmp.295 = dup %tmp.281;
+        %tmp.296 = aputv %tmp.295 2 %tmp.294;
+        invoke %tmp.249 %tmp.250(%tmp.296);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 83 12 ]
+        %tmp.297 = lgetv %dc;
+        %tmp.298 = getv function %tmp.297 :setColor;
+        %tmp.299 = getm $.Toybox.Graphics;
+        %tmp.300 = getv %tmp.299 :COLOR_GREEN;
+        %tmp.301 = getm $.Toybox.Graphics;
+        %tmp.302 = getv %tmp.301 :COLOR_TRANSPARENT;
+        invoke %tmp.297 %tmp.298(%tmp.300, %tmp.302);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_31_85_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_15_108_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_15_108_8_if_false:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_85_15_108_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 87 12 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_85_15_108_8_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_85_15_108_8_stop" ]
+        %lapScreen.5 = local;
+        %tmp.304 = getv ? :Properties;
+        %tmp.305 = getv function %tmp.304 :getValue;
+        %tmp.306 = "LapScreen";
+        %tmp.307 = invoke %tmp.304 %tmp.305(%tmp.306);
+        lputv %lapScreen.5 %tmp.307;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 88 12 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_12_106_12_if_stmt:
+        %tmp.309 = lgetv %lapScreen.5;
+        bf %tmp.309 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_12_106_12_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_12_106_12_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_26_106_12_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 89 16 ]
+        %tmp.310 = lgetv %dc;
+        %tmp.311 = getv function %tmp.310 :setColor;
+        %tmp.313 = lgetv %backgroundColor.3;
+        %tmp.314 = getm $.Toybox.Graphics;
+        %tmp.315 = getv %tmp.314 :COLOR_TRANSPARENT;
+        invoke %tmp.310 %tmp.311(%tmp.313, %tmp.315);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 90 16 ]
+        %tmp.316 = lgetv %dc;
+        %tmp.317 = getv function %tmp.316 :fillRoundedRectangle;
+        %tmp.319 = lgetv %width.1;
+        %tmp.320 = 2;
+        %tmp.321 = div %tmp.319 %tmp.320;
+        %tmp.323 = lgetv %width.1;
+        %tmp.324 = 0.3;
+        %tmp.325 = mul %tmp.323 %tmp.324;
+        %tmp.326 = sub %tmp.321 %tmp.325;
+        %tmp.328 = lgetv %height.2;
+        %tmp.329 = 2;
+        %tmp.330 = div %tmp.328 %tmp.329;
+        %tmp.332 = lgetv %height.2;
+        %tmp.333 = 0.3;
+        %tmp.334 = mul %tmp.332 %tmp.333;
+        %tmp.335 = sub %tmp.330 %tmp.334;
+        %tmp.337 = lgetv %width.1;
+        %tmp.338 = 0.6;
+        %tmp.339 = mul %tmp.337 %tmp.338;
+        %tmp.341 = lgetv %height.2;
+        %tmp.342 = 0.6;
+        %tmp.343 = mul %tmp.341 %tmp.342;
+        %tmp.345 = lgetv %height.2;
+        %tmp.346 = 0.05;
+        %tmp.347 = mul %tmp.345 %tmp.346;
+        invoke %tmp.316 %tmp.317(%tmp.326, %tmp.335, %tmp.339, %tmp.343, %tmp.347);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 91 16 ]
+        %tmp.348 = lgetv %dc;
+        %tmp.349 = getv function %tmp.348 :setPenWidth;
+        %tmp.351 = lgetv %width.1;
+        %tmp.352 = 0.01;
+        %tmp.353 = mul %tmp.351 %tmp.352;
+        invoke %tmp.348 %tmp.349(%tmp.353);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 92 16 ]
+        %tmp.354 = lgetv %dc;
+        %tmp.355 = getv function %tmp.354 :setColor;
+        %tmp.357 = lgetv %foregroundColor.4;
+        %tmp.358 = getm $.Toybox.Graphics;
+        %tmp.359 = getv %tmp.358 :COLOR_TRANSPARENT;
+        invoke %tmp.354 %tmp.355(%tmp.357, %tmp.359);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 93 16 ]
+        %tmp.360 = lgetv %dc;
+        %tmp.361 = getv function %tmp.360 :drawRoundedRectangle;
+        %tmp.363 = lgetv %width.1;
+        %tmp.364 = 2;
+        %tmp.365 = div %tmp.363 %tmp.364;
+        %tmp.367 = lgetv %width.1;
+        %tmp.368 = 0.3;
+        %tmp.369 = mul %tmp.367 %tmp.368;
+        %tmp.370 = sub %tmp.365 %tmp.369;
+        %tmp.372 = lgetv %height.2;
+        %tmp.373 = 2;
+        %tmp.374 = div %tmp.372 %tmp.373;
+        %tmp.376 = lgetv %height.2;
+        %tmp.377 = 0.3;
+        %tmp.378 = mul %tmp.376 %tmp.377;
+        %tmp.379 = sub %tmp.374 %tmp.378;
+        %tmp.381 = lgetv %width.1;
+        %tmp.382 = 0.6;
+        %tmp.383 = mul %tmp.381 %tmp.382;
+        %tmp.385 = lgetv %height.2;
+        %tmp.386 = 0.6;
+        %tmp.387 = mul %tmp.385 %tmp.386;
+        %tmp.389 = lgetv %height.2;
+        %tmp.390 = 0.05;
+        %tmp.391 = mul %tmp.389 %tmp.390;
+        invoke %tmp.360 %tmp.361(%tmp.370, %tmp.379, %tmp.383, %tmp.387, %tmp.391);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 96 16 ]
+        %tmp.392 = lgetv %dc;
+        %tmp.393 = getv function %tmp.392 :drawText;
+        %tmp.395 = lgetv %width.1;
+        %tmp.396 = 2;
+        %tmp.397 = div %tmp.395 %tmp.396;
+        %tmp.399 = lgetv %height.2;
+        %tmp.400 = 0.3;
+        %tmp.401 = mul %tmp.399 %tmp.400;
+        %tmp.402 = getm $.Toybox.Graphics;
+        %tmp.403 = getv %tmp.402 :FONT_XTINY;
+        %tmp.405 = getv ? :lapValue;
+        %tmp.406 = 0;
+        %tmp.407 = agetv %tmp.405 %tmp.406;
+        %tmp.408 = 1;
+        %tmp.409 = agetv %tmp.407 %tmp.408;
+        %tmp.410 = getm $.Toybox.Graphics;
+        %tmp.411 = getv %tmp.410 :TEXT_JUSTIFY_CENTER;
+        %tmp.412 = getm $.Toybox.Graphics;
+        %tmp.413 = getv %tmp.412 :TEXT_JUSTIFY_VCENTER;
+        %tmp.414 = bitor %tmp.411 %tmp.413;
+        invoke %tmp.392 %tmp.393(%tmp.397, %tmp.401, %tmp.403, %tmp.409, %tmp.414);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 97 16 ]
+        %tmp.415 = lgetv %dc;
+        %tmp.416 = getv function %tmp.415 :drawText;
+        %tmp.418 = lgetv %width.1;
+        %tmp.419 = 2;
+        %tmp.420 = div %tmp.418 %tmp.419;
+        %tmp.422 = lgetv %height.2;
+        %tmp.423 = 0.4;
+        %tmp.424 = mul %tmp.422 %tmp.423;
+        %tmp.425 = getm $.Toybox.Graphics;
+        %tmp.426 = getv %tmp.425 :FONT_LARGE;
+        %tmp.428 = getv ? :lapValue;
+        %tmp.429 = 0;
+        %tmp.430 = agetv %tmp.428 %tmp.429;
+        %tmp.431 = 0;
+        %tmp.432 = agetv %tmp.430 %tmp.431;
+        %tmp.433 = getm $.Toybox.Graphics;
+        %tmp.434 = getv %tmp.433 :TEXT_JUSTIFY_CENTER;
+        %tmp.435 = getm $.Toybox.Graphics;
+        %tmp.436 = getv %tmp.435 :TEXT_JUSTIFY_VCENTER;
+        %tmp.437 = bitor %tmp.434 %tmp.436;
+        invoke %tmp.415 %tmp.416(%tmp.420, %tmp.424, %tmp.426, %tmp.432, %tmp.437);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 99 16 ]
+        %tmp.438 = lgetv %dc;
+        %tmp.439 = getv function %tmp.438 :drawText;
+        %tmp.441 = lgetv %width.1;
+        %tmp.442 = 2;
+        %tmp.443 = div %tmp.441 %tmp.442;
+        %tmp.445 = lgetv %height.2;
+        %tmp.446 = 0.55;
+        %tmp.447 = mul %tmp.445 %tmp.446;
+        %tmp.448 = getm $.Toybox.Graphics;
+        %tmp.449 = getv %tmp.448 :FONT_XTINY;
+        %tmp.451 = getv ? :lapValue;
+        %tmp.452 = 1;
+        %tmp.453 = agetv %tmp.451 %tmp.452;
+        %tmp.454 = 1;
+        %tmp.455 = agetv %tmp.453 %tmp.454;
+        %tmp.456 = getm $.Toybox.Graphics;
+        %tmp.457 = getv %tmp.456 :TEXT_JUSTIFY_CENTER;
+        %tmp.458 = getm $.Toybox.Graphics;
+        %tmp.459 = getv %tmp.458 :TEXT_JUSTIFY_VCENTER;
+        %tmp.460 = bitor %tmp.457 %tmp.459;
+        invoke %tmp.438 %tmp.439(%tmp.443, %tmp.447, %tmp.449, %tmp.455, %tmp.460);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 100 16 ]
+        %tmp.461 = lgetv %dc;
+        %tmp.462 = getv function %tmp.461 :drawText;
+        %tmp.464 = lgetv %width.1;
+        %tmp.465 = 2;
+        %tmp.466 = div %tmp.464 %tmp.465;
+        %tmp.468 = lgetv %height.2;
+        %tmp.469 = 0.65;
+        %tmp.470 = mul %tmp.468 %tmp.469;
+        %tmp.471 = getm $.Toybox.Graphics;
+        %tmp.472 = getv %tmp.471 :FONT_LARGE;
+        %tmp.474 = getv ? :lapValue;
+        %tmp.475 = 1;
+        %tmp.476 = agetv %tmp.474 %tmp.475;
+        %tmp.477 = 0;
+        %tmp.478 = agetv %tmp.476 %tmp.477;
+        %tmp.479 = getm $.Toybox.Graphics;
+        %tmp.480 = getv %tmp.479 :TEXT_JUSTIFY_CENTER;
+        %tmp.481 = getm $.Toybox.Graphics;
+        %tmp.482 = getv %tmp.481 :TEXT_JUSTIFY_VCENTER;
+        %tmp.483 = bitor %tmp.480 %tmp.482;
+        invoke %tmp.461 %tmp.462(%tmp.466, %tmp.470, %tmp.472, %tmp.478, %tmp.483);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_26_106_12_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_12_106_12_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_88_12_106_12_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 107 12 ]
+        %tmp.484 = lgetv %dc;
+        %tmp.485 = getv function %tmp.484 :setColor;
+        %tmp.486 = getm $.Toybox.Graphics;
+        %tmp.487 = getv %tmp.486 :COLOR_ORANGE;
+        %tmp.488 = getm $.Toybox.Graphics;
+        %tmp.489 = getv %tmp.488 :COLOR_TRANSPARENT;
+        invoke %tmp.484 %tmp.485(%tmp.487, %tmp.489);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_85_15_108_8_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_78_15_108_8_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_71_8_108_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 111 8 ]
+        %tmp.490 = lgetv %dc;
+        %tmp.491 = getv function %tmp.490 :setPenWidth;
+        %tmp.493 = lgetv %width.1;
+        %tmp.494 = 0.1;
+        %tmp.495 = mul %tmp.493 %tmp.494;
+        invoke %tmp.490 %tmp.491(%tmp.495);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 112 8 ]
+        %tmp.496 = lgetv %dc;
+        %tmp.497 = getv function %tmp.496 :drawCircle;
+        %tmp.499 = lgetv %width.1;
+        %tmp.500 = 2;
+        %tmp.501 = div %tmp.499 %tmp.500;
+        %tmp.503 = lgetv %height.2;
+        %tmp.504 = 2;
+        %tmp.505 = div %tmp.503 %tmp.504;
+        %tmp.507 = lgetv %width.1;
+        %tmp.508 = 2;
+        %tmp.509 = div %tmp.507 %tmp.508;
+        %tmp.511 = getv ? :anim;
+        %tmp.513 = lgetv %width.1;
+        %tmp.514 = mul %tmp.511 %tmp.513;
+        %tmp.515 = 0.05;
+        %tmp.516 = mul %tmp.514 %tmp.515;
+        %tmp.517 = 5;
+        %tmp.518 = div %tmp.516 %tmp.517;
+        %tmp.519 = add %tmp.509 %tmp.518;
+        invoke %tmp.496 %tmp.497(%tmp.501, %tmp.505, %tmp.519);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 113 8 ]
+        %tmp.520 = lgetv %dc;
+        %tmp.521 = getv function %tmp.520 :setPenWidth;
+        %tmp.523 = lgetv %width.1;
+        %tmp.524 = 0.01;
+        %tmp.525 = mul %tmp.523 %tmp.524;
+        invoke %tmp.520 %tmp.521(%tmp.525);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 114 8 ]
+        %tmp.526 = lgetv %dc;
+        %tmp.527 = getv function %tmp.526 :setColor;
+        %tmp.529 = lgetv %foregroundColor.4;
+        %tmp.530 = getm $.Toybox.Graphics;
+        %tmp.531 = getv %tmp.530 :COLOR_TRANSPARENT;
+        invoke %tmp.526 %tmp.527(%tmp.529, %tmp.531);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 115 8 ]
+        %tmp.532 = lgetv %dc;
+        %tmp.533 = getv function %tmp.532 :drawCircle;
+        %tmp.535 = lgetv %width.1;
+        %tmp.536 = 2;
+        %tmp.537 = div %tmp.535 %tmp.536;
+        %tmp.539 = lgetv %height.2;
+        %tmp.540 = 2;
+        %tmp.541 = div %tmp.539 %tmp.540;
+        %tmp.543 = lgetv %width.1;
+        %tmp.544 = 2;
+        %tmp.545 = div %tmp.543 %tmp.544;
+        %tmp.547 = lgetv %width.1;
+        %tmp.548 = 0.05;
+        %tmp.549 = mul %tmp.547 %tmp.548;
+        %tmp.550 = sub %tmp.545 %tmp.549;
+        %tmp.552 = getv ? :anim;
+        %tmp.554 = lgetv %width.1;
+        %tmp.555 = mul %tmp.552 %tmp.554;
+        %tmp.556 = 0.05;
+        %tmp.557 = mul %tmp.555 %tmp.556;
+        %tmp.558 = 5;
+        %tmp.559 = div %tmp.557 %tmp.558;
+        %tmp.560 = add %tmp.550 %tmp.559;
+        invoke %tmp.532 %tmp.533(%tmp.537, %tmp.541, %tmp.560);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 122 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_8_127_8_if_stmt:
+        %tmp.562 = getv ? :status;
+        %tmp.563 = 0;
+        %tmp.564 = ne %tmp.562 %tmp.563;
+        bf %tmp.564 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_8_127_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_8_127_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_24_127_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 123 12 ]
+        %tmp.565 = getv self :counter;
+        %tmp.566 = 1;
+        %tmp.567 = add %tmp.565 %tmp.566;
+        putv self :counter dup %tmp.567;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 124 12 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_12_126_12_if_stmt:
+        %tmp.569 = getv ? :counter;
+        %tmp.570 = 15;
+        %tmp.571 = gte %tmp.569 %tmp.570;
+        bf %tmp.571 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_12_126_12_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_12_126_12_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_30_126_12_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 125 16 ]
+        %tmp.572 = getv self :anim;
+        %tmp.573 = 1;
+        %tmp.574 = add %tmp.572 %tmp.573;
+        putv self :anim dup %tmp.574;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_30_126_12_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_12_126_12_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_124_12_126_12_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_24_127_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_8_127_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_122_8_127_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 129 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_8_131_8_if_stmt:
+        %tmp.576 = getv ? :counter;
+        %tmp.578 = getv ? :FRAMES;
+        %tmp.579 = 1;
+        %tmp.580 = add %tmp.578 %tmp.579;
+        %tmp.581 = eq %tmp.576 %tmp.580;
+        bf %tmp.581 @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_8_131_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_8_131_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_34_131_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc" 130 12 ]
+        %tmp.582 = self;
+        %tmp.583 = getv function %tmp.582 :setStatus;
+        %tmp.584 = 0;
+        invoke %tmp.582 %tmp.583(%tmp.584);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_34_131_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_8_131_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_129_8_131_8_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_parts_Ring_mc_45_36_133_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\parts\Ring.mc"; @line = 1; ]
+<init> {
+}

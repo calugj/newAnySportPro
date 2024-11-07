@@ -1,0 +1,135 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 5; ]
+class newAnySportProApp extends Application.AppBase{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 7; @position = 8; ]
+    var sportData = null;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 9; @position = 16; ]
+    private
+    var timer = null;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 10; @position = 10; ]
+    const REFRESH_LOW = 500;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 11; @position = 10; ]
+    const REFRESH_HIGH = 50;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 12; @position = 8; ]
+    var bannerAnimation = false;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 13; @position = 8; ]
+    var ringAnimation = false;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 15; ]
+    function initialize() as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_15_26_23_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 16 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 17 8 ]
+        %tmp.7 = getv ? :SportData;
+        %tmp.4 = newc %tmp.7 ();
+        putv self :sportData %tmp.4;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 19 8 ]
+        %tmp.8 = false;
+        putv self :bannerAnimation %tmp.8;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 20 8 ]
+        %tmp.9 = false;
+        putv self :ringAnimation %tmp.9;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 21 8 ]
+        %tmp.13 = getv ? :Timer;
+        %tmp.14 = getv function ? %tmp.13 :Timer;
+        %tmp.10 = newc %tmp.14 ();
+        putv self :timer %tmp.10;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 22 8 ]
+        %tmp.16 = getv ? :timer;
+        %tmp.17 = getv function %tmp.16 :start;
+        %tmp.18 = self;
+        %tmp.19 = getv function %tmp.18 :method;
+        %tmp.21 = const :timerCallback;
+        %tmp.22 = invoke %tmp.18 %tmp.19(%tmp.21);
+        %tmp.24 = getv ? :REFRESH_LOW;
+        %tmp.25 = true;
+        invoke %tmp.16 %tmp.17(%tmp.22, %tmp.24, %tmp.25);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_15_26_23_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 25; ]
+    function setRefreshRate(param_refreshRate) {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_25_47_28_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 26 8 ]
+        %tmp.2 = getv ? :timer;
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 27 8 ]
+        %tmp.5 = getv ? :timer;
+        %tmp.6 = getv function %tmp.5 :start;
+        %tmp.7 = self;
+        %tmp.8 = getv function %tmp.7 :method;
+        %tmp.10 = const :timerCallback;
+        %tmp.11 = invoke %tmp.7 %tmp.8(%tmp.10);
+        %tmp.13 = lgetv %param_refreshRate;
+        %tmp.14 = true;
+        invoke %tmp.5 %tmp.6(%tmp.11, %tmp.13, %tmp.14);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_25_47_28_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 30; ]
+    function timerCallback() as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_30_37_32_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 31 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :requestUpdate;
+        invoke %tmp.1 %tmp.2();
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_30_37_32_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 35; ]
+    function onStart(state as Dictionary or Null) as Void {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 39; ]
+    function onStop(state as Dictionary or Null) as Void {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 43; ]
+    function getInitialView() as [Views] or [Views, InputDelegates] {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_43_68_46_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 44 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_43_68_46_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_43_68_46_4_stop" ]
+        %view.1 = local;
+        %tmp.4 = getv ? :newAnySportProView;
+        %tmp.6 = getv ? :sportData;
+        %tmp.7 = 1;
+        %tmp.1 = newc %tmp.4 (%tmp.6, %tmp.7);
+        lputv %view.1 %tmp.1;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 45 8 ]
+        %tmp.8 = newa 2;
+        %tmp.10 = lgetv %view.1;
+        %tmp.11 = dup %tmp.8;
+        %tmp.12 = aputv %tmp.11 0 %tmp.10;
+        %tmp.16 = getv ? :newAnySportProDelegate;
+        %tmp.18 = lgetv %view.1;
+        %tmp.13 = newc %tmp.16 (%tmp.18);
+        %tmp.19 = dup %tmp.12;
+        %tmp.20 = aputv %tmp.19 1 %tmp.13;
+        ret %tmp.20;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_43_68_46_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 51; ]
+function getApp() as newAnySportProApp {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_51_39_53_0_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc" 52 4 ]
+    %tmp.1 = getm $.Toybox.Application;
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 newAnySportProApp;
+    ret %tmp.4;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_newAnySportProApp_mc_51_39_53_0_stop:
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\newAnySportProApp.mc"; @line = 1; ]
+<init> {
+}

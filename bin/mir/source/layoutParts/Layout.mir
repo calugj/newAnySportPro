@@ -1,0 +1,439 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 5; ]
+class Layout{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 7; @position = 16; ]
+    private
+    var fields = 0;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 9; ]
+    function initialize(param_fields as Number) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_9_48_11_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 10 8 ]
+        %tmp.2 = lgetv %param_fields;
+        putv self :fields %tmp.2;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_9_48_11_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 13; ]
+    function draw(dc as Dc) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 14 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_stop" ]
+        %width.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 15 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_stop" ]
+        %height.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 16 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_stop" ]
+        %backgroundColor.3 = local;
+        %tmp.8 = getv ? :Properties;
+        %tmp.9 = getv function %tmp.8 :getValue;
+        %tmp.10 = "BackgroundColor";
+        %tmp.11 = invoke %tmp.8 %tmp.9(%tmp.10);
+        lputv %backgroundColor.3 %tmp.11;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 17 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_stop" ]
+        %foregroundColor.4 = local;
+        %tmp.13 = getv ? :Properties;
+        %tmp.14 = getv function %tmp.13 :getValue;
+        %tmp.15 = "AccentColor";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        lputv %foregroundColor.4 %tmp.16;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 19 8 ]
+        %tmp.17 = lgetv %dc;
+        %tmp.18 = getv function %tmp.17 :setColor;
+        %tmp.20 = lgetv %backgroundColor.3;
+        %tmp.22 = lgetv %backgroundColor.3;
+        invoke %tmp.17 %tmp.18(%tmp.20, %tmp.22);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 20 8 ]
+        %tmp.23 = lgetv %dc;
+        %tmp.24 = getv function %tmp.23 :clear;
+        invoke %tmp.23 %tmp.24();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 22 8 ]
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = getv function %tmp.25 :setColor;
+        %tmp.28 = lgetv %foregroundColor.4;
+        %tmp.29 = getm $.Toybox.Graphics;
+        %tmp.30 = getv %tmp.29 :COLOR_TRANSPARENT;
+        invoke %tmp.25 %tmp.26(%tmp.28, %tmp.30);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 23 8 ]
+        %tmp.31 = lgetv %dc;
+        %tmp.32 = getv function %tmp.31 :setPenWidth;
+        %tmp.34 = lgetv %width.1;
+        %tmp.35 = 0.01;
+        %tmp.36 = mul %tmp.34 %tmp.35;
+        invoke %tmp.31 %tmp.32(%tmp.36);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 27 8 ]
+        %tmp.38 = getv ? :fields;
+        push %tmp.38;
+        switch %tmp.38 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtBegin:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 28 12 ]
+        %tmp.39 = dup %tmp.38;
+        %tmp.40 = 2;
+        %tmp.41 = getv function %tmp.39 :equals;
+        %tmp.42 = invoke %tmp.39 %tmp.41 (%tmp.40);
+        bt %tmp.42 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_28_12_30_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 31 12 ]
+        %tmp.43 = dup %tmp.38;
+        %tmp.44 = 3;
+        %tmp.45 = getv function %tmp.43 :equals;
+        %tmp.46 = invoke %tmp.43 %tmp.45 (%tmp.44);
+        bt %tmp.46 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_31_12_34_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 35 12 ]
+        %tmp.47 = dup %tmp.38;
+        %tmp.48 = 4;
+        %tmp.49 = getv function %tmp.47 :equals;
+        %tmp.50 = invoke %tmp.47 %tmp.49 (%tmp.48);
+        bt %tmp.50 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_35_12_39_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 40 12 ]
+        %tmp.51 = dup %tmp.38;
+        %tmp.52 = 5;
+        %tmp.53 = getv function %tmp.51 :equals;
+        %tmp.54 = invoke %tmp.51 %tmp.53 (%tmp.52);
+        bt %tmp.54 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_40_12_45_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 46 12 ]
+        %tmp.55 = dup %tmp.38;
+        %tmp.56 = 6;
+        %tmp.57 = getv function %tmp.55 :equals;
+        %tmp.58 = invoke %tmp.55 %tmp.57 (%tmp.56);
+        bt %tmp.58 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_46_12_50_83_switchCase;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtDefault:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_defaultCodeBegin;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_28_12_30_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 29 16 ]
+        %tmp.59 = lgetv %dc;
+        %tmp.60 = getv function %tmp.59 :drawLine;
+        %tmp.61 = 0;
+        %tmp.63 = lgetv %height.2;
+        %tmp.64 = 2;
+        %tmp.65 = div %tmp.63 %tmp.64;
+        %tmp.66 = 1;
+        %tmp.67 = sub %tmp.65 %tmp.66;
+        %tmp.69 = lgetv %width.1;
+        %tmp.71 = lgetv %height.2;
+        %tmp.72 = 2;
+        %tmp.73 = div %tmp.71 %tmp.72;
+        %tmp.74 = 1;
+        %tmp.75 = sub %tmp.73 %tmp.74;
+        invoke %tmp.59 %tmp.60(%tmp.61, %tmp.67, %tmp.69, %tmp.75);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 30 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_31_12_34_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 32 16 ]
+        %tmp.76 = lgetv %dc;
+        %tmp.77 = getv function %tmp.76 :drawLine;
+        %tmp.78 = 0;
+        %tmp.80 = lgetv %height.2;
+        %tmp.81 = 3;
+        %tmp.82 = div %tmp.80 %tmp.81;
+        %tmp.83 = 1;
+        %tmp.84 = sub %tmp.82 %tmp.83;
+        %tmp.86 = lgetv %width.1;
+        %tmp.88 = lgetv %height.2;
+        %tmp.89 = 3;
+        %tmp.90 = div %tmp.88 %tmp.89;
+        %tmp.91 = 1;
+        %tmp.92 = sub %tmp.90 %tmp.91;
+        invoke %tmp.76 %tmp.77(%tmp.78, %tmp.84, %tmp.86, %tmp.92);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 33 16 ]
+        %tmp.93 = lgetv %dc;
+        %tmp.94 = getv function %tmp.93 :drawLine;
+        %tmp.95 = 0;
+        %tmp.96 = 2;
+        %tmp.98 = lgetv %height.2;
+        %tmp.99 = mul %tmp.96 %tmp.98;
+        %tmp.100 = 3;
+        %tmp.101 = div %tmp.99 %tmp.100;
+        %tmp.102 = 1;
+        %tmp.103 = sub %tmp.101 %tmp.102;
+        %tmp.105 = lgetv %width.1;
+        %tmp.106 = 2;
+        %tmp.108 = lgetv %height.2;
+        %tmp.109 = mul %tmp.106 %tmp.108;
+        %tmp.110 = 3;
+        %tmp.111 = div %tmp.109 %tmp.110;
+        %tmp.112 = 1;
+        %tmp.113 = sub %tmp.111 %tmp.112;
+        invoke %tmp.93 %tmp.94(%tmp.95, %tmp.103, %tmp.105, %tmp.113);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 34 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_35_12_39_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 36 16 ]
+        %tmp.114 = lgetv %dc;
+        %tmp.115 = getv function %tmp.114 :drawLine;
+        %tmp.116 = 0;
+        %tmp.118 = lgetv %height.2;
+        %tmp.119 = 3;
+        %tmp.120 = div %tmp.118 %tmp.119;
+        %tmp.121 = 1;
+        %tmp.122 = sub %tmp.120 %tmp.121;
+        %tmp.124 = lgetv %width.1;
+        %tmp.126 = lgetv %height.2;
+        %tmp.127 = 3;
+        %tmp.128 = div %tmp.126 %tmp.127;
+        %tmp.129 = 1;
+        %tmp.130 = sub %tmp.128 %tmp.129;
+        invoke %tmp.114 %tmp.115(%tmp.116, %tmp.122, %tmp.124, %tmp.130);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 37 16 ]
+        %tmp.131 = lgetv %dc;
+        %tmp.132 = getv function %tmp.131 :drawLine;
+        %tmp.133 = 0;
+        %tmp.134 = 2;
+        %tmp.136 = lgetv %height.2;
+        %tmp.137 = mul %tmp.134 %tmp.136;
+        %tmp.138 = 3;
+        %tmp.139 = div %tmp.137 %tmp.138;
+        %tmp.140 = 1;
+        %tmp.141 = sub %tmp.139 %tmp.140;
+        %tmp.143 = lgetv %width.1;
+        %tmp.144 = 2;
+        %tmp.146 = lgetv %height.2;
+        %tmp.147 = mul %tmp.144 %tmp.146;
+        %tmp.148 = 3;
+        %tmp.149 = div %tmp.147 %tmp.148;
+        %tmp.150 = 1;
+        %tmp.151 = sub %tmp.149 %tmp.150;
+        invoke %tmp.131 %tmp.132(%tmp.133, %tmp.141, %tmp.143, %tmp.151);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 38 16 ]
+        %tmp.152 = lgetv %dc;
+        %tmp.153 = getv function %tmp.152 :drawLine;
+        %tmp.155 = lgetv %width.1;
+        %tmp.156 = 2;
+        %tmp.157 = div %tmp.155 %tmp.156;
+        %tmp.158 = 1;
+        %tmp.159 = sub %tmp.157 %tmp.158;
+        %tmp.161 = lgetv %height.2;
+        %tmp.162 = 3;
+        %tmp.163 = div %tmp.161 %tmp.162;
+        %tmp.164 = 1;
+        %tmp.165 = sub %tmp.163 %tmp.164;
+        %tmp.167 = lgetv %width.1;
+        %tmp.168 = 2;
+        %tmp.169 = div %tmp.167 %tmp.168;
+        %tmp.170 = 1;
+        %tmp.171 = sub %tmp.169 %tmp.170;
+        %tmp.172 = 2;
+        %tmp.174 = lgetv %height.2;
+        %tmp.175 = mul %tmp.172 %tmp.174;
+        %tmp.176 = 3;
+        %tmp.177 = div %tmp.175 %tmp.176;
+        %tmp.178 = 1;
+        %tmp.179 = sub %tmp.177 %tmp.178;
+        invoke %tmp.152 %tmp.153(%tmp.159, %tmp.165, %tmp.171, %tmp.179);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 39 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_40_12_45_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 41 16 ]
+        %tmp.180 = lgetv %dc;
+        %tmp.181 = getv function %tmp.180 :drawLine;
+        %tmp.182 = 0;
+        %tmp.184 = lgetv %height.2;
+        %tmp.185 = 4;
+        %tmp.186 = div %tmp.184 %tmp.185;
+        %tmp.187 = 1;
+        %tmp.188 = sub %tmp.186 %tmp.187;
+        %tmp.190 = lgetv %width.1;
+        %tmp.192 = lgetv %height.2;
+        %tmp.193 = 4;
+        %tmp.194 = div %tmp.192 %tmp.193;
+        %tmp.195 = 1;
+        %tmp.196 = sub %tmp.194 %tmp.195;
+        invoke %tmp.180 %tmp.181(%tmp.182, %tmp.188, %tmp.190, %tmp.196);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 42 16 ]
+        %tmp.197 = lgetv %dc;
+        %tmp.198 = getv function %tmp.197 :drawLine;
+        %tmp.199 = 0;
+        %tmp.201 = lgetv %height.2;
+        %tmp.202 = 2;
+        %tmp.203 = div %tmp.201 %tmp.202;
+        %tmp.204 = 1;
+        %tmp.205 = sub %tmp.203 %tmp.204;
+        %tmp.207 = lgetv %width.1;
+        %tmp.209 = lgetv %height.2;
+        %tmp.210 = 2;
+        %tmp.211 = div %tmp.209 %tmp.210;
+        %tmp.212 = 1;
+        %tmp.213 = sub %tmp.211 %tmp.212;
+        invoke %tmp.197 %tmp.198(%tmp.199, %tmp.205, %tmp.207, %tmp.213);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 43 16 ]
+        %tmp.214 = lgetv %dc;
+        %tmp.215 = getv function %tmp.214 :drawLine;
+        %tmp.216 = 0;
+        %tmp.217 = 3;
+        %tmp.219 = lgetv %height.2;
+        %tmp.220 = mul %tmp.217 %tmp.219;
+        %tmp.221 = 4;
+        %tmp.222 = div %tmp.220 %tmp.221;
+        %tmp.223 = 1;
+        %tmp.224 = sub %tmp.222 %tmp.223;
+        %tmp.226 = lgetv %width.1;
+        %tmp.227 = 3;
+        %tmp.229 = lgetv %height.2;
+        %tmp.230 = mul %tmp.227 %tmp.229;
+        %tmp.231 = 4;
+        %tmp.232 = div %tmp.230 %tmp.231;
+        %tmp.233 = 1;
+        %tmp.234 = sub %tmp.232 %tmp.233;
+        invoke %tmp.214 %tmp.215(%tmp.216, %tmp.224, %tmp.226, %tmp.234);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 44 16 ]
+        %tmp.235 = lgetv %dc;
+        %tmp.236 = getv function %tmp.235 :drawLine;
+        %tmp.238 = lgetv %width.1;
+        %tmp.239 = 2;
+        %tmp.240 = div %tmp.238 %tmp.239;
+        %tmp.241 = 1;
+        %tmp.242 = sub %tmp.240 %tmp.241;
+        %tmp.244 = lgetv %height.2;
+        %tmp.245 = 2;
+        %tmp.246 = div %tmp.244 %tmp.245;
+        %tmp.247 = 1;
+        %tmp.248 = sub %tmp.246 %tmp.247;
+        %tmp.250 = lgetv %width.1;
+        %tmp.251 = 2;
+        %tmp.252 = div %tmp.250 %tmp.251;
+        %tmp.253 = 1;
+        %tmp.254 = sub %tmp.252 %tmp.253;
+        %tmp.255 = 3;
+        %tmp.257 = lgetv %height.2;
+        %tmp.258 = mul %tmp.255 %tmp.257;
+        %tmp.259 = 4;
+        %tmp.260 = div %tmp.258 %tmp.259;
+        %tmp.261 = 1;
+        %tmp.262 = sub %tmp.260 %tmp.261;
+        invoke %tmp.235 %tmp.236(%tmp.242, %tmp.248, %tmp.254, %tmp.262);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 45 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_46_12_50_83_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 47 16 ]
+        %tmp.263 = lgetv %dc;
+        %tmp.264 = getv function %tmp.263 :drawLine;
+        %tmp.265 = 0;
+        %tmp.267 = lgetv %height.2;
+        %tmp.268 = 4;
+        %tmp.269 = div %tmp.267 %tmp.268;
+        %tmp.270 = 1;
+        %tmp.271 = sub %tmp.269 %tmp.270;
+        %tmp.273 = lgetv %width.1;
+        %tmp.275 = lgetv %height.2;
+        %tmp.276 = 4;
+        %tmp.277 = div %tmp.275 %tmp.276;
+        %tmp.278 = 1;
+        %tmp.279 = sub %tmp.277 %tmp.278;
+        invoke %tmp.263 %tmp.264(%tmp.265, %tmp.271, %tmp.273, %tmp.279);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 48 16 ]
+        %tmp.280 = lgetv %dc;
+        %tmp.281 = getv function %tmp.280 :drawLine;
+        %tmp.282 = 0;
+        %tmp.284 = lgetv %height.2;
+        %tmp.285 = 2;
+        %tmp.286 = div %tmp.284 %tmp.285;
+        %tmp.287 = 1;
+        %tmp.288 = sub %tmp.286 %tmp.287;
+        %tmp.290 = lgetv %width.1;
+        %tmp.292 = lgetv %height.2;
+        %tmp.293 = 2;
+        %tmp.294 = div %tmp.292 %tmp.293;
+        %tmp.295 = 1;
+        %tmp.296 = sub %tmp.294 %tmp.295;
+        invoke %tmp.280 %tmp.281(%tmp.282, %tmp.288, %tmp.290, %tmp.296);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 49 16 ]
+        %tmp.297 = lgetv %dc;
+        %tmp.298 = getv function %tmp.297 :drawLine;
+        %tmp.299 = 0;
+        %tmp.300 = 3;
+        %tmp.302 = lgetv %height.2;
+        %tmp.303 = mul %tmp.300 %tmp.302;
+        %tmp.304 = 4;
+        %tmp.305 = div %tmp.303 %tmp.304;
+        %tmp.306 = 1;
+        %tmp.307 = sub %tmp.305 %tmp.306;
+        %tmp.309 = lgetv %width.1;
+        %tmp.310 = 3;
+        %tmp.312 = lgetv %height.2;
+        %tmp.313 = mul %tmp.310 %tmp.312;
+        %tmp.314 = 4;
+        %tmp.315 = div %tmp.313 %tmp.314;
+        %tmp.316 = 1;
+        %tmp.317 = sub %tmp.315 %tmp.316;
+        invoke %tmp.297 %tmp.298(%tmp.299, %tmp.307, %tmp.309, %tmp.317);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 50 16 ]
+        %tmp.318 = lgetv %dc;
+        %tmp.319 = getv function %tmp.318 :drawLine;
+        %tmp.321 = lgetv %width.1;
+        %tmp.322 = 2;
+        %tmp.323 = div %tmp.321 %tmp.322;
+        %tmp.324 = 1;
+        %tmp.325 = sub %tmp.323 %tmp.324;
+        %tmp.327 = lgetv %height.2;
+        %tmp.328 = 4;
+        %tmp.329 = div %tmp.327 %tmp.328;
+        %tmp.330 = 1;
+        %tmp.331 = sub %tmp.329 %tmp.330;
+        %tmp.333 = lgetv %width.1;
+        %tmp.334 = 2;
+        %tmp.335 = div %tmp.333 %tmp.334;
+        %tmp.336 = 1;
+        %tmp.337 = sub %tmp.335 %tmp.336;
+        %tmp.338 = 3;
+        %tmp.340 = lgetv %height.2;
+        %tmp.341 = mul %tmp.338 %tmp.340;
+        %tmp.342 = 4;
+        %tmp.343 = div %tmp.341 %tmp.342;
+        %tmp.344 = 1;
+        %tmp.345 = sub %tmp.343 %tmp.344;
+        invoke %tmp.318 %tmp.319(%tmp.325, %tmp.331, %tmp.337, %tmp.345);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_defaultCodeBegin:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_27_8_51_8_switchStmtEnd:
+        pop;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 53 8 ]
+        %tmp.346 = lgetv %dc;
+        %tmp.347 = getv function %tmp.346 :setColor;
+        %tmp.349 = lgetv %backgroundColor.3;
+        %tmp.350 = getm $.Toybox.Graphics;
+        %tmp.351 = getv %tmp.350 :COLOR_TRANSPARENT;
+        invoke %tmp.346 %tmp.347(%tmp.349, %tmp.351);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 55 8 ]
+        %tmp.352 = lgetv %dc;
+        %tmp.353 = getv function %tmp.352 :setPenWidth;
+        %tmp.355 = lgetv %width.1;
+        %tmp.356 = 0.06;
+        %tmp.357 = mul %tmp.355 %tmp.356;
+        invoke %tmp.352 %tmp.353(%tmp.357);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc" 56 8 ]
+        %tmp.358 = lgetv %dc;
+        %tmp.359 = getv function %tmp.358 :drawCircle;
+        %tmp.361 = lgetv %width.1;
+        %tmp.362 = 2;
+        %tmp.363 = div %tmp.361 %tmp.362;
+        %tmp.365 = lgetv %height.2;
+        %tmp.366 = 2;
+        %tmp.367 = div %tmp.365 %tmp.366;
+        %tmp.369 = lgetv %width.1;
+        %tmp.370 = 2;
+        %tmp.371 = div %tmp.369 %tmp.370;
+        invoke %tmp.358 %tmp.359(%tmp.363, %tmp.367, %tmp.371);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_Layout_mc_13_36_57_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/Layout.mc"; @line = 1; ]
+<init> {
+}

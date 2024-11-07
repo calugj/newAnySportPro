@@ -1,0 +1,744 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 4; ]
+import Toybox.Lang;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 6; ]
+class PageSettingView extends WatchUi.View{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 6; ]
+    <init> {
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 10 16 ]
+        %tmp.2 = 6;
+        %tmp.1 = newa Array<Datafield> %tmp.2;
+        putv self :datafields %tmp.1;
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 8; @position = 16; ]
+    private
+    var layout;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 9; @position = 8; ]
+    var pageNumber;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 10; @position = 16; ]
+    private
+    var datafields as Array<Datafield>;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 11; @position = 16; ]
+    private
+    var fieldsNumber;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 13; @position = 16; ]
+    private
+    var sportData;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 17; ]
+    function initialize(param_pageNumber) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_17_42_26_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 18 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 20 8 ]
+        %tmp.4 = self;
+        %tmp.5 = getv function %tmp.4 :getApp;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = getv %tmp.6 :sportData;
+        putv self :sportData %tmp.7;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 21 8 ]
+        %tmp.9 = lgetv %param_pageNumber;
+        putv self :pageNumber %tmp.9;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 24 8 ]
+        %tmp.13 = getv ? :Layout;
+        %tmp.14 = 1;
+        %tmp.10 = newc %tmp.13 (%tmp.14);
+        putv self :layout %tmp.10;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_17_42_26_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 29; ]
+    function onLayout(dc as Dc) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 30 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %width.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 31 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %height.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 33 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %ONE_FIELD.3 = local;
+        %tmp.7 = newa 1;
+        %tmp.8 = newa 4;
+        %tmp.9 = 0;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = 0;
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 1 %tmp.12;
+        %tmp.16 = lgetv %width.1;
+        %tmp.17 = dup %tmp.14;
+        %tmp.18 = aputv %tmp.17 2 %tmp.16;
+        %tmp.20 = lgetv %height.2;
+        %tmp.21 = dup %tmp.18;
+        %tmp.22 = aputv %tmp.21 3 %tmp.20;
+        %tmp.23 = dup %tmp.7;
+        %tmp.24 = aputv %tmp.23 0 %tmp.22;
+        lputv %ONE_FIELD.3 %tmp.24;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 34 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %TWO_FIELD.4 = local;
+        %tmp.25 = newa 2;
+        %tmp.26 = newa 4;
+        %tmp.27 = 0;
+        %tmp.28 = dup %tmp.26;
+        %tmp.29 = aputv %tmp.28 0 %tmp.27;
+        %tmp.30 = 0;
+        %tmp.31 = dup %tmp.29;
+        %tmp.32 = aputv %tmp.31 1 %tmp.30;
+        %tmp.34 = lgetv %width.1;
+        %tmp.35 = dup %tmp.32;
+        %tmp.36 = aputv %tmp.35 2 %tmp.34;
+        %tmp.38 = lgetv %height.2;
+        %tmp.39 = 2;
+        %tmp.40 = div %tmp.38 %tmp.39;
+        %tmp.41 = dup %tmp.36;
+        %tmp.42 = aputv %tmp.41 3 %tmp.40;
+        %tmp.43 = dup %tmp.25;
+        %tmp.44 = aputv %tmp.43 0 %tmp.42;
+        %tmp.45 = newa 4;
+        %tmp.46 = 0;
+        %tmp.47 = dup %tmp.45;
+        %tmp.48 = aputv %tmp.47 0 %tmp.46;
+        %tmp.50 = lgetv %height.2;
+        %tmp.51 = 2;
+        %tmp.52 = div %tmp.50 %tmp.51;
+        %tmp.53 = dup %tmp.48;
+        %tmp.54 = aputv %tmp.53 1 %tmp.52;
+        %tmp.56 = lgetv %width.1;
+        %tmp.57 = dup %tmp.54;
+        %tmp.58 = aputv %tmp.57 2 %tmp.56;
+        %tmp.60 = lgetv %height.2;
+        %tmp.61 = 2;
+        %tmp.62 = div %tmp.60 %tmp.61;
+        %tmp.63 = dup %tmp.58;
+        %tmp.64 = aputv %tmp.63 3 %tmp.62;
+        %tmp.65 = dup %tmp.44;
+        %tmp.66 = aputv %tmp.65 1 %tmp.64;
+        lputv %TWO_FIELD.4 %tmp.66;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 35 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %THREE_FIELD.5 = local;
+        %tmp.67 = newa 3;
+        %tmp.68 = newa 4;
+        %tmp.69 = 0;
+        %tmp.70 = dup %tmp.68;
+        %tmp.71 = aputv %tmp.70 0 %tmp.69;
+        %tmp.72 = 0;
+        %tmp.73 = dup %tmp.71;
+        %tmp.74 = aputv %tmp.73 1 %tmp.72;
+        %tmp.76 = lgetv %width.1;
+        %tmp.77 = dup %tmp.74;
+        %tmp.78 = aputv %tmp.77 2 %tmp.76;
+        %tmp.80 = lgetv %height.2;
+        %tmp.81 = 3;
+        %tmp.82 = div %tmp.80 %tmp.81;
+        %tmp.83 = dup %tmp.78;
+        %tmp.84 = aputv %tmp.83 3 %tmp.82;
+        %tmp.85 = dup %tmp.67;
+        %tmp.86 = aputv %tmp.85 0 %tmp.84;
+        %tmp.87 = newa 4;
+        %tmp.88 = 0;
+        %tmp.89 = dup %tmp.87;
+        %tmp.90 = aputv %tmp.89 0 %tmp.88;
+        %tmp.92 = lgetv %height.2;
+        %tmp.93 = 3;
+        %tmp.94 = div %tmp.92 %tmp.93;
+        %tmp.95 = dup %tmp.90;
+        %tmp.96 = aputv %tmp.95 1 %tmp.94;
+        %tmp.98 = lgetv %width.1;
+        %tmp.99 = dup %tmp.96;
+        %tmp.100 = aputv %tmp.99 2 %tmp.98;
+        %tmp.102 = lgetv %height.2;
+        %tmp.103 = 3;
+        %tmp.104 = div %tmp.102 %tmp.103;
+        %tmp.105 = dup %tmp.100;
+        %tmp.106 = aputv %tmp.105 3 %tmp.104;
+        %tmp.107 = dup %tmp.86;
+        %tmp.108 = aputv %tmp.107 1 %tmp.106;
+        %tmp.109 = newa 4;
+        %tmp.110 = 0;
+        %tmp.111 = dup %tmp.109;
+        %tmp.112 = aputv %tmp.111 0 %tmp.110;
+        %tmp.113 = 2;
+        %tmp.115 = lgetv %height.2;
+        %tmp.116 = mul %tmp.113 %tmp.115;
+        %tmp.117 = 3;
+        %tmp.118 = div %tmp.116 %tmp.117;
+        %tmp.119 = dup %tmp.112;
+        %tmp.120 = aputv %tmp.119 1 %tmp.118;
+        %tmp.122 = lgetv %width.1;
+        %tmp.123 = dup %tmp.120;
+        %tmp.124 = aputv %tmp.123 2 %tmp.122;
+        %tmp.126 = lgetv %height.2;
+        %tmp.127 = 3;
+        %tmp.128 = div %tmp.126 %tmp.127;
+        %tmp.129 = dup %tmp.124;
+        %tmp.130 = aputv %tmp.129 3 %tmp.128;
+        %tmp.131 = dup %tmp.108;
+        %tmp.132 = aputv %tmp.131 2 %tmp.130;
+        lputv %THREE_FIELD.5 %tmp.132;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 36 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %FOUR_FIELD.6 = local;
+        %tmp.133 = newa 4;
+        %tmp.134 = newa 4;
+        %tmp.135 = 0;
+        %tmp.136 = dup %tmp.134;
+        %tmp.137 = aputv %tmp.136 0 %tmp.135;
+        %tmp.138 = 0;
+        %tmp.139 = dup %tmp.137;
+        %tmp.140 = aputv %tmp.139 1 %tmp.138;
+        %tmp.142 = lgetv %width.1;
+        %tmp.143 = dup %tmp.140;
+        %tmp.144 = aputv %tmp.143 2 %tmp.142;
+        %tmp.146 = lgetv %height.2;
+        %tmp.147 = 3;
+        %tmp.148 = div %tmp.146 %tmp.147;
+        %tmp.149 = dup %tmp.144;
+        %tmp.150 = aputv %tmp.149 3 %tmp.148;
+        %tmp.151 = dup %tmp.133;
+        %tmp.152 = aputv %tmp.151 0 %tmp.150;
+        %tmp.153 = newa 4;
+        %tmp.154 = 0;
+        %tmp.155 = dup %tmp.153;
+        %tmp.156 = aputv %tmp.155 0 %tmp.154;
+        %tmp.158 = lgetv %height.2;
+        %tmp.159 = 3;
+        %tmp.160 = div %tmp.158 %tmp.159;
+        %tmp.161 = dup %tmp.156;
+        %tmp.162 = aputv %tmp.161 1 %tmp.160;
+        %tmp.164 = lgetv %width.1;
+        %tmp.165 = 2;
+        %tmp.166 = div %tmp.164 %tmp.165;
+        %tmp.167 = dup %tmp.162;
+        %tmp.168 = aputv %tmp.167 2 %tmp.166;
+        %tmp.170 = lgetv %height.2;
+        %tmp.171 = 3;
+        %tmp.172 = div %tmp.170 %tmp.171;
+        %tmp.173 = dup %tmp.168;
+        %tmp.174 = aputv %tmp.173 3 %tmp.172;
+        %tmp.175 = dup %tmp.152;
+        %tmp.176 = aputv %tmp.175 1 %tmp.174;
+        %tmp.177 = newa 4;
+        %tmp.179 = lgetv %width.1;
+        %tmp.180 = 2;
+        %tmp.181 = div %tmp.179 %tmp.180;
+        %tmp.182 = dup %tmp.177;
+        %tmp.183 = aputv %tmp.182 0 %tmp.181;
+        %tmp.185 = lgetv %height.2;
+        %tmp.186 = 3;
+        %tmp.187 = div %tmp.185 %tmp.186;
+        %tmp.188 = dup %tmp.183;
+        %tmp.189 = aputv %tmp.188 1 %tmp.187;
+        %tmp.191 = lgetv %width.1;
+        %tmp.192 = 2;
+        %tmp.193 = div %tmp.191 %tmp.192;
+        %tmp.194 = dup %tmp.189;
+        %tmp.195 = aputv %tmp.194 2 %tmp.193;
+        %tmp.197 = lgetv %height.2;
+        %tmp.198 = 3;
+        %tmp.199 = div %tmp.197 %tmp.198;
+        %tmp.200 = dup %tmp.195;
+        %tmp.201 = aputv %tmp.200 3 %tmp.199;
+        %tmp.202 = dup %tmp.176;
+        %tmp.203 = aputv %tmp.202 2 %tmp.201;
+        %tmp.204 = newa 4;
+        %tmp.205 = 0;
+        %tmp.206 = dup %tmp.204;
+        %tmp.207 = aputv %tmp.206 0 %tmp.205;
+        %tmp.208 = 2;
+        %tmp.210 = lgetv %height.2;
+        %tmp.211 = mul %tmp.208 %tmp.210;
+        %tmp.212 = 3;
+        %tmp.213 = div %tmp.211 %tmp.212;
+        %tmp.214 = dup %tmp.207;
+        %tmp.215 = aputv %tmp.214 1 %tmp.213;
+        %tmp.217 = lgetv %width.1;
+        %tmp.218 = dup %tmp.215;
+        %tmp.219 = aputv %tmp.218 2 %tmp.217;
+        %tmp.221 = lgetv %height.2;
+        %tmp.222 = 3;
+        %tmp.223 = div %tmp.221 %tmp.222;
+        %tmp.224 = dup %tmp.219;
+        %tmp.225 = aputv %tmp.224 3 %tmp.223;
+        %tmp.226 = dup %tmp.203;
+        %tmp.227 = aputv %tmp.226 3 %tmp.225;
+        lputv %FOUR_FIELD.6 %tmp.227;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 37 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %FIVE_FIELD.7 = local;
+        %tmp.228 = newa 5;
+        %tmp.229 = newa 4;
+        %tmp.230 = 0;
+        %tmp.231 = dup %tmp.229;
+        %tmp.232 = aputv %tmp.231 0 %tmp.230;
+        %tmp.233 = 0;
+        %tmp.234 = dup %tmp.232;
+        %tmp.235 = aputv %tmp.234 1 %tmp.233;
+        %tmp.237 = lgetv %width.1;
+        %tmp.238 = dup %tmp.235;
+        %tmp.239 = aputv %tmp.238 2 %tmp.237;
+        %tmp.241 = lgetv %height.2;
+        %tmp.242 = 4;
+        %tmp.243 = div %tmp.241 %tmp.242;
+        %tmp.244 = dup %tmp.239;
+        %tmp.245 = aputv %tmp.244 3 %tmp.243;
+        %tmp.246 = dup %tmp.228;
+        %tmp.247 = aputv %tmp.246 0 %tmp.245;
+        %tmp.248 = newa 4;
+        %tmp.249 = 0;
+        %tmp.250 = dup %tmp.248;
+        %tmp.251 = aputv %tmp.250 0 %tmp.249;
+        %tmp.253 = lgetv %height.2;
+        %tmp.254 = 4;
+        %tmp.255 = div %tmp.253 %tmp.254;
+        %tmp.256 = dup %tmp.251;
+        %tmp.257 = aputv %tmp.256 1 %tmp.255;
+        %tmp.259 = lgetv %width.1;
+        %tmp.260 = dup %tmp.257;
+        %tmp.261 = aputv %tmp.260 2 %tmp.259;
+        %tmp.263 = lgetv %height.2;
+        %tmp.264 = 4;
+        %tmp.265 = div %tmp.263 %tmp.264;
+        %tmp.266 = dup %tmp.261;
+        %tmp.267 = aputv %tmp.266 3 %tmp.265;
+        %tmp.268 = dup %tmp.247;
+        %tmp.269 = aputv %tmp.268 1 %tmp.267;
+        %tmp.270 = newa 4;
+        %tmp.271 = 0;
+        %tmp.272 = dup %tmp.270;
+        %tmp.273 = aputv %tmp.272 0 %tmp.271;
+        %tmp.275 = lgetv %height.2;
+        %tmp.276 = 2;
+        %tmp.277 = div %tmp.275 %tmp.276;
+        %tmp.278 = dup %tmp.273;
+        %tmp.279 = aputv %tmp.278 1 %tmp.277;
+        %tmp.281 = lgetv %width.1;
+        %tmp.282 = 2;
+        %tmp.283 = div %tmp.281 %tmp.282;
+        %tmp.284 = dup %tmp.279;
+        %tmp.285 = aputv %tmp.284 2 %tmp.283;
+        %tmp.287 = lgetv %height.2;
+        %tmp.288 = 4;
+        %tmp.289 = div %tmp.287 %tmp.288;
+        %tmp.290 = dup %tmp.285;
+        %tmp.291 = aputv %tmp.290 3 %tmp.289;
+        %tmp.292 = dup %tmp.269;
+        %tmp.293 = aputv %tmp.292 2 %tmp.291;
+        %tmp.294 = newa 4;
+        %tmp.296 = lgetv %width.1;
+        %tmp.297 = 2;
+        %tmp.298 = div %tmp.296 %tmp.297;
+        %tmp.299 = dup %tmp.294;
+        %tmp.300 = aputv %tmp.299 0 %tmp.298;
+        %tmp.302 = lgetv %height.2;
+        %tmp.303 = 2;
+        %tmp.304 = div %tmp.302 %tmp.303;
+        %tmp.305 = dup %tmp.300;
+        %tmp.306 = aputv %tmp.305 1 %tmp.304;
+        %tmp.308 = lgetv %width.1;
+        %tmp.309 = 2;
+        %tmp.310 = div %tmp.308 %tmp.309;
+        %tmp.311 = dup %tmp.306;
+        %tmp.312 = aputv %tmp.311 2 %tmp.310;
+        %tmp.314 = lgetv %height.2;
+        %tmp.315 = 4;
+        %tmp.316 = div %tmp.314 %tmp.315;
+        %tmp.317 = dup %tmp.312;
+        %tmp.318 = aputv %tmp.317 3 %tmp.316;
+        %tmp.319 = dup %tmp.293;
+        %tmp.320 = aputv %tmp.319 3 %tmp.318;
+        %tmp.321 = newa 4;
+        %tmp.322 = 0;
+        %tmp.323 = dup %tmp.321;
+        %tmp.324 = aputv %tmp.323 0 %tmp.322;
+        %tmp.325 = 3;
+        %tmp.327 = lgetv %height.2;
+        %tmp.328 = mul %tmp.325 %tmp.327;
+        %tmp.329 = 4;
+        %tmp.330 = div %tmp.328 %tmp.329;
+        %tmp.331 = dup %tmp.324;
+        %tmp.332 = aputv %tmp.331 1 %tmp.330;
+        %tmp.334 = lgetv %width.1;
+        %tmp.335 = dup %tmp.332;
+        %tmp.336 = aputv %tmp.335 2 %tmp.334;
+        %tmp.338 = lgetv %height.2;
+        %tmp.339 = 4;
+        %tmp.340 = div %tmp.338 %tmp.339;
+        %tmp.341 = dup %tmp.336;
+        %tmp.342 = aputv %tmp.341 3 %tmp.340;
+        %tmp.343 = dup %tmp.320;
+        %tmp.344 = aputv %tmp.343 4 %tmp.342;
+        lputv %FIVE_FIELD.7 %tmp.344;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 38 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %SIX_FIELD.8 = local;
+        %tmp.345 = newa 6;
+        %tmp.346 = newa 4;
+        %tmp.347 = 0;
+        %tmp.348 = dup %tmp.346;
+        %tmp.349 = aputv %tmp.348 0 %tmp.347;
+        %tmp.350 = 0;
+        %tmp.351 = dup %tmp.349;
+        %tmp.352 = aputv %tmp.351 1 %tmp.350;
+        %tmp.354 = lgetv %width.1;
+        %tmp.355 = dup %tmp.352;
+        %tmp.356 = aputv %tmp.355 2 %tmp.354;
+        %tmp.358 = lgetv %height.2;
+        %tmp.359 = 4;
+        %tmp.360 = div %tmp.358 %tmp.359;
+        %tmp.361 = dup %tmp.356;
+        %tmp.362 = aputv %tmp.361 3 %tmp.360;
+        %tmp.363 = dup %tmp.345;
+        %tmp.364 = aputv %tmp.363 0 %tmp.362;
+        %tmp.365 = newa 4;
+        %tmp.366 = 0;
+        %tmp.367 = dup %tmp.365;
+        %tmp.368 = aputv %tmp.367 0 %tmp.366;
+        %tmp.370 = lgetv %height.2;
+        %tmp.371 = 4;
+        %tmp.372 = div %tmp.370 %tmp.371;
+        %tmp.373 = dup %tmp.368;
+        %tmp.374 = aputv %tmp.373 1 %tmp.372;
+        %tmp.376 = lgetv %width.1;
+        %tmp.377 = 2;
+        %tmp.378 = div %tmp.376 %tmp.377;
+        %tmp.379 = dup %tmp.374;
+        %tmp.380 = aputv %tmp.379 2 %tmp.378;
+        %tmp.382 = lgetv %height.2;
+        %tmp.383 = 4;
+        %tmp.384 = div %tmp.382 %tmp.383;
+        %tmp.385 = dup %tmp.380;
+        %tmp.386 = aputv %tmp.385 3 %tmp.384;
+        %tmp.387 = dup %tmp.364;
+        %tmp.388 = aputv %tmp.387 1 %tmp.386;
+        %tmp.389 = newa 4;
+        %tmp.391 = lgetv %width.1;
+        %tmp.392 = 2;
+        %tmp.393 = div %tmp.391 %tmp.392;
+        %tmp.394 = dup %tmp.389;
+        %tmp.395 = aputv %tmp.394 0 %tmp.393;
+        %tmp.397 = lgetv %height.2;
+        %tmp.398 = 4;
+        %tmp.399 = div %tmp.397 %tmp.398;
+        %tmp.400 = dup %tmp.395;
+        %tmp.401 = aputv %tmp.400 1 %tmp.399;
+        %tmp.403 = lgetv %width.1;
+        %tmp.404 = 2;
+        %tmp.405 = div %tmp.403 %tmp.404;
+        %tmp.406 = dup %tmp.401;
+        %tmp.407 = aputv %tmp.406 2 %tmp.405;
+        %tmp.409 = lgetv %height.2;
+        %tmp.410 = 4;
+        %tmp.411 = div %tmp.409 %tmp.410;
+        %tmp.412 = dup %tmp.407;
+        %tmp.413 = aputv %tmp.412 3 %tmp.411;
+        %tmp.414 = dup %tmp.388;
+        %tmp.415 = aputv %tmp.414 2 %tmp.413;
+        %tmp.416 = newa 4;
+        %tmp.417 = 0;
+        %tmp.418 = dup %tmp.416;
+        %tmp.419 = aputv %tmp.418 0 %tmp.417;
+        %tmp.421 = lgetv %height.2;
+        %tmp.422 = 2;
+        %tmp.423 = div %tmp.421 %tmp.422;
+        %tmp.424 = dup %tmp.419;
+        %tmp.425 = aputv %tmp.424 1 %tmp.423;
+        %tmp.427 = lgetv %width.1;
+        %tmp.428 = 2;
+        %tmp.429 = div %tmp.427 %tmp.428;
+        %tmp.430 = dup %tmp.425;
+        %tmp.431 = aputv %tmp.430 2 %tmp.429;
+        %tmp.433 = lgetv %height.2;
+        %tmp.434 = 4;
+        %tmp.435 = div %tmp.433 %tmp.434;
+        %tmp.436 = dup %tmp.431;
+        %tmp.437 = aputv %tmp.436 3 %tmp.435;
+        %tmp.438 = dup %tmp.415;
+        %tmp.439 = aputv %tmp.438 3 %tmp.437;
+        %tmp.440 = newa 4;
+        %tmp.442 = lgetv %width.1;
+        %tmp.443 = 2;
+        %tmp.444 = div %tmp.442 %tmp.443;
+        %tmp.445 = dup %tmp.440;
+        %tmp.446 = aputv %tmp.445 0 %tmp.444;
+        %tmp.448 = lgetv %height.2;
+        %tmp.449 = 2;
+        %tmp.450 = div %tmp.448 %tmp.449;
+        %tmp.451 = dup %tmp.446;
+        %tmp.452 = aputv %tmp.451 1 %tmp.450;
+        %tmp.454 = lgetv %width.1;
+        %tmp.455 = 2;
+        %tmp.456 = div %tmp.454 %tmp.455;
+        %tmp.457 = dup %tmp.452;
+        %tmp.458 = aputv %tmp.457 2 %tmp.456;
+        %tmp.460 = lgetv %height.2;
+        %tmp.461 = 4;
+        %tmp.462 = div %tmp.460 %tmp.461;
+        %tmp.463 = dup %tmp.458;
+        %tmp.464 = aputv %tmp.463 3 %tmp.462;
+        %tmp.465 = dup %tmp.439;
+        %tmp.466 = aputv %tmp.465 4 %tmp.464;
+        %tmp.467 = newa 4;
+        %tmp.468 = 0;
+        %tmp.469 = dup %tmp.467;
+        %tmp.470 = aputv %tmp.469 0 %tmp.468;
+        %tmp.471 = 3;
+        %tmp.473 = lgetv %height.2;
+        %tmp.474 = mul %tmp.471 %tmp.473;
+        %tmp.475 = 4;
+        %tmp.476 = div %tmp.474 %tmp.475;
+        %tmp.477 = dup %tmp.470;
+        %tmp.478 = aputv %tmp.477 1 %tmp.476;
+        %tmp.480 = lgetv %width.1;
+        %tmp.481 = dup %tmp.478;
+        %tmp.482 = aputv %tmp.481 2 %tmp.480;
+        %tmp.484 = lgetv %height.2;
+        %tmp.485 = 4;
+        %tmp.486 = div %tmp.484 %tmp.485;
+        %tmp.487 = dup %tmp.482;
+        %tmp.488 = aputv %tmp.487 3 %tmp.486;
+        %tmp.489 = dup %tmp.466;
+        %tmp.490 = aputv %tmp.489 5 %tmp.488;
+        lputv %SIX_FIELD.8 %tmp.490;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 41 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %FIELDS.9 = local;
+        %tmp.491 = newa 6;
+        %tmp.493 = lgetv %ONE_FIELD.3;
+        %tmp.494 = dup %tmp.491;
+        %tmp.495 = aputv %tmp.494 0 %tmp.493;
+        %tmp.497 = lgetv %TWO_FIELD.4;
+        %tmp.498 = dup %tmp.495;
+        %tmp.499 = aputv %tmp.498 1 %tmp.497;
+        %tmp.501 = lgetv %THREE_FIELD.5;
+        %tmp.502 = dup %tmp.499;
+        %tmp.503 = aputv %tmp.502 2 %tmp.501;
+        %tmp.505 = lgetv %FOUR_FIELD.6;
+        %tmp.506 = dup %tmp.503;
+        %tmp.507 = aputv %tmp.506 3 %tmp.505;
+        %tmp.509 = lgetv %FIVE_FIELD.7;
+        %tmp.510 = dup %tmp.507;
+        %tmp.511 = aputv %tmp.510 4 %tmp.509;
+        %tmp.513 = lgetv %SIX_FIELD.8;
+        %tmp.514 = dup %tmp.511;
+        %tmp.515 = aputv %tmp.514 5 %tmp.513;
+        lputv %FIELDS.9 %tmp.515;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 43 8 ]
+        %tmp.517 = getv ? :Properties;
+        %tmp.518 = getv function %tmp.517 :getValue;
+        %tmp.519 = "FieldsPage";
+        %tmp.521 = getv ? :pageNumber;
+        %tmp.522 = getv function %tmp.521 :toString;
+        %tmp.523 = invoke %tmp.521 %tmp.522();
+        %tmp.524 = add %tmp.519 %tmp.523;
+        %tmp.525 = invoke %tmp.517 %tmp.518(%tmp.524);
+        putv self :fieldsNumber %tmp.525;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 44 8 ]
+        %tmp.527 = getv ? :layout;
+        %tmp.528 = getv function %tmp.527 :initialize;
+        %tmp.530 = getv ? :fieldsNumber;
+        invoke %tmp.527 %tmp.528(%tmp.530);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 46 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop" ]
+        %choice.10 = local;
+        %tmp.532 = lgetv %FIELDS.9;
+        %tmp.534 = getv ? :fieldsNumber;
+        %tmp.535 = 1;
+        %tmp.536 = sub %tmp.534 %tmp.535;
+        %tmp.537 = agetv %tmp.532 %tmp.536;
+        lputv %choice.10 %tmp.537;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 49 8 ]
+        for @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_test @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_incr @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_init:
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_begin" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_end" ]
+        %i.11 = local;
+        %tmp.538 = 0;
+        lputv %i.11 %tmp.538;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_test:
+        %tmp.540 = lgetv %i.11;
+        %tmp.542 = getv ? :fieldsNumber;
+        %tmp.543 = lt %tmp.540 %tmp.542;
+        bf %tmp.543 @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_begin:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_52_53_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 50 12 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_52_53_8_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_52_53_8_stop" ]
+        %request.12 = local;
+        %tmp.544 = "Field";
+        %tmp.546 = lgetv %i.11;
+        %tmp.547 = 1;
+        %tmp.548 = add %tmp.546 %tmp.547;
+        %tmp.549 = getv function %tmp.548 :toString;
+        %tmp.550 = invoke %tmp.548 %tmp.549();
+        %tmp.551 = add %tmp.544 %tmp.550;
+        %tmp.552 = "Page";
+        %tmp.553 = add %tmp.551 %tmp.552;
+        %tmp.555 = getv ? :pageNumber;
+        %tmp.556 = getv function %tmp.555 :toString;
+        %tmp.557 = invoke %tmp.555 %tmp.556();
+        %tmp.558 = add %tmp.553 %tmp.557;
+        lputv %request.12 %tmp.558;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 51 12 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_52_53_8_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_52_53_8_stop" ]
+        %index.13 = local;
+        %tmp.560 = getv ? :Properties;
+        %tmp.561 = getv function %tmp.560 :getValue;
+        %tmp.563 = lgetv %request.12;
+        %tmp.564 = invoke %tmp.560 %tmp.561(%tmp.563);
+        lputv %index.13 %tmp.564;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 52 12 ]
+        %tmp.565 = getv self :datafields;
+        %tmp.569 = getv ? :SimpleDatafield;
+        %tmp.571 = lgetv %choice.10;
+        %tmp.573 = lgetv %i.11;
+        %tmp.574 = agetv %tmp.571 %tmp.573;
+        %tmp.575 = 0;
+        %tmp.576 = agetv %tmp.574 %tmp.575;
+        %tmp.578 = lgetv %choice.10;
+        %tmp.580 = lgetv %i.11;
+        %tmp.581 = agetv %tmp.578 %tmp.580;
+        %tmp.582 = 1;
+        %tmp.583 = agetv %tmp.581 %tmp.582;
+        %tmp.585 = lgetv %choice.10;
+        %tmp.587 = lgetv %i.11;
+        %tmp.588 = agetv %tmp.585 %tmp.587;
+        %tmp.589 = 2;
+        %tmp.590 = agetv %tmp.588 %tmp.589;
+        %tmp.592 = lgetv %choice.10;
+        %tmp.594 = lgetv %i.11;
+        %tmp.595 = agetv %tmp.592 %tmp.594;
+        %tmp.596 = 3;
+        %tmp.597 = agetv %tmp.595 %tmp.596;
+        %tmp.599 = getv ? :sportData;
+        %tmp.600 = getv function %tmp.599 :getMetric;
+        %tmp.602 = lgetv %index.13;
+        %tmp.603 = invoke %tmp.599 %tmp.600(%tmp.602);
+        %tmp.566 = newc %tmp.569 (%tmp.576, %tmp.583, %tmp.590, %tmp.597, %tmp.603);
+        %tmp.605 = lgetv %i.11;
+        aputv %tmp.565 %tmp.605 %tmp.566;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_52_53_8_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_incr:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 49 ]
+        %tmp.606 = lgetv %i.11;
+        %tmp.607 = 1;
+        %tmp.608 = add %tmp.606 %tmp.607;
+        lputv %i.11 %tmp.608;
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_test;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_49_8_53_8_for_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_29_40_59_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 64; ]
+    function onShow() as Void {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 69; ]
+    function onUpdate(dc as Dc) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_69_40_102_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 81 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 85 8 ]
+        %tmp.6 = lgetv %dc;
+        %tmp.7 = getv function %tmp.6 :setAntiAlias;
+        %tmp.8 = true;
+        invoke %tmp.6 %tmp.7(%tmp.8);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 89 8 ]
+        %tmp.10 = getv ? :layout;
+        %tmp.11 = getv function %tmp.10 :draw;
+        %tmp.13 = lgetv %dc;
+        invoke %tmp.10 %tmp.11(%tmp.13);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 91 8 ]
+        for @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_test @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_incr @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_init:
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_begin" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_end" ]
+        %i.1 = local;
+        %tmp.14 = 0;
+        lputv %i.1 %tmp.14;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_test:
+        %tmp.16 = lgetv %i.1;
+        %tmp.18 = getv ? :fieldsNumber;
+        %tmp.19 = lt %tmp.16 %tmp.18;
+        bf %tmp.19 @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_begin:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_51_96_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 92 12 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_51_96_8_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_51_96_8_stop" ]
+        %request.2 = local;
+        %tmp.20 = "Field";
+        %tmp.22 = lgetv %i.1;
+        %tmp.23 = 1;
+        %tmp.24 = add %tmp.22 %tmp.23;
+        %tmp.25 = getv function %tmp.24 :toString;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        %tmp.27 = add %tmp.20 %tmp.26;
+        %tmp.28 = "Page";
+        %tmp.29 = add %tmp.27 %tmp.28;
+        %tmp.31 = getv ? :pageNumber;
+        %tmp.32 = getv function %tmp.31 :toString;
+        %tmp.33 = invoke %tmp.31 %tmp.32();
+        %tmp.34 = add %tmp.29 %tmp.33;
+        lputv %request.2 %tmp.34;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 93 12 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_51_96_8_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_51_96_8_stop" ]
+        %index.3 = local;
+        %tmp.36 = getv ? :Properties;
+        %tmp.37 = getv function %tmp.36 :getValue;
+        %tmp.39 = lgetv %request.2;
+        %tmp.40 = invoke %tmp.36 %tmp.37(%tmp.39);
+        lputv %index.3 %tmp.40;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 94 12 ]
+        %tmp.42 = getv ? :datafields;
+        %tmp.44 = lgetv %i.1;
+        %tmp.45 = agetv %tmp.42 %tmp.44;
+        %tmp.46 = getv function %tmp.45 :updateValue;
+        %tmp.48 = getv ? :sportData;
+        %tmp.49 = getv function %tmp.48 :getMetric;
+        %tmp.51 = lgetv %index.3;
+        %tmp.52 = invoke %tmp.48 %tmp.49(%tmp.51);
+        invoke %tmp.45 %tmp.46(%tmp.52);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 95 12 ]
+        %tmp.54 = getv ? :datafields;
+        %tmp.56 = lgetv %i.1;
+        %tmp.57 = agetv %tmp.54 %tmp.56;
+        %tmp.58 = getv function %tmp.57 :draw;
+        %tmp.60 = lgetv %dc;
+        invoke %tmp.57 %tmp.58(%tmp.60);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_51_96_8_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_incr:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc" 91 ]
+        %tmp.61 = lgetv %i.1;
+        %tmp.62 = 1;
+        %tmp.63 = add %tmp.61 %tmp.62;
+        lputv %i.1 %tmp.63;
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_test;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_91_8_96_8_for_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_PageSettingView_mc_69_40_102_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 107; ]
+    function onHide() as Void {
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\PageSettingView.mc"; @line = 1; ]
+<init> {
+}

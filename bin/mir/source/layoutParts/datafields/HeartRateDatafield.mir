@@ -1,0 +1,187 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 4; ]
+class HeartRateDatafield extends Datafield{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 6; ]
+    function initialize(param_x, param_y, param_width, param_height, param_value) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_6_82_8_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 7 8 ]
+        %tmp.2 = getv ? :Datafield;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.5 = lgetv %param_x;
+        %tmp.7 = lgetv %param_y;
+        %tmp.9 = lgetv %param_width;
+        %tmp.11 = lgetv %param_height;
+        %tmp.13 = lgetv %param_value;
+        invoke %tmp.2 %tmp.3(%tmp.5, %tmp.7, %tmp.9, %tmp.11, %tmp.13);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_6_82_8_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 10; ]
+    function draw(dc as Dc) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_10_36_27_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 11 8 ]
+        %tmp.2 = getv ? :Datafield;
+        %tmp.3 = getv function %tmp.2 :draw;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 13 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_10_36_27_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_10_36_27_4_stop" ]
+        %hr.1 = local;
+        %tmp.7 = getv ? :value;
+        %tmp.8 = 0;
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        %tmp.10 = getv function %tmp.9 :toNumber;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %hr.1 %tmp.11;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 14 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_10_36_27_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_10_36_27_4_stop" ]
+        %color.2 = local;
+        %tmp.12 = 0;
+        lputv %color.2 %tmp.12;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 15 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_8_20_41_if_stmt:
+        %tmp.14 = lgetv %hr.1;
+        %tmp.15 = 80;
+        %tmp.16 = lt %tmp.14 %tmp.15;
+        bf %tmp.16 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_8_20_41_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_8_20_41_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_20_15_50_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 15 21 ]
+        %tmp.17 = getm $.Toybox.Graphics;
+        %tmp.18 = getv %tmp.17 :COLOR_WHITE;
+        lputv %color.2 %tmp.18;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_20_15_50_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_8_20_41_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_8_20_41_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 16 13 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_13_20_41_if_stmt:
+        %tmp.20 = lgetv %hr.1;
+        %tmp.21 = 100;
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        bf %tmp.22 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_13_20_41_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_13_20_41_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_26_16_58_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 16 27 ]
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :COLOR_DK_GRAY;
+        lputv %color.2 %tmp.24;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_26_16_58_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_13_20_41_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_13_20_41_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 17 13 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_13_20_41_if_stmt:
+        %tmp.26 = lgetv %hr.1;
+        %tmp.27 = 120;
+        %tmp.28 = lt %tmp.26 %tmp.27;
+        bf %tmp.28 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_13_20_41_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_13_20_41_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_26_17_55_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 17 27 ]
+        %tmp.29 = getm $.Toybox.Graphics;
+        %tmp.30 = getv %tmp.29 :COLOR_BLUE;
+        lputv %color.2 %tmp.30;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_26_17_55_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_13_20_41_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_13_20_41_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 18 13 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_13_20_41_if_stmt:
+        %tmp.32 = lgetv %hr.1;
+        %tmp.33 = 140;
+        %tmp.34 = lt %tmp.32 %tmp.33;
+        bf %tmp.34 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_13_20_41_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_13_20_41_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_26_18_56_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 18 27 ]
+        %tmp.35 = getm $.Toybox.Graphics;
+        %tmp.36 = getv %tmp.35 :COLOR_GREEN;
+        lputv %color.2 %tmp.36;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_26_18_56_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_13_20_41_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_13_20_41_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 19 13 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_13_20_41_if_stmt:
+        %tmp.38 = lgetv %hr.1;
+        %tmp.39 = 160;
+        %tmp.40 = lt %tmp.38 %tmp.39;
+        bf %tmp.40 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_13_20_41_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_13_20_41_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_26_19_57_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 19 27 ]
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :COLOR_ORANGE;
+        lputv %color.2 %tmp.42;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_26_19_57_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_13_20_41_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_13_20_41_if_false:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_20_13_20_41_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 20 14 ]
+        %tmp.43 = getm $.Toybox.Graphics;
+        %tmp.44 = getv %tmp.43 :COLOR_RED;
+        lputv %color.2 %tmp.44;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_20_13_20_41_stop:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_19_13_20_41_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_18_13_20_41_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_17_13_20_41_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_16_13_20_41_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_15_8_20_41_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 22 8 ]
+        %tmp.45 = lgetv %dc;
+        %tmp.46 = getv function %tmp.45 :setColor;
+        %tmp.48 = lgetv %color.2;
+        %tmp.49 = getm $.Toybox.Graphics;
+        %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
+        invoke %tmp.45 %tmp.46(%tmp.48, %tmp.50);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 23 8 ]
+        %tmp.51 = lgetv %dc;
+        %tmp.52 = getv function %tmp.51 :fillRectangle;
+        %tmp.54 = getv ? :x;
+        %tmp.56 = getv ? :y;
+        %tmp.58 = getv ? :width;
+        %tmp.60 = getv ? :height;
+        invoke %tmp.51 %tmp.52(%tmp.54, %tmp.56, %tmp.58, %tmp.60);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 25 8 ]
+        %tmp.61 = lgetv %dc;
+        %tmp.62 = getv function %tmp.61 :setColor;
+        %tmp.63 = getm $.Toybox.Graphics;
+        %tmp.64 = getv %tmp.63 :COLOR_WHITE;
+        %tmp.66 = lgetv %color.2;
+        invoke %tmp.61 %tmp.62(%tmp.64, %tmp.66);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc" 26 8 ]
+        %tmp.67 = lgetv %dc;
+        %tmp.68 = getv function %tmp.67 :drawText;
+        %tmp.70 = getv ? :x;
+        %tmp.72 = getv ? :width;
+        %tmp.73 = 2;
+        %tmp.74 = div %tmp.72 %tmp.73;
+        %tmp.75 = add %tmp.70 %tmp.74;
+        %tmp.77 = getv ? :y;
+        %tmp.79 = getv ? :height;
+        %tmp.80 = 2;
+        %tmp.81 = div %tmp.79 %tmp.80;
+        %tmp.82 = add %tmp.77 %tmp.81;
+        %tmp.83 = getm $.Toybox.Graphics;
+        %tmp.84 = getv %tmp.83 :FONT_SMALL;
+        %tmp.86 = getv ? :value;
+        %tmp.87 = 0;
+        %tmp.88 = agetv %tmp.86 %tmp.87;
+        %tmp.89 = getm $.Toybox.Graphics;
+        %tmp.90 = getv %tmp.89 :TEXT_JUSTIFY_CENTER;
+        %tmp.91 = getm $.Toybox.Graphics;
+        %tmp.92 = getv %tmp.91 :TEXT_JUSTIFY_VCENTER;
+        %tmp.93 = bitor %tmp.90 %tmp.92;
+        invoke %tmp.67 %tmp.68(%tmp.75, %tmp.82, %tmp.84, %tmp.88, %tmp.93);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_datafields_HeartRateDatafield_mc_10_36_27_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/datafields/HeartRateDatafield.mc"; @line = 1; ]
+<init> {
+}

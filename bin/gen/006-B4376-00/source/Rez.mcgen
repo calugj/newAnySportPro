@@ -1,0 +1,905 @@
+import Toybox.Lang;
+using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
+using Toybox.Graphics;
+using Toybox.Graphics as Gfx;
+
+module Rez {
+    module Drawables {
+        (:initialized) var Datafields as ResourceId;
+        (:initialized) var GPS as ResourceId;
+        (:initialized) var Color as ResourceId;
+        (:initialized) var Fill as ResourceId;
+        (:initialized) var Lap as ResourceId;
+        (:initialized) var Unit as ResourceId;
+        (:initialized) var About as ResourceId;
+        (:initialized) var Play as ResourceId;
+        (:initialized) var Delete as ResourceId;
+        (:initialized) var Save as ResourceId;
+        (:initialized) var Running as ResourceId;
+        (:initialized) var Cycling as ResourceId;
+        (:initialized) var Fitness as ResourceId;
+        (:initialized) var Swimming as ResourceId;
+        (:initialized) var Field as ResourceId;
+        (:initialized) var Training as ResourceId;
+        (:initialized) var Walking as ResourceId;
+        (:initialized) var Winter as ResourceId;
+        (:initialized) var Water as ResourceId;
+        (:initialized) var Flying as ResourceId;
+        (:initialized) var Motorsports as ResourceId;
+        (:initialized) var Climbing as ResourceId;
+        (:initialized) var Diving as ResourceId;
+        (:initialized) var Other as ResourceId;
+        (:initialized) var Custom as ResourceId;
+        (:initialized) var LauncherIcon as ResourceId;
+    } // Drawables
+
+    module Strings {
+        (:initialized) var Delete as ResourceId;
+        (:initialized) var Other_Tactical as ResourceId;
+        (:initialized) var Other_Meditation as ResourceId;
+        (:initialized) var Fitness_Ski as ResourceId;
+        (:initialized) var Field_Volleyball as ResourceId;
+        (:initialized) var Motorsport_Motorcycling as ResourceId;
+        (:initialized) var Walking_Mountaineering as ResourceId;
+        (:initialized) var Water_Raft as ResourceId;
+        (:initialized) var Cycling_Mountain as ResourceId;
+        (:initialized) var COLOR_WHITE as ResourceId;
+        (:initialized) var Pace as ResourceId;
+        (:initialized) var LastLapPace as ResourceId;
+        (:initialized) var EditFieldsNumber as ResourceId;
+        (:initialized) var EditFields as ResourceId;
+        (:initialized) var Motorsport_Race as ResourceId;
+        (:initialized) var Flying_Drone as ResourceId;
+        (:initialized) var LapDistance as ResourceId;
+        (:initialized) var Cycling_eBiking as ResourceId;
+        (:initialized) var LastLapDistance as ResourceId;
+        (:initialized) var Walking_Hiking as ResourceId;
+        (:initialized) var LastLapTimer as ResourceId;
+        (:initialized) var Cycling_Mixed as ResourceId;
+        (:initialized) var Field_Lacrosse as ResourceId;
+        (:initialized) var Flying_Jumpmaster as ResourceId;
+        (:initialized) var Running as ResourceId;
+        (:initialized) var Swimming_Lap as ResourceId;
+        (:initialized) var Other_Hunt as ResourceId;
+        (:initialized) var PressStart as ResourceId;
+        (:initialized) var Run_Treadmill as ResourceId;
+        (:initialized) var Flying_Pressurized as ResourceId;
+        (:initialized) var DualBand as ResourceId;
+        (:initialized) var Winter_CrossCountrySkate as ResourceId;
+        (:initialized) var Water_SUP as ResourceId;
+        (:initialized) var GLONASS as ResourceId;
+        (:initialized) var COLOR_BLUE as ResourceId;
+        (:initialized) var AveragePace as ResourceId;
+        (:initialized) var Motorsport_Boating as ResourceId;
+        (:initialized) var Cycling as ResourceId;
+        (:initialized) var AverageLapSpeed as ResourceId;
+        (:initialized) var AddPage as ResourceId;
+        (:initialized) var Fitness_JumpRope as ResourceId;
+        (:initialized) var SpeedUnits as ResourceId;
+        (:initialized) var Imperial as ResourceId;
+        (:initialized) var Field_Basketball as ResourceId;
+        (:initialized) var AverageHeartRate as ResourceId;
+        (:initialized) var Other as ResourceId;
+        (:initialized) var Fitness_Rowing as ResourceId;
+        (:initialized) var Page as ResourceId;
+        (:initialized) var GPS as ResourceId;
+        (:initialized) var EditPage as ResourceId;
+        (:initialized) var Flying_Skydive as ResourceId;
+        (:initialized) var Climbing_Indoor as ResourceId;
+        (:initialized) var LapTimer as ResourceId;
+        (:initialized) var Water_Whitewater as ResourceId;
+        (:initialized) var Other_Horseback as ResourceId;
+        (:initialized) var Version as ResourceId;
+        (:initialized) var Diving_Gauge as ResourceId;
+        (:initialized) var Swimming as ResourceId;
+        (:initialized) var LastLapHeartRate as ResourceId;
+        (:initialized) var Run_Trail as ResourceId;
+        (:initialized) var Cycling_Indoor as ResourceId;
+        (:initialized) var COLOR_YELLOW as ResourceId;
+        (:initialized) var Training_Pilates as ResourceId;
+        (:initialized) var About as ResourceId;
+        (:initialized) var Walking as ResourceId;
+        (:initialized) var Water_Kayak as ResourceId;
+        (:initialized) var Diving_Hunt as ResourceId;
+        (:initialized) var ActivityClassMenu_Title as ResourceId;
+        (:initialized) var Field_Pickleball as ResourceId;
+        (:initialized) var menu_label_1 as ResourceId;
+        (:initialized) var Field_Tennis as ResourceId;
+        (:initialized) var Water_Kitesurf as ResourceId;
+        (:initialized) var Water_Windsurf as ResourceId;
+        (:initialized) var Other_HuntDog as ResourceId;
+        (:initialized) var Cycling_Generic as ResourceId;
+        (:initialized) var Water_Row as ResourceId;
+        (:initialized) var Positioning as ResourceId;
+        (:initialized) var Training_AMRAP as ResourceId;
+        (:initialized) var Field_TableTennis as ResourceId;
+        (:initialized) var ElapsedTime as ResourceId;
+        (:initialized) var Training_Strength as ResourceId;
+        (:initialized) var Cycling_Cyclocross as ResourceId;
+        (:initialized) var Continue as ResourceId;
+        (:initialized) var Field as ResourceId;
+        (:initialized) var Empty as ResourceId;
+        (:initialized) var Climbing_Bouldering as ResourceId;
+        (:initialized) var Diving_Single as ResourceId;
+        (:initialized) var Field_AmericanFootball as ResourceId;
+        (:initialized) var Run_Generic as ResourceId;
+        (:initialized) var Winter_Generic as ResourceId;
+        (:initialized) var Run_Virtual as ResourceId;
+        (:initialized) var Diving_Apnea as ResourceId;
+        (:initialized) var WinterSports as ResourceId;
+        (:initialized) var Cycling_Recumbent as ResourceId;
+        (:initialized) var About1 as ResourceId;
+        (:initialized) var Speed as ResourceId;
+        (:initialized) var MaxSpeed as ResourceId;
+        (:initialized) var TrainingEffect as ResourceId;
+        (:initialized) var Fitness_Generic as ResourceId;
+        (:initialized) var Winter_Snowshoe as ResourceId;
+        (:initialized) var Flying_Generic as ResourceId;
+        (:initialized) var MaxPace as ResourceId;
+        (:initialized) var Field_Racquetball as ResourceId;
+        (:initialized) var Other_Offshore as ResourceId;
+        (:initialized) var PercentMaxHeartRate as ResourceId;
+        (:initialized) var Metric as ResourceId;
+        (:initialized) var Cycling_Track as ResourceId;
+        (:initialized) var Cycling_Virtual as ResourceId;
+        (:initialized) var SatellitesOff as ResourceId;
+        (:initialized) var PaceUnits as ResourceId;
+        (:initialized) var Training_EMOM as ResourceId;
+        (:initialized) var Field_Soccer as ResourceId;
+        (:initialized) var DeletePage as ResourceId;
+        (:initialized) var Run_Ultra as ResourceId;
+        (:initialized) var Run_Indoor as ResourceId;
+        (:initialized) var Training_Flexibility as ResourceId;
+        (:initialized) var Training_Yoga as ResourceId;
+        (:initialized) var Cycling_Hand as ResourceId;
+        (:initialized) var Field_Hockey as ResourceId;
+        (:initialized) var Training as ResourceId;
+        (:initialized) var AccentColor as ResourceId;
+        (:initialized) var Climbing_Floor as ResourceId;
+        (:initialized) var COLOR_BLACK as ResourceId;
+        (:initialized) var Winter_AlpineSki as ResourceId;
+        (:initialized) var Presets as ResourceId;
+        (:initialized) var Water_Ski as ResourceId;
+        (:initialized) var LastLapSpeed as ResourceId;
+        (:initialized) var Motorsport_Snowmobiling as ResourceId;
+        (:initialized) var Distance as ResourceId;
+        (:initialized) var Fitness_Onshore as ResourceId;
+        (:initialized) var Other_eSport as ResourceId;
+        (:initialized) var Diving_Generic as ResourceId;
+        (:initialized) var Flying_Paraglide as ResourceId;
+        (:initialized) var Pages as ResourceId;
+        (:initialized) var Other_Multisport as ResourceId;
+        (:initialized) var Flying as ResourceId;
+        (:initialized) var Cycling_BMX as ResourceId;
+        (:initialized) var Water_Tube as ResourceId;
+        (:initialized) var AverageSpeed as ResourceId;
+        (:initialized) var HeartRate as ResourceId;
+        (:initialized) var Pause as ResourceId;
+        (:initialized) var Other_InlineSkate as ResourceId;
+        (:initialized) var Other_DiscGolf as ResourceId;
+        (:initialized) var Climbing as ResourceId;
+        (:initialized) var Cycling_Downhill as ResourceId;
+        (:initialized) var COLOR_RED as ResourceId;
+        (:initialized) var AllSystems as ResourceId;
+        (:initialized) var PercentMaxAverageHeartRate as ResourceId;
+        (:initialized) var Run_Street as ResourceId;
+        (:initialized) var Cycling_Spin as ResourceId;
+        (:initialized) var Flying_Wingsuit as ResourceId;
+        (:initialized) var COLOR_ORANGE as ResourceId;
+        (:initialized) var COLOR_TRANSPARENT as ResourceId;
+        (:initialized) var AllSystemsMulti as ResourceId;
+        (:initialized) var Flying_HangGlide as ResourceId;
+        (:initialized) var ZoneHeartRate as ResourceId;
+        (:initialized) var Nautical as ResourceId;
+        (:initialized) var Other_Shooting as ResourceId;
+        (:initialized) var MainMenu_Title as ResourceId;
+        (:initialized) var Custom as ResourceId;
+        (:initialized) var NauticalSpeed as ResourceId;
+        (:initialized) var PercentMaxAverageLapHeartRate as ResourceId;
+        (:initialized) var Field_Softball as ResourceId;
+        (:initialized) var Flying_Paramotor as ResourceId;
+        (:initialized) var COLOR_PINK as ResourceId;
+        (:initialized) var Lap as ResourceId;
+        (:initialized) var Field_Rugby as ResourceId;
+        (:initialized) var Field_Baseball as ResourceId;
+        (:initialized) var Motorsports as ResourceId;
+        (:initialized) var Fitness as ResourceId;
+        (:initialized) var SingleBand as ResourceId;
+        (:initialized) var COLOR_DK_GREEN as ResourceId;
+        (:initialized) var Other_Fish as ResourceId;
+        (:initialized) var Other_Dance as ResourceId;
+        (:initialized) var Water_Snorkel as ResourceId;
+        (:initialized) var BEIDOU as ResourceId;
+        (:initialized) var Unit as ResourceId;
+        (:initialized) var Motorsport_ATV as ResourceId;
+        (:initialized) var COLOR_LT_GRAY as ResourceId;
+        (:initialized) var LapActive as ResourceId;
+        (:initialized) var Winter_Snowboard as ResourceId;
+        (:initialized) var Other_Golf as ResourceId;
+        (:initialized) var AverageLapPace as ResourceId;
+        (:initialized) var Cycling_Commuting as ResourceId;
+        (:initialized) var Walking_Speed as ResourceId;
+        (:initialized) var Training_TABATA as ResourceId;
+        (:initialized) var Motorsport_Driving as ResourceId;
+        (:initialized) var Field_Cricket as ResourceId;
+        (:initialized) var Training_HIIT as ResourceId;
+        (:initialized) var Winter_BackCountrySnowboard as ResourceId;
+        (:initialized) var Fitness_Stair as ResourceId;
+        (:initialized) var Winter_CrossCountryClassic as ResourceId;
+        (:initialized) var Other_MMA as ResourceId;
+        (:initialized) var GALILEO as ResourceId;
+        (:initialized) var Other_Breathing as ResourceId;
+        (:initialized) var Winter_IceSkate as ResourceId;
+        (:initialized) var AverageLap as ResourceId;
+        (:initialized) var Active as ResourceId;
+        (:initialized) var COLOR_DK_BLUE as ResourceId;
+        (:initialized) var Fields as ResourceId;
+        (:initialized) var Water_Wakeboard as ResourceId;
+        (:initialized) var Cycling_Road as ResourceId;
+        (:initialized) var Cycling_Gravel as ResourceId;
+        (:initialized) var Datafields as ResourceId;
+        (:initialized) var COLOR_DK_GRAY as ResourceId;
+        (:initialized) var Save as ResourceId;
+        (:initialized) var WaterSports as ResourceId;
+        (:initialized) var Winter_BackCountrySki as ResourceId;
+        (:initialized) var Training_Cardio as ResourceId;
+        (:initialized) var Climbing_Generic as ResourceId;
+        (:initialized) var Field_Squash as ResourceId;
+        (:initialized) var Run_Obstacle as ResourceId;
+        (:initialized) var Walking_Casual as ResourceId;
+        (:initialized) var AppName as ResourceId;
+        (:initialized) var SatIQ as ResourceId;
+        (:initialized) var COLOR_DK_RED as ResourceId;
+        (:initialized) var Field_Badminton as ResourceId;
+        (:initialized) var Water_Wakesurf as ResourceId;
+        (:initialized) var Water_Surf as ResourceId;
+        (:initialized) var Flying_Canopy as ResourceId;
+        (:initialized) var Walking_Generic as ResourceId;
+        (:initialized) var Other_Boxe as ResourceId;
+        (:initialized) var Inactive as ResourceId;
+        (:initialized) var Diving as ResourceId;
+        (:initialized) var COLOR_GREEN as ResourceId;
+        (:initialized) var Swimming_Open as ResourceId;
+        (:initialized) var COLOR_PURPLE as ResourceId;
+        (:initialized) var Water_Paddle as ResourceId;
+        (:initialized) var Cycling_eMTB as ResourceId;
+        (:initialized) var Swimming_Generic as ResourceId;
+        (:initialized) var Run_Track as ResourceId;
+        (:initialized) var Motorsport_Motocross as ResourceId;
+        (:initialized) var TemperatureUnits as ResourceId;
+        (:initialized) var Fitness_Elliptical as ResourceId;
+        (:initialized) var Training_Generic as ResourceId;
+        (:initialized) var ActivityType as ResourceId;
+        (:initialized) var PercentMaxLastLapHeartRate as ResourceId;
+        (:initialized) var Field_Padel as ResourceId;
+        (:initialized) var Water_Sail as ResourceId;
+        (:initialized) var Timer as ResourceId;
+        (:initialized) var Walking_Indoor as ResourceId;
+        (:initialized) var Diving_Multi as ResourceId;
+        (:initialized) var DistanceUnits as ResourceId;
+        (:initialized) var AverageLapHeartRate as ResourceId;
+        (:initialized) var AutoLap as ResourceId;
+        (:initialized) var BackgroundColor as ResourceId;
+    } // Strings
+
+    module Styles {
+        module prompt_font_enhanced_readability__body_with_title {
+            const exclude as Boolean = true;
+        } // prompt_font_enhanced_readability__body_with_title
+
+        module system_size__menu_header {
+            const width as Number = 280;
+            const height as Number = 87;
+        } // system_size__menu_header
+
+        module system_loc__hint_button_left_bottom {
+            const x as Number = 11;
+            const y as Number = 185;
+        } // system_loc__hint_button_left_bottom
+
+        module prompt_font_enhanced_readability__body_no_title {
+            const exclude as Boolean = true;
+        } // prompt_font_enhanced_readability__body_no_title
+
+        module prompt_loc__body_no_title {
+            const x as Number = 28;
+            const y as Number = 28;
+        } // prompt_loc__body_no_title
+
+        module system_icon_dark__about {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__about.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__about
+
+        module system_icon_light__question {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__question.svg";
+            const dithering as String = "none";
+        } // system_icon_light__question
+
+        module system_loc__hint_button_left_top {
+            const exclude as Boolean = true;
+        } // system_loc__hint_button_left_top
+
+        module prompt_font__title {
+            const justification = Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER;
+            const font = Graphics.FONT_XTINY;
+        } // prompt_font__title
+
+        module system_icon_dark__discard {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__discard.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__discard
+
+        module system_size__menu_item {
+            const width as Number = 280;
+            const height as Number = 73;
+        } // system_size__menu_item
+
+        module system_color_dark__text {
+            const color as Number = 0xFFFFFF;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // system_color_dark__text
+
+        module system_icon_destructive__discard {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__discard.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__discard
+
+        module system_icon_dark__hint_action_menu {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_dark__hint_action_menu
+
+        module prompt_size__title {
+            const width as Number = 224;
+            const height as Number = 42;
+        } // prompt_size__title
+
+        module confirmation_font__body {
+            const justification = Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER;
+            const font = Graphics.FONT_TINY;
+        } // confirmation_font__body
+
+        module system_color_dark__background {
+            const color as Number = 0x000000;
+            const background as Number = 0x000000;
+        } // system_color_dark__background
+
+        module system_icon_destructive__hint_button_left_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__hint_button_left_top.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__hint_button_left_top
+
+        module system_size__launch_icon {
+            const scaleX as Number = 40;
+            const scaleY as Number = 40;
+            const scaleRelativeTo as String = "screen";
+        } // system_size__launch_icon
+
+        module confirmation_input__confirm {
+            const button = WatchUi.KEY_ENTER;
+        } // confirmation_input__confirm
+
+        module prompt_font__body_with_title {
+            const justification = Graphics.TEXT_JUSTIFY_CENTER;
+            const font = Graphics.FONT_TINY;
+        } // prompt_font__body_with_title
+
+        module confirmation_loc__body {
+            const x as Number = 56;
+            const y as Number = 56;
+        } // confirmation_loc__body
+
+        module system_icon_destructive__hint_button_left_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__hint_button_left_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__hint_button_left_bottom
+
+        module prompt_color_dark__background {
+            const color as Number = 0x000000;
+            const background as Number = 0x000000;
+        } // prompt_color_dark__background
+
+        module system_icon_destructive__hint_action_menu {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__hint_action_menu
+
+        module system_loc__hint_action_menu {
+            const x as Number = 242;
+            const y as Number = 52;
+        } // system_loc__hint_action_menu
+
+        module confirmation_icon__hint_confirm {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_completion.svg";
+            const dithering as String = "none";
+        } // confirmation_icon__hint_confirm
+
+        module system_loc__hint_button_left_middle {
+            const x as Number = 3;
+            const y as Number = 116;
+        } // system_loc__hint_button_left_middle
+
+        module prompt_size__body_no_title {
+            const width as Number = 224;
+            const height as Number = 224;
+        } // prompt_size__body_no_title
+
+        module system_icon_light__hint_button_left_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__hint_button_left_top.svg";
+            const dithering as String = "none";
+        } // system_icon_light__hint_button_left_top
+
+        module prompt_color_light__background {
+            const color as Number = 0xFFFFFF;
+            const background as Number = 0xFFFFFF;
+        } // prompt_color_light__background
+
+        module confirmation_input__delete {
+            const button = WatchUi.KEY_ENTER;
+        } // confirmation_input__delete
+
+        module system_icon_dark__hint_button_left_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__hint_button_left_top.svg";
+            const dithering as String = "none";
+        } // system_icon_dark__hint_button_left_top
+
+        module system_input__action_menu {
+            const button = WatchUi.KEY_ENTER;
+        } // system_input__action_menu
+
+        module system_icon_light__save {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__save.svg";
+            const dithering as String = "none";
+        } // system_icon_light__save
+
+        module prompt_color_light__body {
+            const color as Number = 0x000000;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // prompt_color_light__body
+
+        module system_loc__subwindow {
+            const exclude as Boolean = true;
+        } // system_loc__subwindow
+
+        module system_icon_light__warning {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__warning.svg";
+            const dithering as String = "none";
+        } // system_icon_light__warning
+
+        module confirmation_color_light__body {
+            const color as Number = 0x000000;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // confirmation_color_light__body
+
+        module confirmation_icon_light__hint_keep {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_keep.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_light__hint_keep
+
+        module activity_color_light__background {
+            const color as Number = 0xFFFFFF;
+            const background as Number = 0xFFFFFF;
+        } // activity_color_light__background
+
+        module system_icon_positive__hint_button_right_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__hint_button_right_top
+
+        module system_size__screen {
+            const width as Number = 280;
+            const height as Number = 280;
+        } // system_size__screen
+
+        module system_icon_destructive__hint_button_right_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__hint_button_right_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__hint_button_right_bottom
+
+        module system_color_light__background {
+            const color as Number = 0xFFFFFF;
+            const background as Number = 0xFFFFFF;
+        } // system_color_light__background
+
+        module system_icon_destructive__hint_button_right_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__hint_button_right_top
+
+        module confirmation_loc__hint_confirm {
+            const x as Number = 226;
+            const y as Number = 52;
+        } // confirmation_loc__hint_confirm
+
+        module activity_color_dark__text {
+            const color as Number = 0xFFFFFF;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // activity_color_dark__text
+
+        module confirmation_input__keep {
+            const button = WatchUi.KEY_DOWN;
+        } // confirmation_input__keep
+
+        module prompt_loc__body_with_title {
+            const x as Number = 28;
+            const y as Number = 84;
+        } // prompt_loc__body_with_title
+
+        module system_icon_dark__search {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__search.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__search
+
+        module activity_color_light__text {
+            const color as Number = 0x000000;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // activity_color_light__text
+
+        module confirmation_icon__hint_keep {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_keep.svg";
+            const dithering as String = "none";
+        } // confirmation_icon__hint_keep
+
+        module system_icon_dark__save {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__save.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__save
+
+        module system_icon_destructive__hint_button_left_middle {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__hint_button_left_middle.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__hint_button_left_middle
+
+        module system_icon_light__search {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__search.svg";
+            const dithering as String = "none";
+        } // system_icon_light__search
+
+        module system_icon_dark__hint_button_left_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__hint_button_left_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_dark__hint_button_left_bottom
+
+        module system_icon_positive__hint_button_left_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__hint_button_left_top.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__hint_button_left_top
+
+        module system_loc__hint_button_right_bottom {
+            const x as Number = 242;
+            const y as Number = 185;
+        } // system_loc__hint_button_right_bottom
+
+        module confirmation_icon_dark__hint_reject {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_reject.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_dark__hint_reject
+
+        module confirmation_color_dark__body {
+            const color as Number = 0xFFFFFF;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // confirmation_color_dark__body
+
+        module confirmation_icon_light__hint_confirm {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_completion.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_light__hint_confirm
+
+        module prompt_color_dark__title {
+            const color as Number = 0xFFFFFF;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // prompt_color_dark__title
+
+        module system_icon_destructive__cancel {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__cancel.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__cancel
+
+        module system_icon_light__hint_button_right_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__hint_button_right_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_light__hint_button_right_bottom
+
+        module prompt_loc__title {
+            const x as Number = 28;
+            const y as Number = 21;
+        } // prompt_loc__title
+
+        module confirmation_font_enhanced_readability__body {
+            const exclude as Boolean = true;
+        } // confirmation_font_enhanced_readability__body
+
+        module prompt_color_light__title {
+            const color as Number = 0x000000;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // prompt_color_light__title
+
+        module system_icon_dark__hint_button_right_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_dark__hint_button_right_top
+
+        module system_icon_dark__hint_button_left_middle {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__hint_button_left_middle.svg";
+            const dithering as String = "none";
+        } // system_icon_dark__hint_button_left_middle
+
+        module confirmation_icon_dark__hint_keep {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_keep.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_dark__hint_keep
+
+        module system_icon_light__cancel {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__cancel.svg";
+            const dithering as String = "none";
+        } // system_icon_light__cancel
+
+        module confirmation_icon_light__hint_reject {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_reject.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_light__hint_reject
+
+        module system_icon_light__about {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__about.svg";
+            const dithering as String = "none";
+        } // system_icon_light__about
+
+        module system_size__toast_icon {
+            const scaleX as Number = 40;
+            const scaleY as Number = 40;
+            const scaleRelativeTo as String = "screen";
+        } // system_size__toast_icon
+
+        module system_icon_dark__hint_button_right_middle {
+            const exclude as Boolean = true;
+        } // system_icon_dark__hint_button_right_middle
+
+        module confirmation_icon__hint_reject {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_reject.svg";
+            const dithering as String = "none";
+        } // confirmation_icon__hint_reject
+
+        module system_icon_light__hint_action_menu {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_light__hint_action_menu
+
+        module system_icon_light__hint_button_right_middle {
+            const exclude as Boolean = true;
+        } // system_icon_light__hint_button_right_middle
+
+        module system_icon_destructive__hint_button_right_middle {
+            const exclude as Boolean = true;
+        } // system_icon_destructive__hint_button_right_middle
+
+        module confirmation_loc__hint_reject {
+            const x as Number = 11;
+            const y as Number = 185;
+            const horizontalJustification as String = "left";
+        } // confirmation_loc__hint_reject
+
+        module confirmation_icon_dark__hint_delete {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_delete.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_dark__hint_delete
+
+        module activity_color_dark__background {
+            const color as Number = 0x000000;
+            const background as Number = 0x000000;
+        } // activity_color_dark__background
+
+        module system_icon_light__hint_button_left_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__hint_button_left_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_light__hint_button_left_bottom
+
+        module system_icon_positive__hint_button_left_middle {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__hint_button_left_middle.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__hint_button_left_middle
+
+        module system_size__menu_icon {
+            const scaleX as Number = 40;
+            const scaleY as Number = 40;
+            const scaleRelativeTo as String = "screen";
+        } // system_size__menu_icon
+
+        module system_icon_destructive__warning {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_destructive__warning.svg";
+            const dithering as String = "none";
+        } // system_icon_destructive__warning
+
+        module system_loc__hint_button_right_middle {
+            const exclude as Boolean = true;
+        } // system_loc__hint_button_right_middle
+
+        module system_icon_dark__cancel {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__cancel.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__cancel
+
+        module prompt_size__body_with_title {
+            const width as Number = 224;
+            const height as Number = 168;
+        } // prompt_size__body_with_title
+
+        module system_loc__hint_button_right_top {
+            const x as Number = 242;
+            const y as Number = 52;
+        } // system_loc__hint_button_right_top
+
+        module system_color_light__text {
+            const color as Number = 0x000000;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // system_color_light__text
+
+        module system_icon_light__check {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__check.svg";
+            const dithering as String = "none";
+        } // system_icon_light__check
+
+        module confirmation_input__reject {
+            const button = WatchUi.KEY_DOWN;
+        } // confirmation_input__reject
+
+        module system_icon_light__revert {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__revert.svg";
+            const dithering as String = "none";
+        } // system_icon_light__revert
+
+        module system_size__subwindow {
+            const exclude as Boolean = true;
+        } // system_size__subwindow
+
+        module system_icon_positive__hint_button_left_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__hint_button_left_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__hint_button_left_bottom
+
+        module system_icon_dark__check {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__check.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__check
+
+        module confirmation_loc__hint_keep {
+            const x as Number = 11;
+            const y as Number = 185;
+            const horizontalJustification as String = "left";
+        } // confirmation_loc__hint_keep
+
+        module confirmation_loc__hint_delete {
+            const x as Number = 226;
+            const y as Number = 52;
+        } // confirmation_loc__hint_delete
+
+        module system_icon_positive__hint_action_menu {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__hint_action_menu
+
+        module system_icon_positive__hint_button_right_middle {
+            const exclude as Boolean = true;
+        } // system_icon_positive__hint_button_right_middle
+
+        module system_icon_light__hint_button_left_middle {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__hint_button_left_middle.svg";
+            const dithering as String = "none";
+        } // system_icon_light__hint_button_left_middle
+
+        module system_icon_dark__hint_button_right_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__hint_button_right_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_dark__hint_button_right_bottom
+
+        module system_icon_positive__hint_button_right_bottom {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__hint_button_right_bottom.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__hint_button_right_bottom
+
+        module system_icon_dark__revert {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__revert.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__revert
+
+        module confirmation_icon_light__hint_delete {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_delete.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_light__hint_delete
+
+        module system_icon_dark__question {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__question.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__question
+
+        module system_icon_light__discard {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__discard.svg";
+            const dithering as String = "none";
+        } // system_icon_light__discard
+
+        module device_info {
+            const screenWidth as Number = 280;
+            const screenShape = Toybox.System.SCREEN_SHAPE_ROUND;
+            const hasNightMode as Boolean = false;
+            const hasGpu as Boolean = true;
+            const screenHeight as Number = 280;
+            const hasTouchScreen as Boolean = true;
+            const hasEnhancedReadabilityMode as Boolean = false;
+        } // device_info
+
+        module confirmation_icon_dark__hint_confirm {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_completion.svg";
+            const dithering as String = "none";
+        } // confirmation_icon_dark__hint_confirm
+
+        module prompt_font__body_no_title {
+            const justification = Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER;
+            const font = Graphics.FONT_TINY;
+        } // prompt_font__body_no_title
+
+        module prompt_size__title_icon {
+            const scaleX as Float = 0.15;
+            const scaleRelativeTo as String = "screen";
+        } // prompt_size__title_icon
+
+        module system_icon_dark__warning {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_dark__warning.svg";
+            const compress as String = "true";
+            const dithering as String = "none";
+            const automaticPalette as String = "true";
+        } // system_icon_dark__warning
+
+        module prompt_loc__title_icon {
+            const x as Number = 140;
+            const y as Number = 42;
+            const horizontalJustification as String = "center";
+            const verticalJustification as String = "center";
+        } // prompt_loc__title_icon
+
+        module prompt_font_enhanced_readability__title {
+            const exclude as Boolean = true;
+        } // prompt_font_enhanced_readability__title
+
+        module prompt_color_dark__body {
+            const color as Number = 0xFFFFFF;
+            const background = Graphics.COLOR_TRANSPARENT;
+        } // prompt_color_dark__body
+
+        module confirmation_icon__hint_delete {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\confirmation_icon__hint_delete.svg";
+            const dithering as String = "none";
+        } // confirmation_icon__hint_delete
+
+        module system_icon_light__hint_button_right_top {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_light__hint_button_right_top.svg";
+            const dithering as String = "none";
+        } // system_icon_light__hint_button_right_top
+
+        module confirmation_size__body {
+            const width as Number = 168;
+            const height as Number = 168;
+        } // confirmation_size__body
+
+        module system_icon_positive__check {
+            const filename as String = "C:\\Users\\luca_\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix7xpro\\system_icon_positive__check.svg";
+            const dithering as String = "none";
+        } // system_icon_positive__check
+    } // Styles
+} // Rez

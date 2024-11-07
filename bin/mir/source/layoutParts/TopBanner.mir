@@ -1,0 +1,814 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 4; ]
+import Toybox.Position;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 6; ]
+class TopBanner{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 9; @position = 8; ]
+    var status = 0;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 10; @position = 8; ]
+    var counter = 0;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 11; @position = 10; ]
+    const FRAMES = 30;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 12; @position = 10; ]
+    const FRAMES_ANIM = 6;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 14; @position = 10; ]
+    const SLIDER_ANIM = 30;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 15; @position = 16; ]
+    private
+    var sliderCounter = 0;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 16; @position = 16; ]
+    private
+    var beep;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 18; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_18_26_32_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 19 8 ]
+        %tmp.1 = 0;
+        putv self :status %tmp.1;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 21 8 ]
+        %tmp.2 = 0;
+        putv self :counter %tmp.2;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 22 8 ]
+        %tmp.3 = 0;
+        putv self :sliderCounter %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 23 8 ]
+        %tmp.4 = false;
+        putv self :beep %tmp.4;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 25 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_8_28_8_if_stmt:
+        %tmp.5 = getm $.Toybox.Position;
+        %tmp.6 = getv function %tmp.5 :getInfo;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = getv %tmp.7 :accuracy;
+        %tmp.9 = getm $.Toybox.Position;
+        %tmp.10 = getv %tmp.9 :QUALITY_USABLE;
+        %tmp.11 = gte %tmp.8 %tmp.10;
+        bf %tmp.11 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_8_28_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_8_28_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_67_28_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 26 12 ]
+        %tmp.13 = getv ? :SLIDER_ANIM;
+        putv self :sliderCounter %tmp.13;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 27 12 ]
+        %tmp.14 = true;
+        putv self :beep %tmp.14;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_67_28_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_8_28_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_25_8_28_8_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_18_26_32_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 36; ]
+    function setStatus(param_status as Number) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_36_47_57_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 37 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_8_39_8_if_stmt:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_11_37_42_begin:
+        %tmp.2 = getv ? :status;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_8_39_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_26_37_42_true:
+        %tmp.6 = lgetv %param_status;
+        %tmp.7 = 3;
+        %tmp.8 = eq %tmp.6 %tmp.7;
+        push %tmp.8;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_26_37_42_end:
+        %tmp.9 = phi [%tmp.4 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_11_37_42_begin] [%tmp.8 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_26_37_42_true] [%tmp.9 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_26_37_42_end];
+        bf %tmp.9 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_8_39_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_8_39_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_45_39_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 38 12 ]
+        ret ?;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_45_39_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_8_39_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_37_8_39_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 41 8 ]
+        %tmp.11 = lgetv %param_status;
+        putv self :status %tmp.11;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 42 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_8_42_36_if_stmt:
+        %tmp.13 = getv ? :status;
+        %tmp.14 = 4;
+        %tmp.15 = gte %tmp.13 %tmp.14;
+        bf %tmp.15 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_8_42_36_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_8_42_36_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_24_42_36_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 42 25 ]
+        %tmp.16 = 0;
+        putv self :status %tmp.16;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_24_42_36_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_8_42_36_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_42_8_42_36_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 44 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_36_47_57_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_36_47_57_4_stop" ]
+        %app.1 = local;
+        %tmp.17 = self;
+        %tmp.18 = getv function %tmp.17 :getApp;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        lputv %app.1 %tmp.19;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 46 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_stmt:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_11_46_36_begin:
+        %tmp.21 = getv ? :status;
+        %tmp.22 = 1;
+        %tmp.23 = eq %tmp.21 %tmp.22;
+        bt %tmp.23 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_true;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_26_46_36_false:
+        %tmp.25 = getv ? :status;
+        %tmp.26 = 3;
+        %tmp.27 = eq %tmp.25 %tmp.26;
+        push %tmp.27;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_26_46_36_end:
+        %tmp.28 = phi [%tmp.23 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_11_46_36_begin] [%tmp.27 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_26_46_36_false] [%tmp.28 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_26_46_36_end];
+        bf %tmp.28 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_39_48_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 47 12 ]
+        %tmp.29 = lgetv %app.1;
+        %tmp.30 = true;
+        putv %tmp.29 :bannerAnimation %tmp.30;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_39_48_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 49 13 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_13_56_8_if_stmt:
+        %tmp.32 = getv ? :status;
+        %tmp.33 = 0;
+        %tmp.34 = eq %tmp.32 %tmp.33;
+        bf %tmp.34 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_13_56_8_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_13_56_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_29_52_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 50 12 ]
+        %tmp.35 = 0;
+        putv self :counter %tmp.35;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 51 12 ]
+        %tmp.36 = lgetv %app.1;
+        %tmp.37 = false;
+        putv %tmp.36 :bannerAnimation %tmp.37;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_29_52_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_13_56_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_13_56_8_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 53 13 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_13_56_8_if_stmt:
+        %tmp.39 = getv ? :status;
+        %tmp.40 = 2;
+        %tmp.41 = eq %tmp.39 %tmp.40;
+        bf %tmp.41 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_13_56_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_13_56_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_29_56_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 54 12 ]
+        %tmp.43 = getv ? :FRAMES;
+        putv self :counter %tmp.43;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 55 12 ]
+        %tmp.44 = lgetv %app.1;
+        %tmp.45 = false;
+        putv %tmp.44 :bannerAnimation %tmp.45;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_29_56_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_13_56_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_53_13_56_8_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_49_13_56_8_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_46_8_56_8_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_36_47_57_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 62; ]
+    function draw(dc as Dc) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 63 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_8_65_8_if_stmt:
+        %tmp.2 = getv ? :status;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_8_65_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_8_65_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_24_65_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 64 12 ]
+        ret ?;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_24_65_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_8_65_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_63_8_65_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 67 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %width.1 = local;
+        %tmp.5 = lgetv %dc;
+        %tmp.6 = getv function %tmp.5 :getWidth;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %width.1 %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 68 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %height.2 = local;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = getv function %tmp.8 :getHeight;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        lputv %height.2 %tmp.10;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 70 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %backgroundColor.3 = local;
+        %tmp.12 = getv ? :Properties;
+        %tmp.13 = getv function %tmp.12 :getValue;
+        %tmp.14 = "BackgroundColor";
+        %tmp.15 = invoke %tmp.12 %tmp.13(%tmp.14);
+        lputv %backgroundColor.3 %tmp.15;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 71 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %foregroundColor.4 = local;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 72 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %red.5 = local;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 73 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %green.6 = local;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 74 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_8_84_8_if_stmt:
+        %tmp.17 = lgetv %backgroundColor.3;
+        %tmp.18 = getm $.Toybox.Graphics;
+        %tmp.19 = getv %tmp.18 :COLOR_WHITE;
+        %tmp.20 = eq %tmp.17 %tmp.19;
+        bf %tmp.20 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_8_84_8_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_8_84_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_52_79_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 75 12 ]
+        %tmp.21 = getm $.Toybox.Graphics;
+        %tmp.22 = getv %tmp.21 :COLOR_WHITE;
+        lputv %foregroundColor.4 %tmp.22;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 76 12 ]
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :COLOR_BLACK;
+        lputv %backgroundColor.3 %tmp.24;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 77 12 ]
+        %tmp.25 = getm $.Toybox.Graphics;
+        %tmp.26 = getv %tmp.25 :COLOR_RED;
+        lputv %red.5 %tmp.26;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 78 12 ]
+        %tmp.27 = getm $.Toybox.Graphics;
+        %tmp.28 = getv %tmp.27 :COLOR_GREEN;
+        lputv %green.6 %tmp.28;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_52_79_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_8_84_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_8_84_8_if_false:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_79_15_84_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 80 12 ]
+        %tmp.29 = getm $.Toybox.Graphics;
+        %tmp.30 = getv %tmp.29 :COLOR_BLACK;
+        lputv %foregroundColor.4 %tmp.30;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 81 12 ]
+        %tmp.31 = getm $.Toybox.Graphics;
+        %tmp.32 = getv %tmp.31 :COLOR_WHITE;
+        lputv %backgroundColor.3 %tmp.32;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 82 12 ]
+        %tmp.33 = getm $.Toybox.Graphics;
+        %tmp.34 = getv %tmp.33 :COLOR_DK_RED;
+        lputv %red.5 %tmp.34;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 83 12 ]
+        %tmp.35 = getm $.Toybox.Graphics;
+        %tmp.36 = getv %tmp.35 :COLOR_DK_GREEN;
+        lputv %green.6 %tmp.36;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_79_15_84_8_stop:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_74_8_84_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 86 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %bannerHeight.7 = local;
+        %tmp.38 = lgetv %width.1;
+        %tmp.39 = 0.2;
+        %tmp.40 = mul %tmp.38 %tmp.39;
+        lputv %bannerHeight.7 %tmp.40;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 87 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %step.8 = local;
+        %tmp.42 = lgetv %bannerHeight.7;
+        %tmp.44 = getv ? :FRAMES_ANIM;
+        %tmp.45 = div %tmp.42 %tmp.44;
+        lputv %step.8 %tmp.45;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 88 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop" ]
+        %y.9 = local;
+        %tmp.47 = lgetv %bannerHeight.7;
+        %tmp.48 = sub 0 %tmp.47;
+        %tmp.50 = lgetv %step.8;
+        %tmp.52 = getv ? :counter;
+        %tmp.54 = getv ? :FRAMES;
+        %tmp.55 = sub %tmp.52 %tmp.54;
+        %tmp.57 = getv ? :FRAMES_ANIM;
+        %tmp.58 = add %tmp.55 %tmp.57;
+        %tmp.59 = mul %tmp.50 %tmp.58;
+        %tmp.60 = add %tmp.48 %tmp.59;
+        lputv %y.9 %tmp.60;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 94 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_8_157_8_if_stmt:
+        %tmp.62 = getv ? :counter;
+        %tmp.64 = getv ? :FRAMES;
+        %tmp.66 = getv ? :FRAMES_ANIM;
+        %tmp.67 = sub %tmp.64 %tmp.66;
+        %tmp.68 = gt %tmp.62 %tmp.67;
+        bf %tmp.68 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_8_157_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_8_157_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_43_157_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 95 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_43_157_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_43_157_8_stop" ]
+        %accuracy.10 = local;
+        %tmp.69 = getm $.Toybox.Position;
+        %tmp.70 = getv function %tmp.69 :getInfo;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        %tmp.72 = getv %tmp.71 :accuracy;
+        lputv %accuracy.10 %tmp.72;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 100 12 ]
+        %tmp.73 = lgetv %dc;
+        %tmp.74 = getv function %tmp.73 :setColor;
+        %tmp.76 = lgetv %backgroundColor.3;
+        %tmp.77 = getm $.Toybox.Graphics;
+        %tmp.78 = getv %tmp.77 :COLOR_TRANSPARENT;
+        invoke %tmp.73 %tmp.74(%tmp.76, %tmp.78);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 101 12 ]
+        %tmp.79 = lgetv %dc;
+        %tmp.80 = getv function %tmp.79 :fillRectangle;
+        %tmp.81 = 0;
+        %tmp.83 = lgetv %y.9;
+        %tmp.85 = lgetv %width.1;
+        %tmp.87 = lgetv %bannerHeight.7;
+        invoke %tmp.79 %tmp.80(%tmp.81, %tmp.83, %tmp.85, %tmp.87);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 102 12 ]
+        %tmp.88 = lgetv %dc;
+        %tmp.89 = getv function %tmp.88 :setColor;
+        %tmp.91 = lgetv %foregroundColor.4;
+        %tmp.92 = getm $.Toybox.Graphics;
+        %tmp.93 = getv %tmp.92 :COLOR_TRANSPARENT;
+        invoke %tmp.88 %tmp.89(%tmp.91, %tmp.93);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 103 12 ]
+        %tmp.94 = lgetv %dc;
+        %tmp.95 = getv function %tmp.94 :setPenWidth;
+        %tmp.97 = lgetv %width.1;
+        %tmp.98 = 0.01;
+        %tmp.99 = mul %tmp.97 %tmp.98;
+        invoke %tmp.94 %tmp.95(%tmp.99);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 104 12 ]
+        %tmp.100 = lgetv %dc;
+        %tmp.101 = getv function %tmp.100 :drawLine;
+        %tmp.102 = 0;
+        %tmp.104 = lgetv %y.9;
+        %tmp.106 = lgetv %bannerHeight.7;
+        %tmp.107 = add %tmp.104 %tmp.106;
+        %tmp.109 = lgetv %width.1;
+        %tmp.111 = lgetv %y.9;
+        %tmp.113 = lgetv %bannerHeight.7;
+        %tmp.114 = add %tmp.111 %tmp.113;
+        invoke %tmp.100 %tmp.101(%tmp.102, %tmp.107, %tmp.109, %tmp.114);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 106 12 ]
+        %tmp.115 = lgetv %dc;
+        %tmp.116 = getv function %tmp.115 :setPenWidth;
+        %tmp.118 = lgetv %width.1;
+        %tmp.119 = 0.01;
+        %tmp.120 = mul %tmp.118 %tmp.119;
+        invoke %tmp.115 %tmp.116(%tmp.120);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 107 12 ]
+        %tmp.121 = lgetv %dc;
+        %tmp.122 = getv function %tmp.121 :setColor;
+        %tmp.123 = getm $.Toybox.Graphics;
+        %tmp.124 = getv %tmp.123 :COLOR_DK_GRAY;
+        %tmp.125 = getm $.Toybox.Graphics;
+        %tmp.126 = getv %tmp.125 :COLOR_TRANSPARENT;
+        invoke %tmp.121 %tmp.122(%tmp.124, %tmp.126);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 108 12 ]
+        %tmp.127 = lgetv %dc;
+        %tmp.128 = getv function %tmp.127 :drawArc;
+        %tmp.130 = lgetv %width.1;
+        %tmp.131 = 2;
+        %tmp.132 = div %tmp.130 %tmp.131;
+        %tmp.134 = lgetv %y.9;
+        %tmp.136 = lgetv %height.2;
+        %tmp.137 = 2;
+        %tmp.138 = div %tmp.136 %tmp.137;
+        %tmp.139 = add %tmp.134 %tmp.138;
+        %tmp.141 = lgetv %height.2;
+        %tmp.142 = 0.47;
+        %tmp.143 = mul %tmp.141 %tmp.142;
+        %tmp.144 = getm $.Toybox.Graphics;
+        %tmp.145 = getv %tmp.144 :ARC_CLOCKWISE;
+        %tmp.146 = 130;
+        %tmp.147 = 50;
+        invoke %tmp.127 %tmp.128(%tmp.132, %tmp.139, %tmp.143, %tmp.145, %tmp.146, %tmp.147);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 109 12 ]
+        %tmp.148 = lgetv %dc;
+        %tmp.149 = getv function %tmp.148 :setColor;
+        %tmp.151 = lgetv %red.5;
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :COLOR_TRANSPARENT;
+        invoke %tmp.148 %tmp.149(%tmp.151, %tmp.153);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 110 12 ]
+        %tmp.154 = lgetv %dc;
+        %tmp.155 = getv function %tmp.154 :setPenWidth;
+        %tmp.157 = lgetv %width.1;
+        %tmp.158 = 0.02;
+        %tmp.159 = mul %tmp.157 %tmp.158;
+        invoke %tmp.154 %tmp.155(%tmp.159);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 112 11 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_11_153_12_if_stmt:
+        %tmp.161 = lgetv %accuracy.10;
+        %tmp.162 = getm $.Toybox.Position;
+        %tmp.163 = getv %tmp.162 :QUALITY_LAST_KNOWN;
+        %tmp.164 = lte %tmp.161 %tmp.163;
+        bf %tmp.164 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_11_153_12_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_11_153_12_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_55_119_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 113 16 ]
+        %tmp.165 = 0;
+        putv self :sliderCounter %tmp.165;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 114 16 ]
+        %tmp.166 = false;
+        putv self :beep %tmp.166;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 116 16 ]
+        %tmp.167 = lgetv %dc;
+        %tmp.168 = getv function %tmp.167 :drawArc;
+        %tmp.170 = lgetv %width.1;
+        %tmp.171 = 2;
+        %tmp.172 = div %tmp.170 %tmp.171;
+        %tmp.174 = lgetv %y.9;
+        %tmp.176 = lgetv %height.2;
+        %tmp.177 = 2;
+        %tmp.178 = div %tmp.176 %tmp.177;
+        %tmp.179 = add %tmp.174 %tmp.178;
+        %tmp.181 = lgetv %height.2;
+        %tmp.182 = 0.47;
+        %tmp.183 = mul %tmp.181 %tmp.182;
+        %tmp.184 = getm $.Toybox.Graphics;
+        %tmp.185 = getv %tmp.184 :ARC_CLOCKWISE;
+        %tmp.186 = 130;
+        %tmp.187 = 127;
+        invoke %tmp.167 %tmp.168(%tmp.172, %tmp.179, %tmp.183, %tmp.185, %tmp.186, %tmp.187);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 117 16 ]
+        %tmp.188 = lgetv %dc;
+        %tmp.189 = getv function %tmp.188 :setColor;
+        %tmp.191 = lgetv %backgroundColor.3;
+        %tmp.192 = getm $.Toybox.Graphics;
+        %tmp.193 = getv %tmp.192 :COLOR_TRANSPARENT;
+        invoke %tmp.188 %tmp.189(%tmp.191, %tmp.193);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 118 16 ]
+        %tmp.194 = lgetv %dc;
+        %tmp.195 = getv function %tmp.194 :drawArc;
+        %tmp.197 = lgetv %width.1;
+        %tmp.198 = 2;
+        %tmp.199 = div %tmp.197 %tmp.198;
+        %tmp.201 = lgetv %y.9;
+        %tmp.203 = lgetv %height.2;
+        %tmp.204 = 2;
+        %tmp.205 = div %tmp.203 %tmp.204;
+        %tmp.206 = add %tmp.201 %tmp.205;
+        %tmp.208 = lgetv %height.2;
+        %tmp.209 = 0.47;
+        %tmp.210 = mul %tmp.208 %tmp.209;
+        %tmp.211 = getm $.Toybox.Graphics;
+        %tmp.212 = getv %tmp.211 :ARC_CLOCKWISE;
+        %tmp.213 = 127;
+        %tmp.214 = 126;
+        invoke %tmp.194 %tmp.195(%tmp.199, %tmp.206, %tmp.210, %tmp.212, %tmp.213, %tmp.214);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_55_119_12_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_11_153_12_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_11_153_12_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 119 19 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_19_153_12_if_stmt:
+        %tmp.216 = lgetv %accuracy.10;
+        %tmp.217 = getm $.Toybox.Position;
+        %tmp.218 = getv %tmp.217 :QUALITY_POOR;
+        %tmp.219 = lte %tmp.216 %tmp.218;
+        bf %tmp.219 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_19_153_12_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_19_153_12_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_57_132_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 120 16 ]
+        %tmp.220 = false;
+        putv self :beep %tmp.220;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 121 16 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_16_123_16_if_stmt:
+        %tmp.222 = getv ? :sliderCounter;
+        %tmp.224 = getv ? :SLIDER_ANIM;
+        %tmp.225 = eq %tmp.222 %tmp.224;
+        bf %tmp.225 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_16_123_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_16_123_16_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_49_123_16_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 122 20 ]
+        %tmp.227 = getv ? :SLIDER_ANIM;
+        %tmp.228 = 2;
+        %tmp.229 = div %tmp.227 %tmp.228;
+        putv self :sliderCounter %tmp.229;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_49_123_16_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_16_123_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_121_16_123_16_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 125 16 ]
+        %tmp.230 = lgetv %dc;
+        %tmp.231 = getv function %tmp.230 :drawArc;
+        %tmp.233 = lgetv %width.1;
+        %tmp.234 = 2;
+        %tmp.235 = div %tmp.233 %tmp.234;
+        %tmp.237 = lgetv %y.9;
+        %tmp.239 = lgetv %height.2;
+        %tmp.240 = 2;
+        %tmp.241 = div %tmp.239 %tmp.240;
+        %tmp.242 = add %tmp.237 %tmp.241;
+        %tmp.244 = lgetv %height.2;
+        %tmp.245 = 0.47;
+        %tmp.246 = mul %tmp.244 %tmp.245;
+        %tmp.247 = getm $.Toybox.Graphics;
+        %tmp.248 = getv %tmp.247 :ARC_CLOCKWISE;
+        %tmp.249 = 130;
+        %tmp.250 = 127;
+        %tmp.252 = getv ? :sliderCounter;
+        %tmp.253 = 77;
+        %tmp.254 = mul %tmp.252 %tmp.253;
+        %tmp.256 = getv ? :SLIDER_ANIM;
+        %tmp.257 = div %tmp.254 %tmp.256;
+        %tmp.258 = sub %tmp.250 %tmp.257;
+        invoke %tmp.230 %tmp.231(%tmp.235, %tmp.242, %tmp.246, %tmp.248, %tmp.249, %tmp.258);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 126 16 ]
+        %tmp.259 = lgetv %dc;
+        %tmp.260 = getv function %tmp.259 :setColor;
+        %tmp.262 = lgetv %backgroundColor.3;
+        %tmp.263 = getm $.Toybox.Graphics;
+        %tmp.264 = getv %tmp.263 :COLOR_TRANSPARENT;
+        invoke %tmp.259 %tmp.260(%tmp.262, %tmp.264);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 127 16 ]
+        %tmp.265 = lgetv %dc;
+        %tmp.266 = getv function %tmp.265 :drawArc;
+        %tmp.268 = lgetv %width.1;
+        %tmp.269 = 2;
+        %tmp.270 = div %tmp.268 %tmp.269;
+        %tmp.272 = lgetv %y.9;
+        %tmp.274 = lgetv %height.2;
+        %tmp.275 = 2;
+        %tmp.276 = div %tmp.274 %tmp.275;
+        %tmp.277 = add %tmp.272 %tmp.276;
+        %tmp.279 = lgetv %height.2;
+        %tmp.280 = 0.47;
+        %tmp.281 = mul %tmp.279 %tmp.280;
+        %tmp.282 = getm $.Toybox.Graphics;
+        %tmp.283 = getv %tmp.282 :ARC_CLOCKWISE;
+        %tmp.284 = 127;
+        %tmp.286 = getv ? :sliderCounter;
+        %tmp.287 = 77;
+        %tmp.288 = mul %tmp.286 %tmp.287;
+        %tmp.290 = getv ? :SLIDER_ANIM;
+        %tmp.291 = div %tmp.288 %tmp.290;
+        %tmp.292 = sub %tmp.284 %tmp.291;
+        %tmp.293 = 127;
+        %tmp.295 = getv ? :sliderCounter;
+        %tmp.296 = 77;
+        %tmp.297 = mul %tmp.295 %tmp.296;
+        %tmp.299 = getv ? :SLIDER_ANIM;
+        %tmp.300 = div %tmp.297 %tmp.299;
+        %tmp.301 = sub %tmp.293 %tmp.300;
+        %tmp.302 = 1;
+        %tmp.303 = sub %tmp.301 %tmp.302;
+        invoke %tmp.265 %tmp.266(%tmp.270, %tmp.277, %tmp.281, %tmp.283, %tmp.292, %tmp.303);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 129 16 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_16_131_16_if_stmt:
+        %tmp.305 = getv ? :sliderCounter;
+        %tmp.307 = getv ? :SLIDER_ANIM;
+        %tmp.308 = 2;
+        %tmp.309 = div %tmp.307 %tmp.308;
+        %tmp.310 = lt %tmp.305 %tmp.309;
+        bf %tmp.310 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_16_131_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_16_131_16_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_50_131_16_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 130 20 ]
+        %tmp.311 = getv self :sliderCounter;
+        %tmp.312 = 1;
+        %tmp.313 = add %tmp.311 %tmp.312;
+        putv self :sliderCounter dup %tmp.313;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_50_131_16_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_16_131_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_129_16_131_16_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_57_132_12_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_19_153_12_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_19_153_12_if_false:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_132_19_153_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 133 16 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_16_143_16_if_stmt:
+        %tmp.315 = getv ? :sliderCounter;
+        %tmp.317 = getv ? :SLIDER_ANIM;
+        %tmp.318 = eq %tmp.315 %tmp.317;
+        bf %tmp.318 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_16_143_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_16_143_16_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_49_143_16_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 134 20 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_20_137_20_if_stmt:
+        %tmp.320 = getv ? :beep;
+        %tmp.321 = not %tmp.320;
+        bf %tmp.321 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_20_137_20_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_20_137_20_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_30_137_20_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 135 24 ]
+        %tmp.323 = getv ? :Attention;
+        %tmp.324 = getv function %tmp.323 :playTone;
+        %tmp.326 = getv ? :Attention;
+        %tmp.327 = getv %tmp.326 :TONE_ALARM;
+        invoke %tmp.323 %tmp.324(%tmp.327);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 136 24 ]
+        %tmp.328 = true;
+        putv self :beep %tmp.328;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_30_137_20_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_20_137_20_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_134_20_137_20_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 139 20 ]
+        %tmp.329 = lgetv %dc;
+        %tmp.330 = getv function %tmp.329 :setColor;
+        %tmp.332 = lgetv %foregroundColor.4;
+        %tmp.333 = getm $.Toybox.Graphics;
+        %tmp.334 = getv %tmp.333 :COLOR_TRANSPARENT;
+        invoke %tmp.329 %tmp.330(%tmp.332, %tmp.334);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 140 20 ]
+        %tmp.335 = lgetv %dc;
+        %tmp.336 = getv function %tmp.335 :drawText;
+        %tmp.338 = lgetv %width.1;
+        %tmp.339 = 2;
+        %tmp.340 = div %tmp.338 %tmp.339;
+        %tmp.342 = lgetv %y.9;
+        %tmp.344 = lgetv %bannerHeight.7;
+        %tmp.345 = 0.65;
+        %tmp.346 = mul %tmp.344 %tmp.345;
+        %tmp.347 = add %tmp.342 %tmp.346;
+        %tmp.348 = getm $.Toybox.Graphics;
+        %tmp.349 = getv %tmp.348 :FONT_XTINY;
+        %tmp.351 = getv ? :WatchUi;
+        %tmp.352 = getv function %tmp.351 :loadResource;
+        %tmp.354 = getv ? :Rez;
+        %tmp.355 = getv %tmp.354 :Strings;
+        %tmp.356 = getv %tmp.355 :PressStart;
+        %tmp.357 = invoke %tmp.351 %tmp.352(%tmp.356);
+        %tmp.358 = getm $.Toybox.Graphics;
+        %tmp.359 = getv %tmp.358 :TEXT_JUSTIFY_CENTER;
+        %tmp.360 = getm $.Toybox.Graphics;
+        %tmp.361 = getv %tmp.360 :TEXT_JUSTIFY_VCENTER;
+        %tmp.362 = bitor %tmp.359 %tmp.361;
+        invoke %tmp.335 %tmp.336(%tmp.340, %tmp.347, %tmp.349, %tmp.357, %tmp.362);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 142 20 ]
+        %tmp.363 = lgetv %dc;
+        %tmp.364 = getv function %tmp.363 :setColor;
+        %tmp.366 = lgetv %green.6;
+        %tmp.367 = getm $.Toybox.Graphics;
+        %tmp.368 = getv %tmp.367 :COLOR_TRANSPARENT;
+        invoke %tmp.363 %tmp.364(%tmp.366, %tmp.368);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_49_143_16_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_16_143_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_133_16_143_16_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 145 16 ]
+        %tmp.369 = lgetv %dc;
+        %tmp.370 = getv function %tmp.369 :drawArc;
+        %tmp.372 = lgetv %width.1;
+        %tmp.373 = 2;
+        %tmp.374 = div %tmp.372 %tmp.373;
+        %tmp.376 = lgetv %y.9;
+        %tmp.378 = lgetv %height.2;
+        %tmp.379 = 2;
+        %tmp.380 = div %tmp.378 %tmp.379;
+        %tmp.381 = add %tmp.376 %tmp.380;
+        %tmp.383 = lgetv %height.2;
+        %tmp.384 = 0.47;
+        %tmp.385 = mul %tmp.383 %tmp.384;
+        %tmp.386 = getm $.Toybox.Graphics;
+        %tmp.387 = getv %tmp.386 :ARC_CLOCKWISE;
+        %tmp.388 = 130;
+        %tmp.389 = 127;
+        %tmp.391 = getv ? :sliderCounter;
+        %tmp.392 = 77;
+        %tmp.393 = mul %tmp.391 %tmp.392;
+        %tmp.395 = getv ? :SLIDER_ANIM;
+        %tmp.396 = div %tmp.393 %tmp.395;
+        %tmp.397 = sub %tmp.389 %tmp.396;
+        invoke %tmp.369 %tmp.370(%tmp.374, %tmp.381, %tmp.385, %tmp.387, %tmp.388, %tmp.397);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 146 16 ]
+        %tmp.398 = lgetv %dc;
+        %tmp.399 = getv function %tmp.398 :setColor;
+        %tmp.401 = lgetv %backgroundColor.3;
+        %tmp.402 = getm $.Toybox.Graphics;
+        %tmp.403 = getv %tmp.402 :COLOR_TRANSPARENT;
+        invoke %tmp.398 %tmp.399(%tmp.401, %tmp.403);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 147 16 ]
+        %tmp.404 = lgetv %dc;
+        %tmp.405 = getv function %tmp.404 :drawArc;
+        %tmp.407 = lgetv %width.1;
+        %tmp.408 = 2;
+        %tmp.409 = div %tmp.407 %tmp.408;
+        %tmp.411 = lgetv %y.9;
+        %tmp.413 = lgetv %height.2;
+        %tmp.414 = 2;
+        %tmp.415 = div %tmp.413 %tmp.414;
+        %tmp.416 = add %tmp.411 %tmp.415;
+        %tmp.418 = lgetv %height.2;
+        %tmp.419 = 0.47;
+        %tmp.420 = mul %tmp.418 %tmp.419;
+        %tmp.421 = getm $.Toybox.Graphics;
+        %tmp.422 = getv %tmp.421 :ARC_CLOCKWISE;
+        %tmp.423 = 127;
+        %tmp.425 = getv ? :sliderCounter;
+        %tmp.426 = 77;
+        %tmp.427 = mul %tmp.425 %tmp.426;
+        %tmp.429 = getv ? :SLIDER_ANIM;
+        %tmp.430 = div %tmp.427 %tmp.429;
+        %tmp.431 = sub %tmp.423 %tmp.430;
+        %tmp.432 = 127;
+        %tmp.434 = getv ? :sliderCounter;
+        %tmp.435 = 77;
+        %tmp.436 = mul %tmp.434 %tmp.435;
+        %tmp.438 = getv ? :SLIDER_ANIM;
+        %tmp.439 = div %tmp.436 %tmp.438;
+        %tmp.440 = sub %tmp.432 %tmp.439;
+        %tmp.441 = 1;
+        %tmp.442 = sub %tmp.440 %tmp.441;
+        invoke %tmp.404 %tmp.405(%tmp.409, %tmp.416, %tmp.420, %tmp.422, %tmp.431, %tmp.442);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 149 16 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_16_151_16_if_stmt:
+        %tmp.444 = getv ? :sliderCounter;
+        %tmp.446 = getv ? :SLIDER_ANIM;
+        %tmp.447 = lt %tmp.444 %tmp.446;
+        bf %tmp.447 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_16_151_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_16_151_16_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_48_151_16_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 150 20 ]
+        %tmp.448 = getv self :sliderCounter;
+        %tmp.449 = 1;
+        %tmp.450 = add %tmp.448 %tmp.449;
+        putv self :sliderCounter dup %tmp.450;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_48_151_16_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_16_151_16_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_149_16_151_16_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_132_19_153_12_stop:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_119_19_153_12_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_112_11_153_12_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_43_157_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_8_157_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_94_8_157_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 165 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_8_165_38_if_stmt:
+        %tmp.452 = getv ? :status;
+        %tmp.453 = 1;
+        %tmp.454 = eq %tmp.452 %tmp.453;
+        bf %tmp.454 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_8_165_38_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_8_165_38_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_24_165_38_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 165 25 ]
+        %tmp.455 = getv self :counter;
+        %tmp.456 = 1;
+        %tmp.457 = add %tmp.455 %tmp.456;
+        putv self :counter dup %tmp.457;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_24_165_38_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_8_165_38_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_165_8_165_38_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 166 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_8_166_38_if_stmt:
+        %tmp.459 = getv ? :status;
+        %tmp.460 = 3;
+        %tmp.461 = eq %tmp.459 %tmp.460;
+        bf %tmp.461 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_8_166_38_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_8_166_38_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_24_166_38_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 166 25 ]
+        %tmp.462 = getv self :counter;
+        %tmp.463 = 1;
+        %tmp.464 = sub %tmp.462 %tmp.463;
+        putv self :counter dup %tmp.464;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_24_166_38_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_8_166_38_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_166_8_166_38_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 168 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_8_170_8_if_stmt:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_11_168_47_begin:
+        %tmp.466 = getv ? :counter;
+        %tmp.468 = getv ? :FRAMES;
+        %tmp.469 = 1;
+        %tmp.470 = add %tmp.468 %tmp.469;
+        %tmp.471 = eq %tmp.466 %tmp.470;
+        bt %tmp.471 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_8_170_8_if_true;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_36_168_47_false:
+        %tmp.473 = getv ? :counter;
+        %tmp.474 = 0;
+        %tmp.475 = eq %tmp.473 %tmp.474;
+        push %tmp.475;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_36_168_47_end:
+        %tmp.476 = phi [%tmp.471 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_11_168_47_begin] [%tmp.475 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_36_168_47_false] [%tmp.476 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_36_168_47_end];
+        bf %tmp.476 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_8_170_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_8_170_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_50_170_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc" 169 12 ]
+        %tmp.477 = self;
+        %tmp.478 = getv function %tmp.477 :setStatus;
+        %tmp.480 = getv ? :status;
+        %tmp.481 = 1;
+        %tmp.482 = add %tmp.480 %tmp.481;
+        invoke %tmp.477 %tmp.478(%tmp.482);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_50_170_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_8_170_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_168_8_170_8_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_layoutParts_TopBanner_mc_62_36_172_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/layoutParts/TopBanner.mc"; @line = 1; ]
+<init> {
+}

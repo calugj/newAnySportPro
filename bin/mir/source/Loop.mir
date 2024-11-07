@@ -1,0 +1,76 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 1; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 2; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 4; ]
+import Toybox.Lang;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 6; ]
+class LoopFactory extends ViewLoopFactory{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 8; ]
+    function getSize() as Number {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_8_33_10_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc" 9 8 ]
+        %tmp.2 = getv ? :Properties;
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "Pages";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_8_33_10_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 12; ]
+    function getView(page as Number) {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_12_113_18_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc" 13 8 ]
+        %tmp.2 = getv ? :System;
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "page ";
+        %tmp.6 = lgetv %page;
+        %tmp.7 = add %tmp.4 %tmp.6;
+        invoke %tmp.2 %tmp.3(%tmp.7);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc" 15 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_12_113_18_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_12_113_18_4_stop" ]
+        %sportData.1 = local;
+        %tmp.8 = self;
+        %tmp.9 = getv function %tmp.8 :getApp;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = getv %tmp.10 :sportData;
+        lputv %sportData.1 %tmp.11;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc" 16 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_12_113_18_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_12_113_18_4_stop" ]
+        %view.2 = local;
+        %tmp.15 = getv ? :MainView;
+        %tmp.17 = lgetv %sportData.1;
+        %tmp.19 = lgetv %page;
+        %tmp.20 = 1;
+        %tmp.21 = add %tmp.19 %tmp.20;
+        %tmp.12 = newc %tmp.15 (%tmp.17, %tmp.21);
+        lputv %view.2 %tmp.12;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc" 17 8 ]
+        %tmp.22 = newa 2;
+        %tmp.24 = lgetv %view.2;
+        %tmp.25 = dup %tmp.22;
+        %tmp.26 = aputv %tmp.25 0 %tmp.24;
+        %tmp.30 = getv ? :MainViewDelegate;
+        %tmp.32 = lgetv %view.2;
+        %tmp.34 = lgetv %page;
+        %tmp.35 = 1;
+        %tmp.36 = add %tmp.34 %tmp.35;
+        %tmp.27 = newc %tmp.30 (%tmp.32, %tmp.36);
+        %tmp.37 = dup %tmp.26;
+        %tmp.38 = aputv %tmp.37 1 %tmp.27;
+        ret %tmp.38;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_Loop_mc_12_113_18_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\Loop.mc"; @line = 1; ]
+<init> {
+}

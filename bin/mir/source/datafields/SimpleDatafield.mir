@@ -1,0 +1,71 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 4; ]
+class SimpleDatafield extends Datafield{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 6; ]
+    function initialize(param_x, param_y, param_width, param_height, param_title, param_value) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_SimpleDatafield_mc_6_95_8_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc" 7 8 ]
+        %tmp.2 = getv ? :Datafield;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.5 = lgetv %param_x;
+        %tmp.7 = lgetv %param_y;
+        %tmp.9 = lgetv %param_width;
+        %tmp.11 = lgetv %param_height;
+        %tmp.13 = lgetv %param_title;
+        %tmp.15 = lgetv %param_value;
+        invoke %tmp.2 %tmp.3(%tmp.5, %tmp.7, %tmp.9, %tmp.11, %tmp.13, %tmp.15);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_SimpleDatafield_mc_6_95_8_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 10; ]
+    function draw(dc as Dc) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_SimpleDatafield_mc_10_36_15_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc" 11 8 ]
+        %tmp.2 = getv ? :Datafield;
+        %tmp.3 = getv function %tmp.2 :draw;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc" 13 8 ]
+        %tmp.6 = lgetv %dc;
+        %tmp.7 = getv function %tmp.6 :setColor;
+        %tmp.9 = getv ? :foregroundColor;
+        %tmp.10 = getm $.Toybox.Graphics;
+        %tmp.11 = getv %tmp.10 :COLOR_TRANSPARENT;
+        invoke %tmp.6 %tmp.7(%tmp.9, %tmp.11);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc" 14 8 ]
+        %tmp.12 = lgetv %dc;
+        %tmp.13 = getv function %tmp.12 :drawText;
+        %tmp.15 = getv ? :x;
+        %tmp.17 = getv ? :width;
+        %tmp.18 = 2;
+        %tmp.19 = div %tmp.17 %tmp.18;
+        %tmp.20 = add %tmp.15 %tmp.19;
+        %tmp.22 = getv ? :y;
+        %tmp.24 = getv ? :height;
+        %tmp.25 = 0.55;
+        %tmp.26 = mul %tmp.24 %tmp.25;
+        %tmp.27 = add %tmp.22 %tmp.26;
+        %tmp.28 = getm $.Toybox.Graphics;
+        %tmp.29 = getv %tmp.28 :FONT_SMALL;
+        %tmp.31 = getv ? :value;
+        %tmp.32 = getm $.Toybox.Graphics;
+        %tmp.33 = getv %tmp.32 :TEXT_JUSTIFY_CENTER;
+        %tmp.34 = getm $.Toybox.Graphics;
+        %tmp.35 = getv %tmp.34 :TEXT_JUSTIFY_VCENTER;
+        %tmp.36 = bitor %tmp.33 %tmp.35;
+        invoke %tmp.12 %tmp.13(%tmp.20, %tmp.27, %tmp.29, %tmp.31, %tmp.36);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_SimpleDatafield_mc_10_36_15_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\SimpleDatafield.mc"; @line = 1; ]
+<init> {
+}

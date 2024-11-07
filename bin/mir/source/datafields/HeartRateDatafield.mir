@@ -1,0 +1,184 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 4; ]
+class HeartRateDatafield extends Datafield{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 6; ]
+    function initialize(param_x, param_y, param_width, param_height, param_title, param_value) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_6_95_8_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 7 8 ]
+        %tmp.2 = getv ? :Datafield;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.5 = lgetv %param_x;
+        %tmp.7 = lgetv %param_y;
+        %tmp.9 = lgetv %param_width;
+        %tmp.11 = lgetv %param_height;
+        %tmp.13 = lgetv %param_title;
+        %tmp.15 = lgetv %param_value;
+        invoke %tmp.2 %tmp.3(%tmp.5, %tmp.7, %tmp.9, %tmp.11, %tmp.13, %tmp.15);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_6_95_8_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 10; ]
+    function draw(dc as Dc) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_10_36_27_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 11 8 ]
+        %tmp.2 = getv ? :Datafield;
+        %tmp.3 = getv function %tmp.2 :draw;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 13 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_10_36_27_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_10_36_27_4_stop" ]
+        %hr.1 = local;
+        %tmp.7 = getv ? :value;
+        %tmp.8 = getv function %tmp.7 :toNumber;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        lputv %hr.1 %tmp.9;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 14 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_10_36_27_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_10_36_27_4_stop" ]
+        %color.2 = local;
+        %tmp.10 = 0;
+        lputv %color.2 %tmp.10;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 15 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_8_20_41_if_stmt:
+        %tmp.12 = lgetv %hr.1;
+        %tmp.13 = 80;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        bf %tmp.14 @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_8_20_41_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_8_20_41_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_20_15_50_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 15 21 ]
+        %tmp.15 = getm $.Toybox.Graphics;
+        %tmp.16 = getv %tmp.15 :COLOR_WHITE;
+        lputv %color.2 %tmp.16;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_20_15_50_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_8_20_41_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_8_20_41_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 16 13 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_13_20_41_if_stmt:
+        %tmp.18 = lgetv %hr.1;
+        %tmp.19 = 100;
+        %tmp.20 = lt %tmp.18 %tmp.19;
+        bf %tmp.20 @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_13_20_41_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_13_20_41_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_26_16_58_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 16 27 ]
+        %tmp.21 = getm $.Toybox.Graphics;
+        %tmp.22 = getv %tmp.21 :COLOR_DK_GRAY;
+        lputv %color.2 %tmp.22;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_26_16_58_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_13_20_41_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_13_20_41_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 17 13 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_13_20_41_if_stmt:
+        %tmp.24 = lgetv %hr.1;
+        %tmp.25 = 120;
+        %tmp.26 = lt %tmp.24 %tmp.25;
+        bf %tmp.26 @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_13_20_41_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_13_20_41_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_26_17_55_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 17 27 ]
+        %tmp.27 = getm $.Toybox.Graphics;
+        %tmp.28 = getv %tmp.27 :COLOR_BLUE;
+        lputv %color.2 %tmp.28;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_26_17_55_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_13_20_41_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_13_20_41_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 18 13 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_13_20_41_if_stmt:
+        %tmp.30 = lgetv %hr.1;
+        %tmp.31 = 140;
+        %tmp.32 = lt %tmp.30 %tmp.31;
+        bf %tmp.32 @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_13_20_41_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_13_20_41_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_26_18_56_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 18 27 ]
+        %tmp.33 = getm $.Toybox.Graphics;
+        %tmp.34 = getv %tmp.33 :COLOR_GREEN;
+        lputv %color.2 %tmp.34;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_26_18_56_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_13_20_41_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_13_20_41_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 19 13 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_13_20_41_if_stmt:
+        %tmp.36 = lgetv %hr.1;
+        %tmp.37 = 160;
+        %tmp.38 = lt %tmp.36 %tmp.37;
+        bf %tmp.38 @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_13_20_41_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_13_20_41_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_26_19_57_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 19 27 ]
+        %tmp.39 = getm $.Toybox.Graphics;
+        %tmp.40 = getv %tmp.39 :COLOR_ORANGE;
+        lputv %color.2 %tmp.40;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_26_19_57_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_13_20_41_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_13_20_41_if_false:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_20_13_20_41_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 20 14 ]
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :COLOR_RED;
+        lputv %color.2 %tmp.42;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_20_13_20_41_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_19_13_20_41_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_18_13_20_41_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_17_13_20_41_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_16_13_20_41_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_15_8_20_41_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 22 8 ]
+        %tmp.43 = lgetv %dc;
+        %tmp.44 = getv function %tmp.43 :setColor;
+        %tmp.46 = lgetv %color.2;
+        %tmp.47 = getm $.Toybox.Graphics;
+        %tmp.48 = getv %tmp.47 :COLOR_TRANSPARENT;
+        invoke %tmp.43 %tmp.44(%tmp.46, %tmp.48);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 23 8 ]
+        %tmp.49 = lgetv %dc;
+        %tmp.50 = getv function %tmp.49 :fillRectangle;
+        %tmp.52 = getv ? :x;
+        %tmp.54 = getv ? :y;
+        %tmp.56 = getv ? :width;
+        %tmp.58 = getv ? :height;
+        invoke %tmp.49 %tmp.50(%tmp.52, %tmp.54, %tmp.56, %tmp.58);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 25 8 ]
+        %tmp.59 = lgetv %dc;
+        %tmp.60 = getv function %tmp.59 :setColor;
+        %tmp.61 = getm $.Toybox.Graphics;
+        %tmp.62 = getv %tmp.61 :COLOR_WHITE;
+        %tmp.64 = lgetv %color.2;
+        invoke %tmp.59 %tmp.60(%tmp.62, %tmp.64);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc" 26 8 ]
+        %tmp.65 = lgetv %dc;
+        %tmp.66 = getv function %tmp.65 :drawText;
+        %tmp.68 = getv ? :x;
+        %tmp.70 = getv ? :width;
+        %tmp.71 = 2;
+        %tmp.72 = div %tmp.70 %tmp.71;
+        %tmp.73 = add %tmp.68 %tmp.72;
+        %tmp.75 = getv ? :y;
+        %tmp.77 = getv ? :height;
+        %tmp.78 = 2;
+        %tmp.79 = div %tmp.77 %tmp.78;
+        %tmp.80 = add %tmp.75 %tmp.79;
+        %tmp.81 = getm $.Toybox.Graphics;
+        %tmp.82 = getv %tmp.81 :FONT_SMALL;
+        %tmp.84 = getv ? :value;
+        %tmp.85 = getm $.Toybox.Graphics;
+        %tmp.86 = getv %tmp.85 :TEXT_JUSTIFY_CENTER;
+        %tmp.87 = getm $.Toybox.Graphics;
+        %tmp.88 = getv %tmp.87 :TEXT_JUSTIFY_VCENTER;
+        %tmp.89 = bitor %tmp.86 %tmp.88;
+        invoke %tmp.65 %tmp.66(%tmp.73, %tmp.80, %tmp.82, %tmp.84, %tmp.89);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_HeartRateDatafield_mc_10_36_27_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\HeartRateDatafield.mc"; @line = 1; ]
+<init> {
+}

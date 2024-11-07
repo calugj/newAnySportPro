@@ -1,0 +1,186 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 1; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 2; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 4; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 6; ]
+class MainLoopFactory extends ViewLoopFactory{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 8; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_8_26_10_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 9 8 ]
+        %tmp.2 = getv ? :ViewLoopFactory;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_8_26_10_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 12; ]
+    function getSize() as Number {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_12_33_14_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 13 8 ]
+        %tmp.2 = getv ? :Properties;
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "Pages";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_12_33_14_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 16; ]
+    function getView(page as Number) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_16_113_19_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 17 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_16_113_19_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_16_113_19_4_stop" ]
+        %view.1 = local;
+        %tmp.4 = getv ? :MainView;
+        %tmp.5 = self;
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = getv %tmp.7 :sportData;
+        %tmp.10 = lgetv %page;
+        %tmp.11 = 1;
+        %tmp.12 = add %tmp.10 %tmp.11;
+        %tmp.1 = newc %tmp.4 (%tmp.8, %tmp.12);
+        lputv %view.1 %tmp.1;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 18 8 ]
+        %tmp.13 = newa 2;
+        %tmp.15 = lgetv %view.1;
+        %tmp.16 = dup %tmp.13;
+        %tmp.17 = aputv %tmp.16 0 %tmp.15;
+        %tmp.21 = getv ? :MainViewDelegate;
+        %tmp.23 = lgetv %view.1;
+        %tmp.25 = lgetv %page;
+        %tmp.26 = 1;
+        %tmp.27 = add %tmp.25 %tmp.26;
+        %tmp.18 = newc %tmp.21 (%tmp.23, %tmp.27);
+        %tmp.28 = dup %tmp.17;
+        %tmp.29 = aputv %tmp.28 1 %tmp.18;
+        ret %tmp.29;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_16_113_19_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 24; ]
+class PageSettingLoopFactory extends ViewLoopFactory{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 24; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 24; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 26; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_26_26_28_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 27 8 ]
+        %tmp.2 = getv ? :ViewLoopFactory;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_26_26_28_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 30; ]
+    function getSize() as Number {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_30_33_36_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 31 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_30_33_36_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_30_33_36_4_stop" ]
+        %pages.1 = local;
+        %tmp.2 = getv ? :Properties;
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "Pages";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %pages.1 %tmp.5;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 32 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_8_34_8_if_stmt:
+        %tmp.7 = lgetv %pages.1;
+        %tmp.8 = self;
+        %tmp.9 = getv function %tmp.8 :getApp;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = getv %tmp.10 :MAX_PAGES;
+        %tmp.12 = eq %tmp.7 %tmp.11;
+        bf %tmp.12 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_8_34_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_8_34_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_40_34_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 33 12 ]
+        %tmp.13 = self;
+        %tmp.14 = getv function %tmp.13 :getApp;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = getv %tmp.15 :MAX_PAGES;
+        ret %tmp.16;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_40_34_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_8_34_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_32_8_34_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 35 8 ]
+        %tmp.18 = lgetv %pages.1;
+        %tmp.19 = 1;
+        %tmp.20 = add %tmp.18 %tmp.19;
+        ret %tmp.20;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_30_33_36_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 38; ]
+    function getView(page as Number) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_38_113_46_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 40 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_8_43_8_if_stmt:
+        %tmp.2 = lgetv %page;
+        %tmp.3 = 1;
+        %tmp.4 = add %tmp.2 %tmp.3;
+        %tmp.6 = getv ? :Properties;
+        %tmp.7 = getv function %tmp.6 :getValue;
+        %tmp.8 = "Pages";
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        %tmp.10 = lte %tmp.4 %tmp.9;
+        bf %tmp.10 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_8_43_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_8_43_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_53_43_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 41 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_53_43_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_53_43_8_stop" ]
+        %view.1 = local;
+        %tmp.14 = getv ? :PageSettingView;
+        %tmp.16 = lgetv %page;
+        %tmp.17 = 1;
+        %tmp.18 = add %tmp.16 %tmp.17;
+        %tmp.19 = false;
+        %tmp.11 = newc %tmp.14 (%tmp.18, %tmp.19);
+        lputv %view.1 %tmp.11;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 42 12 ]
+        %tmp.20 = newa 2;
+        %tmp.22 = lgetv %view.1;
+        %tmp.23 = dup %tmp.20;
+        %tmp.24 = aputv %tmp.23 0 %tmp.22;
+        %tmp.28 = getv ? :PageSettingViewDelegate;
+        %tmp.30 = lgetv %view.1;
+        %tmp.32 = lgetv %page;
+        %tmp.33 = 1;
+        %tmp.34 = add %tmp.32 %tmp.33;
+        %tmp.25 = newc %tmp.28 (%tmp.30, %tmp.34);
+        %tmp.35 = dup %tmp.24;
+        %tmp.36 = aputv %tmp.35 1 %tmp.25;
+        ret %tmp.36;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_53_43_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_8_43_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_40_8_43_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc" 44 8 ]
+        %tmp.37 = newa 2;
+        %tmp.41 = getv ? :AddPageView;
+        %tmp.38 = newc %tmp.41 ();
+        %tmp.42 = dup %tmp.37;
+        %tmp.43 = aputv %tmp.42 0 %tmp.38;
+        %tmp.47 = getv ? :AddPageViewDelegate;
+        %tmp.44 = newc %tmp.47 ();
+        %tmp.48 = dup %tmp.43;
+        %tmp.49 = aputv %tmp.48 1 %tmp.44;
+        ret %tmp.49;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_LoopFactory_mc_38_113_46_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/LoopFactory.mc"; @line = 1; ]
+<init> {
+}

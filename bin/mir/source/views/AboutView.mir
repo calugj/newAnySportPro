@@ -1,0 +1,196 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 4; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 6; ]
+class AboutView extends WatchUi.View{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 8; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_8_26_11_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 9 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_8_26_11_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 14; ]
+    function onLayout(dc as Dc) as Void {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 21; ]
+    function onShow() as Void {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 26; ]
+    public
+    function onUpdate(dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 27 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 29 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_8_31_8_if_stmt:
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :Dc;
+        %tmp.9 = const :setAntiAlias;
+        %tmp.10 = canhazplz %tmp.7 %tmp.9;
+        bf %tmp.10 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_8_31_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_8_31_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_49_31_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 30 12 ]
+        %tmp.11 = lgetv %dc;
+        %tmp.12 = getv function %tmp.11 :setAntiAlias;
+        %tmp.13 = true;
+        invoke %tmp.11 %tmp.12(%tmp.13);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_49_31_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_8_31_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_29_8_31_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 33 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_stop" ]
+        %width.1 = local;
+        %tmp.14 = lgetv %dc;
+        %tmp.15 = getv function %tmp.14 :getWidth;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        lputv %width.1 %tmp.16;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 34 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_stop" ]
+        %height.2 = local;
+        %tmp.17 = lgetv %dc;
+        %tmp.18 = getv function %tmp.17 :getHeight;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        lputv %height.2 %tmp.19;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 37 8 ]
+        %tmp.20 = lgetv %dc;
+        %tmp.21 = getv function %tmp.20 :setColor;
+        %tmp.22 = getm $.Toybox.Graphics;
+        %tmp.23 = getv %tmp.22 :COLOR_BLACK;
+        %tmp.24 = getm $.Toybox.Graphics;
+        %tmp.25 = getv %tmp.24 :COLOR_BLACK;
+        invoke %tmp.20 %tmp.21(%tmp.23, %tmp.25);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 38 8 ]
+        %tmp.26 = lgetv %dc;
+        %tmp.27 = getv function %tmp.26 :clear;
+        invoke %tmp.26 %tmp.27();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 41 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_stop" ]
+        %bitmap.3 = local;
+        %tmp.28 = getm $.Toybox.WatchUi;
+        %tmp.29 = getv function %tmp.28 :loadResource;
+        %tmp.31 = getv ? :Rez;
+        %tmp.32 = getv %tmp.31 :Drawables;
+        %tmp.33 = getv %tmp.32 :AS;
+        %tmp.34 = invoke %tmp.28 %tmp.29(%tmp.33);
+        lputv %bitmap.3 %tmp.34;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 42 8 ]
+        %tmp.35 = lgetv %dc;
+        %tmp.36 = getv function %tmp.35 :drawBitmap;
+        %tmp.37 = lgetv %dc;
+        %tmp.38 = getv function %tmp.37 :getWidth;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        %tmp.40 = 2;
+        %tmp.41 = div %tmp.39 %tmp.40;
+        %tmp.42 = lgetv %bitmap.3;
+        %tmp.43 = getv function %tmp.42 :getWidth;
+        %tmp.44 = invoke %tmp.42 %tmp.43();
+        %tmp.45 = 2;
+        %tmp.46 = div %tmp.44 %tmp.45;
+        %tmp.47 = sub %tmp.41 %tmp.46;
+        %tmp.48 = lgetv %dc;
+        %tmp.49 = getv function %tmp.48 :getHeight;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        %tmp.51 = 0.18;
+        %tmp.52 = mul %tmp.50 %tmp.51;
+        %tmp.53 = lgetv %bitmap.3;
+        %tmp.54 = getv function %tmp.53 :getHeight;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        %tmp.56 = 2;
+        %tmp.57 = div %tmp.55 %tmp.56;
+        %tmp.58 = sub %tmp.52 %tmp.57;
+        %tmp.60 = lgetv %bitmap.3;
+        invoke %tmp.35 %tmp.36(%tmp.47, %tmp.58, %tmp.60);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 45 8 ]
+        %tmp.61 = lgetv %dc;
+        %tmp.62 = getv function %tmp.61 :setColor;
+        %tmp.63 = getm $.Toybox.Graphics;
+        %tmp.64 = getv %tmp.63 :COLOR_WHITE;
+        %tmp.65 = getm $.Toybox.Graphics;
+        %tmp.66 = getv %tmp.65 :COLOR_TRANSPARENT;
+        invoke %tmp.61 %tmp.62(%tmp.64, %tmp.66);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 47 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_stop" ]
+        %text.4 = local;
+        %tmp.67 = getm $.Toybox.WatchUi;
+        %tmp.68 = getv function %tmp.67 :loadResource;
+        %tmp.70 = getv ? :Rez;
+        %tmp.71 = getv %tmp.70 :Strings;
+        %tmp.72 = getv %tmp.71 :AppName;
+        %tmp.73 = invoke %tmp.67 %tmp.68(%tmp.72);
+        %tmp.74 = "  ";
+        %tmp.75 = add %tmp.73 %tmp.74;
+        %tmp.76 = getm $.Toybox.WatchUi;
+        %tmp.77 = getv function %tmp.76 :loadResource;
+        %tmp.79 = getv ? :Rez;
+        %tmp.80 = getv %tmp.79 :Strings;
+        %tmp.81 = getv %tmp.80 :Version;
+        %tmp.82 = invoke %tmp.76 %tmp.77(%tmp.81);
+        %tmp.83 = add %tmp.75 %tmp.82;
+        lputv %text.4 %tmp.83;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 48 8 ]
+        %tmp.84 = lgetv %dc;
+        %tmp.85 = getv function %tmp.84 :drawText;
+        %tmp.87 = lgetv %width.1;
+        %tmp.88 = 2;
+        %tmp.89 = div %tmp.87 %tmp.88;
+        %tmp.91 = lgetv %height.2;
+        %tmp.92 = 0.38;
+        %tmp.93 = mul %tmp.91 %tmp.92;
+        %tmp.94 = getm $.Toybox.Graphics;
+        %tmp.95 = getv %tmp.94 :FONT_TINY;
+        %tmp.97 = lgetv %text.4;
+        %tmp.98 = getm $.Toybox.Graphics;
+        %tmp.99 = getv %tmp.98 :TEXT_JUSTIFY_CENTER;
+        %tmp.100 = getm $.Toybox.Graphics;
+        %tmp.101 = getv %tmp.100 :TEXT_JUSTIFY_VCENTER;
+        %tmp.102 = bitor %tmp.99 %tmp.101;
+        invoke %tmp.84 %tmp.85(%tmp.89, %tmp.93, %tmp.95, %tmp.97, %tmp.102);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 50 8 ]
+        %tmp.103 = "Built with ❤️ by\nLuca Boscolo Meneguolo";
+        lputv %text.4 %tmp.103;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc" 51 8 ]
+        %tmp.104 = lgetv %dc;
+        %tmp.105 = getv function %tmp.104 :drawText;
+        %tmp.107 = lgetv %width.1;
+        %tmp.108 = 2;
+        %tmp.109 = div %tmp.107 %tmp.108;
+        %tmp.111 = lgetv %height.2;
+        %tmp.112 = 0.75;
+        %tmp.113 = mul %tmp.111 %tmp.112;
+        %tmp.114 = getm $.Toybox.Graphics;
+        %tmp.115 = getv %tmp.114 :FONT_XTINY;
+        %tmp.117 = lgetv %text.4;
+        %tmp.118 = getm $.Toybox.Graphics;
+        %tmp.119 = getv %tmp.118 :TEXT_JUSTIFY_CENTER;
+        %tmp.120 = getm $.Toybox.Graphics;
+        %tmp.121 = getv %tmp.120 :TEXT_JUSTIFY_VCENTER;
+        %tmp.122 = bitor %tmp.119 %tmp.121;
+        invoke %tmp.104 %tmp.105(%tmp.109, %tmp.113, %tmp.115, %tmp.117, %tmp.122);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_AboutView_mc_26_33_53_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 58; ]
+    function onHide() as Void {
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/AboutView.mc"; @line = 1; ]
+<init> {
+}

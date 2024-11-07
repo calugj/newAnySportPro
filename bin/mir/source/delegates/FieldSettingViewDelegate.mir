@@ -1,0 +1,167 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 3; ]
+import Toybox.Attention;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 4; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 6; ]
+class FieldSettingViewDelegate extends WatchUi.BehaviorDelegate{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 8; @position = 16; ]
+    private
+    var view;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 9; @position = 16; ]
+    private
+    var pageNumber;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 10; @position = 16; ]
+    private
+    var position;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 12; ]
+    function initialize(param_view, param_pageNumber, param_position) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_12_70_18_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 13 8 ]
+        %tmp.2 = getv ? :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 15 8 ]
+        %tmp.5 = lgetv %param_view;
+        putv self :view %tmp.5;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 16 8 ]
+        %tmp.7 = lgetv %param_pageNumber;
+        putv self :pageNumber %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 17 8 ]
+        %tmp.9 = lgetv %param_position;
+        putv self :position %tmp.9;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_12_70_18_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 20; ]
+    function onMenu() as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_20_33_23_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 22 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_20_33_23_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 25; ]
+    function onSelect() {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_25_24_28_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 26 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :pushView;
+        %tmp.6 = getv ? :FieldSettingMenu;
+        %tmp.3 = newc %tmp.6 ();
+        %tmp.10 = getv ? :FieldSettingMenuDelegate;
+        %tmp.12 = getv ? :pageNumber;
+        %tmp.14 = getv ? :position;
+        %tmp.15 = 1;
+        %tmp.16 = add %tmp.14 %tmp.15;
+        %tmp.7 = newc %tmp.10 (%tmp.12, %tmp.16);
+        %tmp.17 = getm $.Toybox.WatchUi;
+        %tmp.18 = getv %tmp.17 :SLIDE_LEFT;
+        invoke %tmp.1 %tmp.2(%tmp.3, %tmp.7, %tmp.18);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 27 8 ]
+        %tmp.19 = true;
+        ret %tmp.19;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_25_24_28_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 30; ]
+    function onBack() {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_30_22_34_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 31 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :popView;
+        %tmp.3 = getm $.Toybox.WatchUi;
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 33 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_30_22_34_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 37; ]
+    function onNextPage() as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_37_37_46_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 38 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_8_42_8_if_stmt:
+        %tmp.2 = getv ? :position;
+        %tmp.4 = getv ? :Properties;
+        %tmp.5 = getv function %tmp.4 :getValue;
+        %tmp.6 = "FieldsPage";
+        %tmp.8 = getv ? :pageNumber;
+        %tmp.9 = getv function %tmp.8 :toString;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = add %tmp.6 %tmp.10;
+        %tmp.12 = invoke %tmp.4 %tmp.5(%tmp.11);
+        %tmp.13 = 1;
+        %tmp.14 = sub %tmp.12 %tmp.13;
+        %tmp.15 = lt %tmp.2 %tmp.14;
+        bf %tmp.15 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_8_42_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_8_42_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_85_42_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 39 12 ]
+        %tmp.16 = getv self :position;
+        %tmp.17 = 1;
+        %tmp.18 = add %tmp.16 %tmp.17;
+        putv self :position dup %tmp.18;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 40 12 ]
+        %tmp.20 = getv ? :view;
+        %tmp.21 = getv function %tmp.20 :setPosition;
+        %tmp.23 = getv ? :position;
+        invoke %tmp.20 %tmp.21(%tmp.23);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 41 12 ]
+        %tmp.24 = getm $.Toybox.WatchUi;
+        %tmp.25 = getv function %tmp.24 :requestUpdate;
+        invoke %tmp.24 %tmp.25();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_85_42_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_8_42_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_38_8_42_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 45 8 ]
+        %tmp.26 = true;
+        ret %tmp.26;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_37_37_46_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 48; ]
+    function onPreviousPage() as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_48_41_57_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 49 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_8_53_8_if_stmt:
+        %tmp.2 = getv ? :position;
+        %tmp.3 = 0;
+        %tmp.4 = gt %tmp.2 %tmp.3;
+        bf %tmp.4 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_8_53_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_8_53_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_25_53_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 50 12 ]
+        %tmp.5 = getv self :position;
+        %tmp.6 = 1;
+        %tmp.7 = sub %tmp.5 %tmp.6;
+        putv self :position dup %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 51 12 ]
+        %tmp.9 = getv ? :view;
+        %tmp.10 = getv function %tmp.9 :setPosition;
+        %tmp.12 = getv ? :position;
+        invoke %tmp.9 %tmp.10(%tmp.12);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 52 12 ]
+        %tmp.13 = getm $.Toybox.WatchUi;
+        %tmp.14 = getv function %tmp.13 :requestUpdate;
+        invoke %tmp.13 %tmp.14();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_25_53_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_8_53_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_49_8_53_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc" 56 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_delegates_FieldSettingViewDelegate_mc_48_41_57_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/delegates/FieldSettingViewDelegate.mc"; @line = 1; ]
+<init> {
+}

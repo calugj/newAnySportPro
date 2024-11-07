@@ -1,0 +1,860 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 4; ]
+import Toybox.System;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 7; ]
+class CustomNumberPicker extends WatchUi.View{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 9; @position = 16; ]
+    private
+    var number as Number;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 10; @position = 16; ]
+    private
+    var MIN_VAL as Number;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 11; @position = 16; ]
+    private
+    var MAX_VAL as Number;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 13; ]
+    public
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_13_33_19_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 14 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 16 8 ]
+        %tmp.4 = 0;
+        putv self :number %tmp.4;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 17 8 ]
+        %tmp.5 = 0;
+        putv self :MIN_VAL %tmp.5;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 18 8 ]
+        %tmp.6 = 0;
+        putv self :MAX_VAL %tmp.6;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_13_33_19_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 21; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 23 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 25 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop" ]
+        %foreground.1 = local;
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :COLOR_WHITE;
+        lputv %foreground.1 %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 26 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop" ]
+        %background.2 = local;
+        %tmp.8 = getm $.Toybox.Graphics;
+        %tmp.9 = getv %tmp.8 :COLOR_BLACK;
+        lputv %background.2 %tmp.9;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 27 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop" ]
+        %width.3 = local;
+        %tmp.10 = lgetv %dc;
+        %tmp.11 = getv function %tmp.10 :getWidth;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %width.3 %tmp.12;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 28 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop" ]
+        %height.4 = local;
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :getHeight;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        lputv %height.4 %tmp.15;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 29 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop" ]
+        %isTouchScreen.5 = local;
+        %tmp.16 = getm $.Toybox.System;
+        %tmp.17 = getv function %tmp.16 :getDeviceSettings;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = getv %tmp.18 :isTouchScreen;
+        lputv %isTouchScreen.5 %tmp.19;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 31 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_8_33_8_if_stmt:
+        %tmp.21 = lgetv %dc;
+        %tmp.23 = const :setAntiAlias;
+        %tmp.24 = canhazplz %tmp.21 %tmp.23;
+        bf %tmp.24 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_8_33_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_8_33_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_33_33_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 32 12 ]
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = as %tmp.25 { (interface { var setAntiAlias; }) };
+        %tmp.27 = getv function %tmp.26 :setAntiAlias;
+        %tmp.28 = true;
+        invoke %tmp.26 %tmp.27(%tmp.28);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_33_33_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_8_33_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_31_8_33_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 34 8 ]
+        %tmp.29 = lgetv %dc;
+        %tmp.30 = getv function %tmp.29 :setColor;
+        %tmp.32 = lgetv %foreground.1;
+        %tmp.34 = lgetv %background.2;
+        invoke %tmp.29 %tmp.30(%tmp.32, %tmp.34);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 35 8 ]
+        %tmp.35 = lgetv %dc;
+        %tmp.36 = getv function %tmp.35 :clear;
+        invoke %tmp.35 %tmp.36();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 36 8 ]
+        %tmp.37 = lgetv %dc;
+        %tmp.38 = getv function %tmp.37 :setColor;
+        %tmp.40 = lgetv %foreground.1;
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :COLOR_TRANSPARENT;
+        invoke %tmp.37 %tmp.38(%tmp.40, %tmp.42);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 37 8 ]
+        %tmp.43 = lgetv %dc;
+        %tmp.44 = getv function %tmp.43 :drawText;
+        %tmp.46 = lgetv %width.3;
+        %tmp.47 = 2;
+        %tmp.48 = div %tmp.46 %tmp.47;
+        %tmp.50 = lgetv %height.4;
+        %tmp.51 = 2;
+        %tmp.52 = div %tmp.50 %tmp.51;
+        %tmp.53 = getm $.Toybox.Graphics;
+        %tmp.54 = getv %tmp.53 :FONT_NUMBER_MEDIUM;
+        %tmp.56 = getv ? :number;
+        %tmp.57 = getm $.Toybox.Graphics;
+        %tmp.58 = getv %tmp.57 :TEXT_JUSTIFY_CENTER;
+        %tmp.59 = getm $.Toybox.Graphics;
+        %tmp.60 = getv %tmp.59 :TEXT_JUSTIFY_VCENTER;
+        %tmp.61 = bitor %tmp.58 %tmp.60;
+        invoke %tmp.43 %tmp.44(%tmp.48, %tmp.52, %tmp.54, %tmp.56, %tmp.61);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 41 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop" ]
+        %triangleOffset.6 = local;
+        %tmp.63 = lgetv %width.3;
+        %tmp.64 = 32f;
+        %tmp.65 = div %tmp.63 %tmp.64;
+        lputv %triangleOffset.6 %tmp.65;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 43 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_8_55_8_if_stmt:
+        %tmp.67 = getv ? :number;
+        %tmp.69 = getv ? :MIN_VAL;
+        %tmp.70 = gt %tmp.67 %tmp.69;
+        bf %tmp.70 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_8_55_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_8_55_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 44 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_stop" ]
+        %x.7 = local;
+        %tmp.71 = 0;
+        lputv %x.7 %tmp.71;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 45 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_stop" ]
+        %y.8 = local;
+        %tmp.72 = 0;
+        lputv %y.8 %tmp.72;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 46 12 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_12_52_12_if_stmt:
+        %tmp.74 = lgetv %isTouchScreen.5;
+        bf %tmp.74 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_12_52_12_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_12_52_12_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_30_49_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 47 16 ]
+        %tmp.76 = lgetv %width.3;
+        %tmp.77 = 2;
+        %tmp.78 = div %tmp.76 %tmp.77;
+        lputv %x.7 %tmp.78;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 48 16 ]
+        %tmp.80 = lgetv %height.4;
+        %tmp.81 = 4;
+        %tmp.82 = mul %tmp.80 %tmp.81;
+        %tmp.83 = 5;
+        %tmp.84 = div %tmp.82 %tmp.83;
+        lputv %y.8 %tmp.84;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_30_49_12_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_12_52_12_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_12_52_12_if_false:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_49_19_52_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 50 16 ]
+        %tmp.86 = lgetv %width.3;
+        %tmp.87 = 0.14;
+        %tmp.88 = mul %tmp.86 %tmp.87;
+        lputv %x.7 %tmp.88;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 51 16 ]
+        %tmp.90 = lgetv %height.4;
+        %tmp.91 = 0.72;
+        %tmp.92 = mul %tmp.90 %tmp.91;
+        lputv %y.8 %tmp.92;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_49_19_52_12_stop:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_46_12_52_12_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 53 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_stop" ]
+        %coordinates.9 = local;
+        %tmp.93 = newa 3;
+        %tmp.94 = newa 2;
+        %tmp.96 = lgetv %triangleOffset.6;
+        %tmp.97 = sub 0 %tmp.96;
+        %tmp.99 = lgetv %x.7;
+        %tmp.100 = add %tmp.97 %tmp.99;
+        %tmp.101 = dup %tmp.94;
+        %tmp.102 = aputv %tmp.101 0 %tmp.100;
+        %tmp.104 = lgetv %triangleOffset.6;
+        %tmp.105 = 2;
+        %tmp.106 = div %tmp.104 %tmp.105;
+        %tmp.107 = sub 0 %tmp.106;
+        %tmp.109 = lgetv %y.8;
+        %tmp.110 = add %tmp.107 %tmp.109;
+        %tmp.111 = dup %tmp.102;
+        %tmp.112 = aputv %tmp.111 1 %tmp.110;
+        %tmp.113 = dup %tmp.93;
+        %tmp.114 = aputv %tmp.113 0 %tmp.112;
+        %tmp.115 = newa 2;
+        %tmp.117 = lgetv %triangleOffset.6;
+        %tmp.119 = lgetv %x.7;
+        %tmp.120 = add %tmp.117 %tmp.119;
+        %tmp.121 = dup %tmp.115;
+        %tmp.122 = aputv %tmp.121 0 %tmp.120;
+        %tmp.124 = lgetv %triangleOffset.6;
+        %tmp.125 = 2;
+        %tmp.126 = div %tmp.124 %tmp.125;
+        %tmp.127 = sub 0 %tmp.126;
+        %tmp.129 = lgetv %y.8;
+        %tmp.130 = add %tmp.127 %tmp.129;
+        %tmp.131 = dup %tmp.122;
+        %tmp.132 = aputv %tmp.131 1 %tmp.130;
+        %tmp.133 = dup %tmp.114;
+        %tmp.134 = aputv %tmp.133 1 %tmp.132;
+        %tmp.135 = newa 2;
+        %tmp.136 = 0;
+        %tmp.138 = lgetv %x.7;
+        %tmp.139 = add %tmp.136 %tmp.138;
+        %tmp.140 = dup %tmp.135;
+        %tmp.141 = aputv %tmp.140 0 %tmp.139;
+        %tmp.143 = lgetv %triangleOffset.6;
+        %tmp.144 = 2;
+        %tmp.145 = div %tmp.143 %tmp.144;
+        %tmp.147 = lgetv %y.8;
+        %tmp.148 = add %tmp.145 %tmp.147;
+        %tmp.149 = dup %tmp.141;
+        %tmp.150 = aputv %tmp.149 1 %tmp.148;
+        %tmp.151 = dup %tmp.134;
+        %tmp.152 = aputv %tmp.151 2 %tmp.150;
+        lputv %coordinates.9 %tmp.152;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 54 12 ]
+        %tmp.153 = lgetv %dc;
+        %tmp.154 = getv function %tmp.153 :fillPolygon;
+        %tmp.156 = lgetv %coordinates.9;
+        invoke %tmp.153 %tmp.154(%tmp.156);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_29_55_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_8_55_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_43_8_55_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 56 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_8_68_8_if_stmt:
+        %tmp.158 = getv ? :number;
+        %tmp.160 = getv ? :MAX_VAL;
+        %tmp.161 = lt %tmp.158 %tmp.160;
+        bf %tmp.161 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_8_68_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_8_68_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 57 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_stop" ]
+        %x.10 = local;
+        %tmp.162 = 0;
+        lputv %x.10 %tmp.162;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 58 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_stop" ]
+        %y.11 = local;
+        %tmp.163 = 0;
+        lputv %y.11 %tmp.163;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 59 12 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_12_65_12_if_stmt:
+        %tmp.165 = lgetv %isTouchScreen.5;
+        bf %tmp.165 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_12_65_12_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_12_65_12_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_30_62_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 60 16 ]
+        %tmp.167 = lgetv %width.3;
+        %tmp.168 = 2;
+        %tmp.169 = div %tmp.167 %tmp.168;
+        lputv %x.10 %tmp.169;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 61 16 ]
+        %tmp.171 = lgetv %height.4;
+        %tmp.172 = 5;
+        %tmp.173 = div %tmp.171 %tmp.172;
+        lputv %y.11 %tmp.173;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_30_62_12_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_12_65_12_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_12_65_12_if_false:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_62_19_65_12_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 63 16 ]
+        %tmp.175 = lgetv %width.3;
+        %tmp.176 = 0.09;
+        %tmp.177 = mul %tmp.175 %tmp.176;
+        lputv %x.10 %tmp.177;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 64 16 ]
+        %tmp.179 = lgetv %height.4;
+        %tmp.180 = 0.5;
+        %tmp.181 = mul %tmp.179 %tmp.180;
+        lputv %y.11 %tmp.181;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_62_19_65_12_stop:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_59_12_65_12_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 66 12 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_stop" ]
+        %coordinates.12 = local;
+        %tmp.182 = newa 3;
+        %tmp.183 = newa 2;
+        %tmp.185 = lgetv %triangleOffset.6;
+        %tmp.186 = sub 0 %tmp.185;
+        %tmp.188 = lgetv %x.10;
+        %tmp.189 = add %tmp.186 %tmp.188;
+        %tmp.190 = dup %tmp.183;
+        %tmp.191 = aputv %tmp.190 0 %tmp.189;
+        %tmp.193 = lgetv %triangleOffset.6;
+        %tmp.194 = 2;
+        %tmp.195 = div %tmp.193 %tmp.194;
+        %tmp.197 = lgetv %y.11;
+        %tmp.198 = add %tmp.195 %tmp.197;
+        %tmp.199 = dup %tmp.191;
+        %tmp.200 = aputv %tmp.199 1 %tmp.198;
+        %tmp.201 = dup %tmp.182;
+        %tmp.202 = aputv %tmp.201 0 %tmp.200;
+        %tmp.203 = newa 2;
+        %tmp.205 = lgetv %triangleOffset.6;
+        %tmp.207 = lgetv %x.10;
+        %tmp.208 = add %tmp.205 %tmp.207;
+        %tmp.209 = dup %tmp.203;
+        %tmp.210 = aputv %tmp.209 0 %tmp.208;
+        %tmp.212 = lgetv %triangleOffset.6;
+        %tmp.213 = 2;
+        %tmp.214 = div %tmp.212 %tmp.213;
+        %tmp.216 = lgetv %y.11;
+        %tmp.217 = add %tmp.214 %tmp.216;
+        %tmp.218 = dup %tmp.210;
+        %tmp.219 = aputv %tmp.218 1 %tmp.217;
+        %tmp.220 = dup %tmp.202;
+        %tmp.221 = aputv %tmp.220 1 %tmp.219;
+        %tmp.222 = newa 2;
+        %tmp.223 = 0;
+        %tmp.225 = lgetv %x.10;
+        %tmp.226 = add %tmp.223 %tmp.225;
+        %tmp.227 = dup %tmp.222;
+        %tmp.228 = aputv %tmp.227 0 %tmp.226;
+        %tmp.230 = lgetv %triangleOffset.6;
+        %tmp.231 = 2;
+        %tmp.232 = div %tmp.230 %tmp.231;
+        %tmp.233 = sub 0 %tmp.232;
+        %tmp.235 = lgetv %y.11;
+        %tmp.236 = add %tmp.233 %tmp.235;
+        %tmp.237 = dup %tmp.228;
+        %tmp.238 = aputv %tmp.237 1 %tmp.236;
+        %tmp.239 = dup %tmp.221;
+        %tmp.240 = aputv %tmp.239 2 %tmp.238;
+        lputv %coordinates.12 %tmp.240;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 67 12 ]
+        %tmp.241 = lgetv %dc;
+        %tmp.242 = getv function %tmp.241 :fillPolygon;
+        %tmp.244 = lgetv %coordinates.12;
+        invoke %tmp.241 %tmp.242(%tmp.244);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_29_68_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_8_68_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_56_8_68_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 70 8 ]
+        %tmp.245 = lgetv %dc;
+        %tmp.246 = getv function %tmp.245 :setPenWidth;
+        %tmp.248 = lgetv %width.3;
+        %tmp.249 = 80;
+        %tmp.250 = div %tmp.248 %tmp.249;
+        invoke %tmp.245 %tmp.246(%tmp.250);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 71 8 ]
+        %tmp.251 = lgetv %dc;
+        %tmp.252 = getv function %tmp.251 :drawArc;
+        %tmp.254 = lgetv %width.3;
+        %tmp.255 = 2;
+        %tmp.256 = div %tmp.254 %tmp.255;
+        %tmp.258 = lgetv %height.4;
+        %tmp.259 = 2;
+        %tmp.260 = div %tmp.258 %tmp.259;
+        %tmp.262 = lgetv %height.4;
+        %tmp.263 = 2;
+        %tmp.264 = div %tmp.262 %tmp.263;
+        %tmp.265 = 0.95;
+        %tmp.266 = mul %tmp.264 %tmp.265;
+        %tmp.267 = getm $.Toybox.Graphics;
+        %tmp.268 = getv %tmp.267 :ARC_COUNTER_CLOCKWISE;
+        %tmp.269 = 23;
+        %tmp.270 = 38;
+        invoke %tmp.251 %tmp.252(%tmp.256, %tmp.260, %tmp.266, %tmp.268, %tmp.269, %tmp.270);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_21_47_73_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 77; ]
+    public
+    function setNumber(mNumber as Number) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_77_57_79_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 78 8 ]
+        %tmp.2 = lgetv %mNumber;
+        putv self :number %tmp.2;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_77_57_79_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 81; ]
+    public
+    function setExtremes(mMIN_VAL as Number, mMAX_VAL as Number) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_81_79_84_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 82 8 ]
+        %tmp.2 = lgetv %mMIN_VAL;
+        putv self :MIN_VAL %tmp.2;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 83 8 ]
+        %tmp.4 = lgetv %mMAX_VAL;
+        putv self :MAX_VAL %tmp.4;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_81_79_84_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 95; ]
+class CustomNumberPickerDelegate extends WatchUi.InputDelegate{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 95; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 95; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 97; ]
+    public
+    class RangeErrorException extends Lang.Exception{
+        [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 97; ]
+        <init> {
+        }
+        [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 97; ]
+        static
+        <init> {
+        }
+        [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 98; ]
+        public
+        function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_98_37_100_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 99 12 ]
+            %tmp.2 = getv ? :Exception;
+            %tmp.3 = getv function %tmp.2 :initialize;
+            invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_98_37_100_8_stop:
+        }
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 103; @position = 16; ]
+    private
+    var view;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 104; @position = 16; ]
+    private
+    var number as Number;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 105; @position = 16; ]
+    private
+    var MIN_VAL as Number;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 106; @position = 16; ]
+    private
+    var MAX_VAL as Number;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 108; ]
+    public
+    function initialize(mView, mInitialValue as Number, mMIN_VAL as Number, mMAX_VAL as Number) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_108_104_122_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 109 8 ]
+        %tmp.2 = getv ? :InputDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 111 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_stmt:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_11_111_78_begin:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_11_111_55_begin:
+        %tmp.5 = lgetv %mInitialValue;
+        %tmp.7 = lgetv %mMAX_VAL;
+        %tmp.8 = gt %tmp.5 %tmp.7;
+        bt %tmp.8 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_true;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_39_111_55_false:
+        %tmp.10 = lgetv %mInitialValue;
+        %tmp.12 = lgetv %mMIN_VAL;
+        %tmp.13 = lt %tmp.10 %tmp.12;
+        push %tmp.13;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_39_111_55_end:
+        %tmp.14 = phi [%tmp.8 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_11_111_55_begin] [%tmp.13 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_39_111_55_false] [%tmp.14 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_39_111_55_end];
+        bt %tmp.14 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_true;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_67_111_78_false:
+        %tmp.16 = lgetv %mMIN_VAL;
+        %tmp.18 = lgetv %mMAX_VAL;
+        %tmp.19 = gt %tmp.16 %tmp.18;
+        push %tmp.19;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_67_111_78_end:
+        %tmp.20 = phi [%tmp.14 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_11_111_78_begin] [%tmp.19 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_67_111_78_false] [%tmp.20 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_67_111_78_end];
+        bf %tmp.20 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_88_113_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 112 12 ]
+        %tmp.24 = getv ? :RangeErrorException;
+        %tmp.21 = newc %tmp.24 ();
+        throw %tmp.21;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_88_113_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_111_8_113_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 114 8 ]
+        %tmp.26 = lgetv %mView;
+        putv self :view %tmp.26;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 116 8 ]
+        %tmp.28 = lgetv %mInitialValue;
+        putv self :number %tmp.28;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 117 8 ]
+        %tmp.30 = lgetv %mMIN_VAL;
+        putv self :MIN_VAL %tmp.30;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 118 8 ]
+        %tmp.32 = lgetv %mMAX_VAL;
+        putv self :MAX_VAL %tmp.32;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 120 8 ]
+        %tmp.34 = getv ? :view;
+        %tmp.35 = getv function %tmp.34 :setNumber;
+        %tmp.37 = getv ? :number;
+        invoke %tmp.34 %tmp.35(%tmp.37);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 121 8 ]
+        %tmp.39 = getv ? :view;
+        %tmp.40 = getv function %tmp.39 :setExtremes;
+        %tmp.42 = getv ? :MIN_VAL;
+        %tmp.44 = getv ? :MAX_VAL;
+        invoke %tmp.39 %tmp.40(%tmp.42, %tmp.44);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_108_104_122_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 124; ]
+    public
+    function onKey(keyEvent) as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_124_47_140_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 125 8 ]
+        %tmp.1 = lgetv %keyEvent;
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        push %tmp.3;
+        switch %tmp.3 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtBegin:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 126 12 ]
+        %tmp.4 = dup %tmp.3;
+        %tmp.5 = getm $.Toybox.WatchUi;
+        %tmp.6 = getv %tmp.5 :KEY_DOWN;
+        %tmp.7 = getv function %tmp.4 :equals;
+        %tmp.8 = invoke %tmp.4 %tmp.7 (%tmp.6);
+        bt %tmp.8 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_126_12_128_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 129 12 ]
+        %tmp.9 = dup %tmp.3;
+        %tmp.10 = getm $.Toybox.WatchUi;
+        %tmp.11 = getv %tmp.10 :KEY_UP;
+        %tmp.12 = getv function %tmp.9 :equals;
+        %tmp.13 = invoke %tmp.9 %tmp.12 (%tmp.11);
+        bt %tmp.13 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_129_12_131_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 132 12 ]
+        %tmp.14 = dup %tmp.3;
+        %tmp.15 = getm $.Toybox.WatchUi;
+        %tmp.16 = getv %tmp.15 :KEY_ENTER;
+        %tmp.17 = getv function %tmp.14 :equals;
+        %tmp.18 = invoke %tmp.14 %tmp.17 (%tmp.16);
+        bt %tmp.18 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_132_12_134_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 135 12 ]
+        %tmp.19 = dup %tmp.3;
+        %tmp.20 = getm $.Toybox.WatchUi;
+        %tmp.21 = getv %tmp.20 :KEY_ESC;
+        %tmp.22 = getv function %tmp.19 :equals;
+        %tmp.23 = invoke %tmp.19 %tmp.22 (%tmp.21);
+        bt %tmp.23 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_135_12_137_21_switchCase;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtDefault:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_defaultCodeBegin;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_126_12_128_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 127 16 ]
+        %tmp.24 = self;
+        %tmp.25 = getv function %tmp.24 :onDown;
+        invoke %tmp.24 %tmp.25();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 128 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_129_12_131_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 130 16 ]
+        %tmp.26 = self;
+        %tmp.27 = getv function %tmp.26 :onUp;
+        invoke %tmp.26 %tmp.27();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 131 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_132_12_134_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 133 16 ]
+        %tmp.28 = self;
+        %tmp.29 = getv function %tmp.28 :onConfirm;
+        invoke %tmp.28 %tmp.29();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 134 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_135_12_137_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 136 16 ]
+        %tmp.30 = self;
+        %tmp.31 = getv function %tmp.30 :onBack;
+        invoke %tmp.30 %tmp.31();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 137 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_defaultCodeBegin:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_125_8_138_8_switchStmtEnd:
+        pop;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 139 8 ]
+        %tmp.32 = true;
+        ret %tmp.32;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_124_47_140_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 142; ]
+    public
+    function onTap(clickEvent) as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 143 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_stop" ]
+        %coordinates.1 = local;
+        %tmp.1 = lgetv %clickEvent;
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %coordinates.1 %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 144 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_stop" ]
+        %width.2 = local;
+        %tmp.4 = getm $.Toybox.System;
+        %tmp.5 = getv function %tmp.4 :getDeviceSettings;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = getv %tmp.6 :screenWidth;
+        lputv %width.2 %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 145 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_stop" ]
+        %height.3 = local;
+        %tmp.8 = getm $.Toybox.System;
+        %tmp.9 = getv function %tmp.8 :getDeviceSettings;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = getv %tmp.10 :screenHeight;
+        lputv %height.3 %tmp.11;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 146 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_stop" ]
+        %offset.4 = local;
+        %tmp.13 = lgetv %width.2;
+        %tmp.14 = 19;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        lputv %offset.4 %tmp.15;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 147 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_stmt:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_12_147_95_begin:
+        %tmp.17 = lgetv %coordinates.1;
+        %tmp.18 = 0;
+        %tmp.19 = agetv %tmp.17 %tmp.18;
+        %tmp.21 = lgetv %width.2;
+        %tmp.22 = 2;
+        %tmp.23 = div %tmp.21 %tmp.22;
+        %tmp.24 = sub %tmp.19 %tmp.23;
+        %tmp.25 = getv function %tmp.24 :abs;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        %tmp.28 = lgetv %offset.4;
+        %tmp.29 = lte %tmp.26 %tmp.28;
+        bf %tmp.29 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_58_147_95_true:
+        %tmp.31 = lgetv %coordinates.1;
+        %tmp.32 = 1;
+        %tmp.33 = agetv %tmp.31 %tmp.32;
+        %tmp.35 = lgetv %height.3;
+        %tmp.36 = 5;
+        %tmp.37 = div %tmp.35 %tmp.36;
+        %tmp.38 = sub %tmp.33 %tmp.37;
+        %tmp.39 = getv function %tmp.38 :abs;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        %tmp.42 = lgetv %offset.4;
+        %tmp.43 = lte %tmp.40 %tmp.42;
+        push %tmp.43;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_58_147_95_end:
+        %tmp.44 = phi [%tmp.29 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_12_147_95_begin] [%tmp.43 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_58_147_95_true] [%tmp.44 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_58_147_95_end];
+        bf %tmp.44 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_false;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_104_149_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 148 12 ]
+        %tmp.45 = self;
+        %tmp.46 = getv function %tmp.45 :onUp;
+        invoke %tmp.45 %tmp.46();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_104_149_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_false:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 149 15 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_15_151_8_if_stmt:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_19_149_104_begin:
+        %tmp.48 = lgetv %coordinates.1;
+        %tmp.49 = 0;
+        %tmp.50 = agetv %tmp.48 %tmp.49;
+        %tmp.52 = lgetv %width.2;
+        %tmp.53 = 2;
+        %tmp.54 = div %tmp.52 %tmp.53;
+        %tmp.55 = sub %tmp.50 %tmp.54;
+        %tmp.56 = getv function %tmp.55 :abs;
+        %tmp.57 = invoke %tmp.55 %tmp.56();
+        %tmp.59 = lgetv %offset.4;
+        %tmp.60 = lte %tmp.57 %tmp.59;
+        bf %tmp.60 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_15_151_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_65_149_104_true:
+        %tmp.62 = lgetv %coordinates.1;
+        %tmp.63 = 1;
+        %tmp.64 = agetv %tmp.62 %tmp.63;
+        %tmp.66 = lgetv %height.3;
+        %tmp.67 = 4;
+        %tmp.68 = mul %tmp.66 %tmp.67;
+        %tmp.69 = 5;
+        %tmp.70 = div %tmp.68 %tmp.69;
+        %tmp.71 = sub %tmp.64 %tmp.70;
+        %tmp.72 = getv function %tmp.71 :abs;
+        %tmp.73 = invoke %tmp.71 %tmp.72();
+        %tmp.75 = lgetv %offset.4;
+        %tmp.76 = lte %tmp.73 %tmp.75;
+        push %tmp.76;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_65_149_104_end:
+        %tmp.77 = phi [%tmp.60 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_19_149_104_begin] [%tmp.76 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_65_149_104_true] [%tmp.77 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_65_149_104_end];
+        bf %tmp.77 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_15_151_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_15_151_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_113_151_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 150 12 ]
+        %tmp.78 = self;
+        %tmp.79 = getv function %tmp.78 :onDown;
+        invoke %tmp.78 %tmp.79();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_113_151_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_15_151_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_149_15_151_8_if_end:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_147_8_151_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 152 8 ]
+        %tmp.80 = true;
+        ret %tmp.80;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_142_49_153_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 155; ]
+    public
+    function onSwipe(swipeEvent as WatchUi.SwipeEvent) as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_155_73_160_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 156 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_8_158_8_if_stmt:
+        %tmp.1 = lgetv %swipeEvent;
+        %tmp.2 = getv function %tmp.1 :getDirection;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = getm $.Toybox.WatchUi;
+        %tmp.5 = getv %tmp.4 :SWIPE_RIGHT;
+        %tmp.6 = eq %tmp.3 %tmp.5;
+        bf %tmp.6 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_8_158_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_8_158_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_61_158_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 157 12 ]
+        %tmp.7 = self;
+        %tmp.8 = getv function %tmp.7 :onBack;
+        invoke %tmp.7 %tmp.8();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_61_158_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_8_158_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_156_8_158_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 159 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_155_73_160_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 165; ]
+    public
+    function onDown() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_165_37_173_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 166 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_8_168_8_if_stmt:
+        %tmp.2 = getv ? :number;
+        %tmp.3 = 1;
+        %tmp.4 = sub %tmp.2 %tmp.3;
+        %tmp.6 = getv ? :MIN_VAL;
+        %tmp.7 = lt %tmp.4 %tmp.6;
+        bf %tmp.7 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_8_168_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_8_168_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_33_168_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 167 12 ]
+        ret ?;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_33_168_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_8_168_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_166_8_168_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 169 8 ]
+        %tmp.8 = getv self :number;
+        %tmp.9 = 1;
+        %tmp.10 = sub %tmp.8 %tmp.9;
+        putv self :number dup %tmp.10;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 170 8 ]
+        %tmp.12 = getv ? :view;
+        %tmp.13 = getv function %tmp.12 :setNumber;
+        %tmp.15 = getv ? :number;
+        invoke %tmp.12 %tmp.13(%tmp.15);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 171 8 ]
+        %tmp.16 = getm $.Toybox.WatchUi;
+        %tmp.17 = getv function %tmp.16 :requestUpdate;
+        invoke %tmp.16 %tmp.17();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 172 8 ]
+        ret ?;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_165_37_173_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 175; ]
+    public
+    function onUp() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_175_35_183_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 176 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_8_178_8_if_stmt:
+        %tmp.2 = getv ? :number;
+        %tmp.3 = 1;
+        %tmp.4 = add %tmp.2 %tmp.3;
+        %tmp.6 = getv ? :MAX_VAL;
+        %tmp.7 = gt %tmp.4 %tmp.6;
+        bf %tmp.7 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_8_178_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_8_178_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_33_178_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 177 12 ]
+        ret ?;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_33_178_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_8_178_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_176_8_178_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 179 8 ]
+        %tmp.8 = getv self :number;
+        %tmp.9 = 1;
+        %tmp.10 = add %tmp.8 %tmp.9;
+        putv self :number dup %tmp.10;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 180 8 ]
+        %tmp.12 = getv ? :view;
+        %tmp.13 = getv function %tmp.12 :setNumber;
+        %tmp.15 = getv ? :number;
+        invoke %tmp.12 %tmp.13(%tmp.15);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 181 8 ]
+        %tmp.16 = getm $.Toybox.WatchUi;
+        %tmp.17 = getv function %tmp.16 :requestUpdate;
+        invoke %tmp.16 %tmp.17();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 182 8 ]
+        ret ?;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_175_35_183_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 189; ]
+    public
+    function getValue() as Number {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_189_41_191_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 190 8 ]
+        %tmp.2 = getv ? :number;
+        ret %tmp.2;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_189_41_191_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 194; ]
+    protected
+    function onConfirm() as Void {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 199; ]
+    protected
+    function onBack() as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_199_43_202_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 200 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :popView;
+        %tmp.3 = getm $.Toybox.WatchUi;
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc" 201 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_libs_CustomNumberPicker_mc_199_43_202_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/libs/CustomNumberPicker.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,627 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 1; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 2; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 4; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 6; ]
+class AccentColorMenu extends CustomMenu{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 6; ]
+    <init> {
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 9 18 ]
+        %tmp.1 = getm $.Toybox.Graphics;
+        %tmp.2 = getv %tmp.1 :COLOR_WHITE;
+        putv self :BACKGROUND_COLOR %tmp.2;
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 8; @position = 16; ]
+    private
+    var ITEM_HEIGHT = 70;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 9; @position = 18; ]
+    private
+    const BACKGROUND_COLOR;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 11; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_11_26_42_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 12 8 ]
+        %tmp.2 = getv ? :System;
+        %tmp.3 = getv function %tmp.2 :getDeviceSettings;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = getv %tmp.4 :screenHeight;
+        %tmp.6 = 0.25;
+        %tmp.7 = mul %tmp.5 %tmp.6;
+        putv self :ITEM_HEIGHT %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 13 8 ]
+        %tmp.9 = getv ? :CustomMenu;
+        %tmp.10 = getv function %tmp.9 :initialize;
+        %tmp.12 = getv ? :ITEM_HEIGHT;
+        %tmp.13 = getv function %tmp.12 :toNumber;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.16 = getv ? :BACKGROUND_COLOR;
+        %tmp.17 = newd 0;
+        invoke %tmp.9 %tmp.10(%tmp.14, %tmp.16, %tmp.17);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 15 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_8_17_8_if_stmt:
+        %tmp.19 = getv ? :CustomMenu;
+        %tmp.21 = const :setDividerType;
+        %tmp.22 = canhazplz %tmp.19 %tmp.21;
+        bf %tmp.22 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_8_17_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_8_17_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_43_17_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 16 12 ]
+        %tmp.23 = self;
+        %tmp.24 = getv function %tmp.23 :setDividerType;
+        %tmp.25 = null;
+        invoke %tmp.23 %tmp.24(%tmp.25);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_43_17_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_8_17_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_15_8_17_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 21 8 ]
+        %tmp.26 = self;
+        %tmp.27 = getv function %tmp.26 :addItem;
+        %tmp.31 = getv ? :CustomColorMenuItem;
+        %tmp.32 = getm $.Toybox.Graphics;
+        %tmp.33 = getv %tmp.32 :COLOR_WHITE;
+        %tmp.34 = getm $.Toybox.WatchUi;
+        %tmp.35 = getv function %tmp.34 :loadResource;
+        %tmp.37 = getv ? :Rez;
+        %tmp.38 = getv %tmp.37 :Strings;
+        %tmp.39 = getv %tmp.38 :COLOR_WHITE;
+        %tmp.40 = invoke %tmp.34 %tmp.35(%tmp.39);
+        %tmp.41 = "HEX ";
+        %tmp.42 = getm $.Toybox.Graphics;
+        %tmp.43 = getv %tmp.42 :COLOR_WHITE;
+        %tmp.44 = getv function %tmp.43 :format;
+        %tmp.45 = "%06X";
+        %tmp.46 = invoke %tmp.43 %tmp.44(%tmp.45);
+        %tmp.47 = add %tmp.41 %tmp.46;
+        %tmp.48 = getm $.Toybox.Graphics;
+        %tmp.49 = getv %tmp.48 :COLOR_WHITE;
+        %tmp.28 = newc %tmp.31 (%tmp.33, %tmp.40, %tmp.47, %tmp.49);
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 22 8 ]
+        %tmp.50 = self;
+        %tmp.51 = getv function %tmp.50 :addItem;
+        %tmp.55 = getv ? :CustomColorMenuItem;
+        %tmp.56 = getm $.Toybox.Graphics;
+        %tmp.57 = getv %tmp.56 :COLOR_LT_GRAY;
+        %tmp.58 = getm $.Toybox.WatchUi;
+        %tmp.59 = getv function %tmp.58 :loadResource;
+        %tmp.61 = getv ? :Rez;
+        %tmp.62 = getv %tmp.61 :Strings;
+        %tmp.63 = getv %tmp.62 :COLOR_LT_GRAY;
+        %tmp.64 = invoke %tmp.58 %tmp.59(%tmp.63);
+        %tmp.65 = "HEX ";
+        %tmp.66 = getm $.Toybox.Graphics;
+        %tmp.67 = getv %tmp.66 :COLOR_LT_GRAY;
+        %tmp.68 = getv function %tmp.67 :format;
+        %tmp.69 = "%06X";
+        %tmp.70 = invoke %tmp.67 %tmp.68(%tmp.69);
+        %tmp.71 = add %tmp.65 %tmp.70;
+        %tmp.72 = getm $.Toybox.Graphics;
+        %tmp.73 = getv %tmp.72 :COLOR_LT_GRAY;
+        %tmp.52 = newc %tmp.55 (%tmp.57, %tmp.64, %tmp.71, %tmp.73);
+        invoke %tmp.50 %tmp.51(%tmp.52);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 23 8 ]
+        %tmp.74 = self;
+        %tmp.75 = getv function %tmp.74 :addItem;
+        %tmp.79 = getv ? :CustomColorMenuItem;
+        %tmp.80 = getm $.Toybox.Graphics;
+        %tmp.81 = getv %tmp.80 :COLOR_DK_GRAY;
+        %tmp.82 = getm $.Toybox.WatchUi;
+        %tmp.83 = getv function %tmp.82 :loadResource;
+        %tmp.85 = getv ? :Rez;
+        %tmp.86 = getv %tmp.85 :Strings;
+        %tmp.87 = getv %tmp.86 :COLOR_DK_GRAY;
+        %tmp.88 = invoke %tmp.82 %tmp.83(%tmp.87);
+        %tmp.89 = "HEX ";
+        %tmp.90 = getm $.Toybox.Graphics;
+        %tmp.91 = getv %tmp.90 :COLOR_DK_GRAY;
+        %tmp.92 = getv function %tmp.91 :format;
+        %tmp.93 = "%06X";
+        %tmp.94 = invoke %tmp.91 %tmp.92(%tmp.93);
+        %tmp.95 = add %tmp.89 %tmp.94;
+        %tmp.96 = getm $.Toybox.Graphics;
+        %tmp.97 = getv %tmp.96 :COLOR_DK_GRAY;
+        %tmp.76 = newc %tmp.79 (%tmp.81, %tmp.88, %tmp.95, %tmp.97);
+        invoke %tmp.74 %tmp.75(%tmp.76);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 24 8 ]
+        %tmp.98 = self;
+        %tmp.99 = getv function %tmp.98 :addItem;
+        %tmp.103 = getv ? :CustomColorMenuItem;
+        %tmp.104 = getm $.Toybox.Graphics;
+        %tmp.105 = getv %tmp.104 :COLOR_BLACK;
+        %tmp.106 = getm $.Toybox.WatchUi;
+        %tmp.107 = getv function %tmp.106 :loadResource;
+        %tmp.109 = getv ? :Rez;
+        %tmp.110 = getv %tmp.109 :Strings;
+        %tmp.111 = getv %tmp.110 :COLOR_BLACK;
+        %tmp.112 = invoke %tmp.106 %tmp.107(%tmp.111);
+        %tmp.113 = "HEX ";
+        %tmp.114 = getm $.Toybox.Graphics;
+        %tmp.115 = getv %tmp.114 :COLOR_BLACK;
+        %tmp.116 = getv function %tmp.115 :format;
+        %tmp.117 = "%06X";
+        %tmp.118 = invoke %tmp.115 %tmp.116(%tmp.117);
+        %tmp.119 = add %tmp.113 %tmp.118;
+        %tmp.120 = getm $.Toybox.Graphics;
+        %tmp.121 = getv %tmp.120 :COLOR_BLACK;
+        %tmp.100 = newc %tmp.103 (%tmp.105, %tmp.112, %tmp.119, %tmp.121);
+        invoke %tmp.98 %tmp.99(%tmp.100);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 25 8 ]
+        %tmp.122 = self;
+        %tmp.123 = getv function %tmp.122 :addItem;
+        %tmp.127 = getv ? :CustomColorMenuItem;
+        %tmp.128 = getm $.Toybox.Graphics;
+        %tmp.129 = getv %tmp.128 :COLOR_RED;
+        %tmp.130 = getm $.Toybox.WatchUi;
+        %tmp.131 = getv function %tmp.130 :loadResource;
+        %tmp.133 = getv ? :Rez;
+        %tmp.134 = getv %tmp.133 :Strings;
+        %tmp.135 = getv %tmp.134 :COLOR_RED;
+        %tmp.136 = invoke %tmp.130 %tmp.131(%tmp.135);
+        %tmp.137 = "HEX ";
+        %tmp.138 = getm $.Toybox.Graphics;
+        %tmp.139 = getv %tmp.138 :COLOR_RED;
+        %tmp.140 = getv function %tmp.139 :format;
+        %tmp.141 = "%06X";
+        %tmp.142 = invoke %tmp.139 %tmp.140(%tmp.141);
+        %tmp.143 = add %tmp.137 %tmp.142;
+        %tmp.144 = getm $.Toybox.Graphics;
+        %tmp.145 = getv %tmp.144 :COLOR_RED;
+        %tmp.124 = newc %tmp.127 (%tmp.129, %tmp.136, %tmp.143, %tmp.145);
+        invoke %tmp.122 %tmp.123(%tmp.124);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 26 8 ]
+        %tmp.146 = self;
+        %tmp.147 = getv function %tmp.146 :addItem;
+        %tmp.151 = getv ? :CustomColorMenuItem;
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :COLOR_DK_RED;
+        %tmp.154 = getm $.Toybox.WatchUi;
+        %tmp.155 = getv function %tmp.154 :loadResource;
+        %tmp.157 = getv ? :Rez;
+        %tmp.158 = getv %tmp.157 :Strings;
+        %tmp.159 = getv %tmp.158 :COLOR_DK_RED;
+        %tmp.160 = invoke %tmp.154 %tmp.155(%tmp.159);
+        %tmp.161 = "HEX ";
+        %tmp.162 = getm $.Toybox.Graphics;
+        %tmp.163 = getv %tmp.162 :COLOR_DK_RED;
+        %tmp.164 = getv function %tmp.163 :format;
+        %tmp.165 = "%06X";
+        %tmp.166 = invoke %tmp.163 %tmp.164(%tmp.165);
+        %tmp.167 = add %tmp.161 %tmp.166;
+        %tmp.168 = getm $.Toybox.Graphics;
+        %tmp.169 = getv %tmp.168 :COLOR_DK_RED;
+        %tmp.148 = newc %tmp.151 (%tmp.153, %tmp.160, %tmp.167, %tmp.169);
+        invoke %tmp.146 %tmp.147(%tmp.148);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 27 8 ]
+        %tmp.170 = self;
+        %tmp.171 = getv function %tmp.170 :addItem;
+        %tmp.175 = getv ? :CustomColorMenuItem;
+        %tmp.176 = getm $.Toybox.Graphics;
+        %tmp.177 = getv %tmp.176 :COLOR_ORANGE;
+        %tmp.178 = getm $.Toybox.WatchUi;
+        %tmp.179 = getv function %tmp.178 :loadResource;
+        %tmp.181 = getv ? :Rez;
+        %tmp.182 = getv %tmp.181 :Strings;
+        %tmp.183 = getv %tmp.182 :COLOR_ORANGE;
+        %tmp.184 = invoke %tmp.178 %tmp.179(%tmp.183);
+        %tmp.185 = "HEX ";
+        %tmp.186 = getm $.Toybox.Graphics;
+        %tmp.187 = getv %tmp.186 :COLOR_ORANGE;
+        %tmp.188 = getv function %tmp.187 :format;
+        %tmp.189 = "%06X";
+        %tmp.190 = invoke %tmp.187 %tmp.188(%tmp.189);
+        %tmp.191 = add %tmp.185 %tmp.190;
+        %tmp.192 = getm $.Toybox.Graphics;
+        %tmp.193 = getv %tmp.192 :COLOR_ORANGE;
+        %tmp.172 = newc %tmp.175 (%tmp.177, %tmp.184, %tmp.191, %tmp.193);
+        invoke %tmp.170 %tmp.171(%tmp.172);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 28 8 ]
+        %tmp.194 = self;
+        %tmp.195 = getv function %tmp.194 :addItem;
+        %tmp.199 = getv ? :CustomColorMenuItem;
+        %tmp.200 = getm $.Toybox.Graphics;
+        %tmp.201 = getv %tmp.200 :COLOR_YELLOW;
+        %tmp.202 = getm $.Toybox.WatchUi;
+        %tmp.203 = getv function %tmp.202 :loadResource;
+        %tmp.205 = getv ? :Rez;
+        %tmp.206 = getv %tmp.205 :Strings;
+        %tmp.207 = getv %tmp.206 :COLOR_YELLOW;
+        %tmp.208 = invoke %tmp.202 %tmp.203(%tmp.207);
+        %tmp.209 = "HEX ";
+        %tmp.210 = getm $.Toybox.Graphics;
+        %tmp.211 = getv %tmp.210 :COLOR_YELLOW;
+        %tmp.212 = getv function %tmp.211 :format;
+        %tmp.213 = "%06X";
+        %tmp.214 = invoke %tmp.211 %tmp.212(%tmp.213);
+        %tmp.215 = add %tmp.209 %tmp.214;
+        %tmp.216 = getm $.Toybox.Graphics;
+        %tmp.217 = getv %tmp.216 :COLOR_YELLOW;
+        %tmp.196 = newc %tmp.199 (%tmp.201, %tmp.208, %tmp.215, %tmp.217);
+        invoke %tmp.194 %tmp.195(%tmp.196);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 29 8 ]
+        %tmp.218 = self;
+        %tmp.219 = getv function %tmp.218 :addItem;
+        %tmp.223 = getv ? :CustomColorMenuItem;
+        %tmp.224 = getm $.Toybox.Graphics;
+        %tmp.225 = getv %tmp.224 :COLOR_GREEN;
+        %tmp.226 = getm $.Toybox.WatchUi;
+        %tmp.227 = getv function %tmp.226 :loadResource;
+        %tmp.229 = getv ? :Rez;
+        %tmp.230 = getv %tmp.229 :Strings;
+        %tmp.231 = getv %tmp.230 :COLOR_GREEN;
+        %tmp.232 = invoke %tmp.226 %tmp.227(%tmp.231);
+        %tmp.233 = "HEX ";
+        %tmp.234 = getm $.Toybox.Graphics;
+        %tmp.235 = getv %tmp.234 :COLOR_GREEN;
+        %tmp.236 = getv function %tmp.235 :format;
+        %tmp.237 = "%06X";
+        %tmp.238 = invoke %tmp.235 %tmp.236(%tmp.237);
+        %tmp.239 = add %tmp.233 %tmp.238;
+        %tmp.240 = getm $.Toybox.Graphics;
+        %tmp.241 = getv %tmp.240 :COLOR_GREEN;
+        %tmp.220 = newc %tmp.223 (%tmp.225, %tmp.232, %tmp.239, %tmp.241);
+        invoke %tmp.218 %tmp.219(%tmp.220);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 30 8 ]
+        %tmp.242 = self;
+        %tmp.243 = getv function %tmp.242 :addItem;
+        %tmp.247 = getv ? :CustomColorMenuItem;
+        %tmp.248 = getm $.Toybox.Graphics;
+        %tmp.249 = getv %tmp.248 :COLOR_DK_GREEN;
+        %tmp.250 = getm $.Toybox.WatchUi;
+        %tmp.251 = getv function %tmp.250 :loadResource;
+        %tmp.253 = getv ? :Rez;
+        %tmp.254 = getv %tmp.253 :Strings;
+        %tmp.255 = getv %tmp.254 :COLOR_DK_GREEN;
+        %tmp.256 = invoke %tmp.250 %tmp.251(%tmp.255);
+        %tmp.257 = "HEX ";
+        %tmp.258 = getm $.Toybox.Graphics;
+        %tmp.259 = getv %tmp.258 :COLOR_DK_GREEN;
+        %tmp.260 = getv function %tmp.259 :format;
+        %tmp.261 = "%06X";
+        %tmp.262 = invoke %tmp.259 %tmp.260(%tmp.261);
+        %tmp.263 = add %tmp.257 %tmp.262;
+        %tmp.264 = getm $.Toybox.Graphics;
+        %tmp.265 = getv %tmp.264 :COLOR_DK_GREEN;
+        %tmp.244 = newc %tmp.247 (%tmp.249, %tmp.256, %tmp.263, %tmp.265);
+        invoke %tmp.242 %tmp.243(%tmp.244);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 31 8 ]
+        %tmp.266 = self;
+        %tmp.267 = getv function %tmp.266 :addItem;
+        %tmp.271 = getv ? :CustomColorMenuItem;
+        %tmp.272 = getm $.Toybox.Graphics;
+        %tmp.273 = getv %tmp.272 :COLOR_BLUE;
+        %tmp.274 = getm $.Toybox.WatchUi;
+        %tmp.275 = getv function %tmp.274 :loadResource;
+        %tmp.277 = getv ? :Rez;
+        %tmp.278 = getv %tmp.277 :Strings;
+        %tmp.279 = getv %tmp.278 :COLOR_BLUE;
+        %tmp.280 = invoke %tmp.274 %tmp.275(%tmp.279);
+        %tmp.281 = "HEX ";
+        %tmp.282 = getm $.Toybox.Graphics;
+        %tmp.283 = getv %tmp.282 :COLOR_BLUE;
+        %tmp.284 = getv function %tmp.283 :format;
+        %tmp.285 = "%06X";
+        %tmp.286 = invoke %tmp.283 %tmp.284(%tmp.285);
+        %tmp.287 = add %tmp.281 %tmp.286;
+        %tmp.288 = getm $.Toybox.Graphics;
+        %tmp.289 = getv %tmp.288 :COLOR_BLUE;
+        %tmp.268 = newc %tmp.271 (%tmp.273, %tmp.280, %tmp.287, %tmp.289);
+        invoke %tmp.266 %tmp.267(%tmp.268);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 32 8 ]
+        %tmp.290 = self;
+        %tmp.291 = getv function %tmp.290 :addItem;
+        %tmp.295 = getv ? :CustomColorMenuItem;
+        %tmp.296 = getm $.Toybox.Graphics;
+        %tmp.297 = getv %tmp.296 :COLOR_DK_BLUE;
+        %tmp.298 = getm $.Toybox.WatchUi;
+        %tmp.299 = getv function %tmp.298 :loadResource;
+        %tmp.301 = getv ? :Rez;
+        %tmp.302 = getv %tmp.301 :Strings;
+        %tmp.303 = getv %tmp.302 :COLOR_DK_BLUE;
+        %tmp.304 = invoke %tmp.298 %tmp.299(%tmp.303);
+        %tmp.305 = "HEX ";
+        %tmp.306 = getm $.Toybox.Graphics;
+        %tmp.307 = getv %tmp.306 :COLOR_DK_BLUE;
+        %tmp.308 = getv function %tmp.307 :format;
+        %tmp.309 = "%06X";
+        %tmp.310 = invoke %tmp.307 %tmp.308(%tmp.309);
+        %tmp.311 = add %tmp.305 %tmp.310;
+        %tmp.312 = getm $.Toybox.Graphics;
+        %tmp.313 = getv %tmp.312 :COLOR_DK_BLUE;
+        %tmp.292 = newc %tmp.295 (%tmp.297, %tmp.304, %tmp.311, %tmp.313);
+        invoke %tmp.290 %tmp.291(%tmp.292);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 33 8 ]
+        %tmp.314 = self;
+        %tmp.315 = getv function %tmp.314 :addItem;
+        %tmp.319 = getv ? :CustomColorMenuItem;
+        %tmp.320 = getm $.Toybox.Graphics;
+        %tmp.321 = getv %tmp.320 :COLOR_PURPLE;
+        %tmp.322 = getm $.Toybox.WatchUi;
+        %tmp.323 = getv function %tmp.322 :loadResource;
+        %tmp.325 = getv ? :Rez;
+        %tmp.326 = getv %tmp.325 :Strings;
+        %tmp.327 = getv %tmp.326 :COLOR_PURPLE;
+        %tmp.328 = invoke %tmp.322 %tmp.323(%tmp.327);
+        %tmp.329 = "HEX ";
+        %tmp.330 = getm $.Toybox.Graphics;
+        %tmp.331 = getv %tmp.330 :COLOR_PURPLE;
+        %tmp.332 = getv function %tmp.331 :format;
+        %tmp.333 = "%06X";
+        %tmp.334 = invoke %tmp.331 %tmp.332(%tmp.333);
+        %tmp.335 = add %tmp.329 %tmp.334;
+        %tmp.336 = getm $.Toybox.Graphics;
+        %tmp.337 = getv %tmp.336 :COLOR_PURPLE;
+        %tmp.316 = newc %tmp.319 (%tmp.321, %tmp.328, %tmp.335, %tmp.337);
+        invoke %tmp.314 %tmp.315(%tmp.316);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 34 8 ]
+        %tmp.338 = self;
+        %tmp.339 = getv function %tmp.338 :addItem;
+        %tmp.343 = getv ? :CustomColorMenuItem;
+        %tmp.344 = getm $.Toybox.Graphics;
+        %tmp.345 = getv %tmp.344 :COLOR_PINK;
+        %tmp.346 = getm $.Toybox.WatchUi;
+        %tmp.347 = getv function %tmp.346 :loadResource;
+        %tmp.349 = getv ? :Rez;
+        %tmp.350 = getv %tmp.349 :Strings;
+        %tmp.351 = getv %tmp.350 :COLOR_PINK;
+        %tmp.352 = invoke %tmp.346 %tmp.347(%tmp.351);
+        %tmp.353 = "HEX ";
+        %tmp.354 = getm $.Toybox.Graphics;
+        %tmp.355 = getv %tmp.354 :COLOR_PINK;
+        %tmp.356 = getv function %tmp.355 :format;
+        %tmp.357 = "%06X";
+        %tmp.358 = invoke %tmp.355 %tmp.356(%tmp.357);
+        %tmp.359 = add %tmp.353 %tmp.358;
+        %tmp.360 = getm $.Toybox.Graphics;
+        %tmp.361 = getv %tmp.360 :COLOR_PINK;
+        %tmp.340 = newc %tmp.343 (%tmp.345, %tmp.352, %tmp.359, %tmp.361);
+        invoke %tmp.338 %tmp.339(%tmp.340);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 35 8 ]
+        %tmp.362 = self;
+        %tmp.363 = getv function %tmp.362 :addItem;
+        %tmp.367 = getv ? :CustomColorMenuItem;
+        %tmp.368 = getm $.Toybox.Graphics;
+        %tmp.369 = getv %tmp.368 :COLOR_TRANSPARENT;
+        %tmp.370 = getm $.Toybox.WatchUi;
+        %tmp.371 = getv function %tmp.370 :loadResource;
+        %tmp.373 = getv ? :Rez;
+        %tmp.374 = getv %tmp.373 :Strings;
+        %tmp.375 = getv %tmp.374 :COLOR_TRANSPARENT;
+        %tmp.376 = invoke %tmp.370 %tmp.371(%tmp.375);
+        %tmp.377 = "HEX ";
+        %tmp.378 = getm $.Toybox.Graphics;
+        %tmp.379 = getv %tmp.378 :COLOR_TRANSPARENT;
+        %tmp.380 = getv function %tmp.379 :format;
+        %tmp.381 = "%06X";
+        %tmp.382 = invoke %tmp.379 %tmp.380(%tmp.381);
+        %tmp.383 = add %tmp.377 %tmp.382;
+        %tmp.384 = getm $.Toybox.Graphics;
+        %tmp.385 = getv %tmp.384 :COLOR_TRANSPARENT;
+        %tmp.364 = newc %tmp.367 (%tmp.369, %tmp.376, %tmp.383, %tmp.385);
+        invoke %tmp.362 %tmp.363(%tmp.364);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 40 8 ]
+        %tmp.386 = self;
+        %tmp.387 = getv function %tmp.386 :setFocus;
+        %tmp.388 = self;
+        %tmp.389 = getv function %tmp.388 :findItemById;
+        %tmp.391 = getv ? :Properties;
+        %tmp.392 = getv function %tmp.391 :getValue;
+        %tmp.393 = "AccentColor";
+        %tmp.394 = invoke %tmp.391 %tmp.392(%tmp.393);
+        %tmp.395 = invoke %tmp.388 %tmp.389(%tmp.394);
+        invoke %tmp.386 %tmp.387(%tmp.395);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_11_26_42_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 44; ]
+    function drawTitle(dc as Dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_44_33_51_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 45 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setAntiAlias;
+        %tmp.3 = true;
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 47 8 ]
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :setColor;
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :COLOR_BLACK;
+        %tmp.8 = getm $.Toybox.Graphics;
+        %tmp.9 = getv %tmp.8 :COLOR_BLACK;
+        invoke %tmp.4 %tmp.5(%tmp.7, %tmp.9);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 48 8 ]
+        %tmp.10 = lgetv %dc;
+        %tmp.11 = getv function %tmp.10 :clear;
+        invoke %tmp.10 %tmp.11();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 49 8 ]
+        %tmp.12 = lgetv %dc;
+        %tmp.13 = getv function %tmp.12 :setColor;
+        %tmp.14 = getm $.Toybox.Graphics;
+        %tmp.15 = getv %tmp.14 :COLOR_WHITE;
+        %tmp.16 = getm $.Toybox.Graphics;
+        %tmp.17 = getv %tmp.16 :COLOR_TRANSPARENT;
+        invoke %tmp.12 %tmp.13(%tmp.15, %tmp.17);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 50 8 ]
+        %tmp.18 = lgetv %dc;
+        %tmp.19 = getv function %tmp.18 :drawText;
+        %tmp.20 = lgetv %dc;
+        %tmp.21 = getv function %tmp.20 :getWidth;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = getv function %tmp.25 :getHeight;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = 0.7;
+        %tmp.29 = mul %tmp.27 %tmp.28;
+        %tmp.30 = getm $.Toybox.Graphics;
+        %tmp.31 = getv %tmp.30 :FONT_SMALL;
+        %tmp.32 = getm $.Toybox.WatchUi;
+        %tmp.33 = getv function %tmp.32 :loadResource;
+        %tmp.35 = getv ? :Rez;
+        %tmp.36 = getv %tmp.35 :Strings;
+        %tmp.37 = getv %tmp.36 :AccentColor;
+        %tmp.38 = invoke %tmp.32 %tmp.33(%tmp.37);
+        %tmp.39 = getm $.Toybox.Graphics;
+        %tmp.40 = getv %tmp.39 :TEXT_JUSTIFY_CENTER;
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :TEXT_JUSTIFY_VCENTER;
+        %tmp.43 = bitor %tmp.40 %tmp.42;
+        invoke %tmp.18 %tmp.19(%tmp.24, %tmp.29, %tmp.31, %tmp.38, %tmp.43);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_44_33_51_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 53; ]
+    function drawForeground(dc as Dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_53_38_60_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 54 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_53_38_60_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_53_38_60_4_stop" ]
+        %width.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 55 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_53_38_60_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_53_38_60_4_stop" ]
+        %height.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 56 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.9 = getm $.Toybox.Graphics;
+        %tmp.10 = getv %tmp.9 :COLOR_BLACK;
+        %tmp.11 = getm $.Toybox.Graphics;
+        %tmp.12 = getv %tmp.11 :COLOR_TRANSPARENT;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 57 8 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :setPenWidth;
+        %tmp.16 = lgetv %width.1;
+        %tmp.17 = 0.015;
+        %tmp.18 = mul %tmp.16 %tmp.17;
+        invoke %tmp.13 %tmp.14(%tmp.18);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 58 8 ]
+        %tmp.19 = lgetv %dc;
+        %tmp.20 = getv function %tmp.19 :drawLine;
+        %tmp.22 = lgetv %width.1;
+        %tmp.23 = 0.05;
+        %tmp.24 = mul %tmp.22 %tmp.23;
+        %tmp.26 = lgetv %height.2;
+        %tmp.27 = 2;
+        %tmp.28 = div %tmp.26 %tmp.27;
+        %tmp.30 = getv ? :ITEM_HEIGHT;
+        %tmp.31 = 0.35;
+        %tmp.32 = mul %tmp.30 %tmp.31;
+        %tmp.33 = sub %tmp.28 %tmp.32;
+        %tmp.35 = lgetv %width.1;
+        %tmp.36 = 0.05;
+        %tmp.37 = mul %tmp.35 %tmp.36;
+        %tmp.39 = lgetv %height.2;
+        %tmp.40 = 2;
+        %tmp.41 = div %tmp.39 %tmp.40;
+        %tmp.43 = getv ? :ITEM_HEIGHT;
+        %tmp.44 = 0.4;
+        %tmp.45 = mul %tmp.43 %tmp.44;
+        %tmp.46 = add %tmp.41 %tmp.45;
+        invoke %tmp.19 %tmp.20(%tmp.24, %tmp.33, %tmp.37, %tmp.46);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_53_38_60_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 73; ]
+class AccentColorMenuDelegate extends Menu2InputDelegate{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 73; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 73; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 75; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_75_26_77_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 76 8 ]
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_75_26_77_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 79; ]
+    function onSelect(item as MenuItem) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_79_48_91_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 80 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_79_48_91_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_79_48_91_4_stop" ]
+        %color.1 = local;
+        %tmp.1 = lgetv %item;
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %color.1 %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 81 8 ]
+        %tmp.5 = getv ? :Properties;
+        %tmp.6 = getv function %tmp.5 :setValue;
+        %tmp.7 = "AccentColor";
+        %tmp.9 = lgetv %color.1;
+        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.9);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 84 8 ]
+        %tmp.10 = self;
+        %tmp.11 = getv function %tmp.10 :onBack;
+        invoke %tmp.10 %tmp.11();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 86 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_79_48_91_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_79_48_91_4_stop" ]
+        %menu.2 = local;
+        %tmp.15 = getv ? :MainMenu;
+        %tmp.12 = newc %tmp.15 ();
+        lputv %menu.2 %tmp.12;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 87 8 ]
+        %tmp.16 = lgetv %menu.2;
+        %tmp.17 = getv function %tmp.16 :setFocus;
+        %tmp.18 = lgetv %menu.2;
+        %tmp.19 = getv function %tmp.18 :findItemById;
+        %tmp.21 = const :accentColor;
+        %tmp.22 = invoke %tmp.18 %tmp.19(%tmp.21);
+        invoke %tmp.16 %tmp.17(%tmp.22);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 89 8 ]
+        %tmp.23 = getm $.Toybox.WatchUi;
+        %tmp.24 = getv function %tmp.23 :switchToView;
+        %tmp.26 = lgetv %menu.2;
+        %tmp.30 = getv ? :MainMenuDelegate;
+        %tmp.27 = newc %tmp.30 ();
+        %tmp.31 = getm $.Toybox.WatchUi;
+        %tmp.32 = getv %tmp.31 :SLIDE_RIGHT;
+        invoke %tmp.23 %tmp.24(%tmp.26, %tmp.27, %tmp.32);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 90 8 ]
+        %tmp.33 = getm $.Toybox.WatchUi;
+        %tmp.34 = getv function %tmp.33 :requestUpdate;
+        invoke %tmp.33 %tmp.34();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_79_48_91_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 93; ]
+    function onBack() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_93_30_95_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 94 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :popView;
+        %tmp.3 = getm $.Toybox.WatchUi;
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_93_30_95_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 97; ]
+    function onWrap(key as WatchUi.Key) as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_97_51_99_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc" 98 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_AccentColorMenu_mc_97_51_99_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/AccentColorMenu.mc"; @line = 1; ]
+<init> {
+}

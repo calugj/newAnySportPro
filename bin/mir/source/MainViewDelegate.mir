@@ -1,0 +1,277 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 3; ]
+import Toybox.Attention;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 4; ]
+import Toybox.Application;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 6; ]
+class MainViewDelegate extends WatchUi.BehaviorDelegate{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 8; @position = 16; ]
+    private
+    var view;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 9; @position = 16; ]
+    private
+    var pageNumber;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 11; ]
+    function initialize(param_view, param_pageNumber) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_11_54_16_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 12 8 ]
+        %tmp.2 = getv ? :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 14 8 ]
+        %tmp.5 = lgetv %param_view;
+        putv self :view %tmp.5;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 15 8 ]
+        %tmp.7 = lgetv %param_pageNumber;
+        putv self :pageNumber %tmp.7;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_11_54_16_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 18; ]
+    function onMenu() as Boolean {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_18_33_21_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 19 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :pushView;
+        %tmp.6 = getv ? :MainMenu;
+        %tmp.3 = newc %tmp.6 ();
+        %tmp.10 = getv ? :MainMenuDelegate;
+        %tmp.7 = newc %tmp.10 ();
+        %tmp.11 = getm $.Toybox.WatchUi;
+        %tmp.12 = getv %tmp.11 :SLIDE_BLINK;
+        invoke %tmp.1 %tmp.2(%tmp.3, %tmp.7, %tmp.12);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 20 8 ]
+        %tmp.13 = true;
+        ret %tmp.13;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_18_33_21_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 23; ]
+    function onSelect() {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_23_24_40_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 24 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_23_24_40_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_23_24_40_4_stop" ]
+        %sportData.1 = local;
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = getv %tmp.3 :sportData;
+        lputv %sportData.1 %tmp.4;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 26 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_8_36_8_if_stmt:
+        %tmp.5 = lgetv %sportData.1;
+        %tmp.6 = getv function %tmp.5 :isRecording;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        bf %tmp.7 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_8_36_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_8_36_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_36_30_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 27 12 ]
+        %tmp.8 = getm $.Toybox.Attention;
+        %tmp.9 = getv function %tmp.8 :playTone;
+        %tmp.10 = getm $.Toybox.Attention;
+        %tmp.11 = getv %tmp.10 :TONE_STOP;
+        invoke %tmp.8 %tmp.9(%tmp.11);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 28 12 ]
+        %tmp.12 = lgetv %sportData.1;
+        %tmp.13 = getv function %tmp.12 :stop;
+        invoke %tmp.12 %tmp.13();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 29 12 ]
+        %tmp.15 = getv ? :view;
+        %tmp.16 = getv %tmp.15 :ring;
+        %tmp.17 = getv function %tmp.16 :setStatus;
+        %tmp.18 = 1;
+        invoke %tmp.16 %tmp.17(%tmp.18);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_36_30_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_8_36_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_8_36_8_if_false:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_31_13_36_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 32 12 ]
+        %tmp.19 = getm $.Toybox.Attention;
+        %tmp.20 = getv function %tmp.19 :playTone;
+        %tmp.21 = getm $.Toybox.Attention;
+        %tmp.22 = getv %tmp.21 :TONE_START;
+        invoke %tmp.19 %tmp.20(%tmp.22);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 33 12 ]
+        %tmp.23 = lgetv %sportData.1;
+        %tmp.24 = getv function %tmp.23 :start;
+        invoke %tmp.23 %tmp.24();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 34 12 ]
+        %tmp.26 = getv ? :view;
+        %tmp.27 = getv %tmp.26 :ring;
+        %tmp.28 = getv function %tmp.27 :setStatus;
+        %tmp.29 = 2;
+        invoke %tmp.27 %tmp.28(%tmp.29);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 35 12 ]
+        %tmp.31 = getv ? :view;
+        %tmp.32 = getv %tmp.31 :topBanner;
+        %tmp.33 = getv function %tmp.32 :setStatus;
+        %tmp.34 = 3;
+        invoke %tmp.32 %tmp.33(%tmp.34);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_31_13_36_8_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_26_8_36_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 38 8 ]
+        %tmp.35 = getm $.Toybox.WatchUi;
+        %tmp.36 = getv function %tmp.35 :requestUpdate;
+        invoke %tmp.35 %tmp.36();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 39 8 ]
+        %tmp.37 = true;
+        ret %tmp.37;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_23_24_40_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 42; ]
+    function onBack() {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_42_22_58_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 43 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_42_22_58_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_42_22_58_4_stop" ]
+        %sportData.1 = local;
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = getv %tmp.3 :sportData;
+        lputv %sportData.1 %tmp.4;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 45 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_stmt:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_11_45_72_begin:
+        %tmp.5 = lgetv %sportData.1;
+        %tmp.6 = getv function %tmp.5 :isRecording;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        bf %tmp.7 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_38_45_72_true:
+        %tmp.9 = getv ? :Properties;
+        %tmp.10 = getv function %tmp.9 :getValue;
+        %tmp.11 = "LapActivated";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        push %tmp.12;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_38_45_72_end:
+        %tmp.13 = phi [%tmp.7 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_11_45_72_begin] [%tmp.12 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_38_45_72_true] [%tmp.13 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_38_45_72_end];
+        bf %tmp.13 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_75_49_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 46 12 ]
+        %tmp.14 = getm $.Toybox.Attention;
+        %tmp.15 = getv function %tmp.14 :playTone;
+        %tmp.16 = getm $.Toybox.Attention;
+        %tmp.17 = getv %tmp.16 :TONE_LAP;
+        invoke %tmp.14 %tmp.15(%tmp.17);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 47 12 ]
+        %tmp.18 = lgetv %sportData.1;
+        %tmp.19 = getv function %tmp.18 :lap;
+        invoke %tmp.18 %tmp.19();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 48 12 ]
+        %tmp.21 = getv ? :view;
+        %tmp.22 = getv %tmp.21 :ring;
+        %tmp.23 = getv function %tmp.22 :setStatus;
+        %tmp.24 = 3;
+        invoke %tmp.22 %tmp.23(%tmp.24);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_75_49_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 49 15 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_stmt:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_18_49_75_begin:
+        %tmp.25 = lgetv %sportData.1;
+        %tmp.26 = getv function %tmp.25 :isRecording;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = not %tmp.27;
+        bf %tmp.28 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_46_49_75_true:
+        %tmp.29 = lgetv %sportData.1;
+        %tmp.30 = getv function %tmp.29 :isRecordingStarted;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        push %tmp.31;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_46_49_75_end:
+        %tmp.32 = phi [%tmp.28 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_18_49_75_begin] [%tmp.31 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_46_49_75_true] [%tmp.32 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_46_49_75_end];
+        bf %tmp.32 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_78_51_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 50 12 ]
+        %tmp.33 = getm $.Toybox.WatchUi;
+        %tmp.34 = getv function %tmp.33 :pushView;
+        %tmp.38 = getv ? :SaveMenu;
+        %tmp.35 = newc %tmp.38 ();
+        %tmp.42 = getv ? :SaveMenuDelegate;
+        %tmp.44 = getv ? :view;
+        %tmp.39 = newc %tmp.42 (%tmp.44);
+        %tmp.45 = getm $.Toybox.WatchUi;
+        %tmp.46 = getv %tmp.45 :SLIDE_BLINK;
+        invoke %tmp.33 %tmp.34(%tmp.35, %tmp.39, %tmp.46);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_78_51_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_false:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 51 15 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_15_53_8_if_stmt:
+        %tmp.47 = lgetv %sportData.1;
+        %tmp.48 = getv function %tmp.47 :isRecording;
+        %tmp.49 = invoke %tmp.47 %tmp.48();
+        %tmp.50 = not %tmp.49;
+        bf %tmp.50 @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_15_53_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_15_53_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_44_53_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 52 12 ]
+        %tmp.51 = getm $.Toybox.WatchUi;
+        %tmp.52 = getv function %tmp.51 :popView;
+        %tmp.53 = getm $.Toybox.WatchUi;
+        %tmp.54 = getv %tmp.53 :SLIDE_IMMEDIATE;
+        invoke %tmp.51 %tmp.52(%tmp.54);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_44_53_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_15_53_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_51_15_53_8_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_49_15_53_8_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_45_8_53_8_if_end:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 55 8 ]
+        %tmp.55 = getm $.Toybox.WatchUi;
+        %tmp.56 = getv function %tmp.55 :requestUpdate;
+        invoke %tmp.55 %tmp.56();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 57 8 ]
+        %tmp.57 = true;
+        ret %tmp.57;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_42_22_58_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 61; ]
+    function onNextPage() as Boolean {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_61_37_65_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 62 8 ]
+        %tmp.2 = getv ? :view;
+        %tmp.3 = getv %tmp.2 :topBanner;
+        %tmp.4 = getv function %tmp.3 :setStatus;
+        %tmp.5 = 0;
+        invoke %tmp.3 %tmp.4(%tmp.5);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 63 8 ]
+        %tmp.6 = getm $.Toybox.WatchUi;
+        %tmp.7 = getv function %tmp.6 :requestUpdate;
+        invoke %tmp.6 %tmp.7();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 64 8 ]
+        %tmp.8 = false;
+        ret %tmp.8;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_61_37_65_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 67; ]
+    function onPreviousPage() as Boolean {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_67_41_71_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 68 8 ]
+        %tmp.2 = getv ? :view;
+        %tmp.3 = getv %tmp.2 :topBanner;
+        %tmp.4 = getv function %tmp.3 :setStatus;
+        %tmp.5 = 0;
+        invoke %tmp.3 %tmp.4(%tmp.5);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 69 8 ]
+        %tmp.6 = getm $.Toybox.WatchUi;
+        %tmp.7 = getv function %tmp.6 :requestUpdate;
+        invoke %tmp.6 %tmp.7();
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc" 70 8 ]
+        %tmp.8 = false;
+        ret %tmp.8;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_MainViewDelegate_mc_67_41_71_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\MainViewDelegate.mc"; @line = 1; ]
+<init> {
+}

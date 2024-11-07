@@ -1,0 +1,1064 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 1; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 2; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 4; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 6; ]
+class ActivityClassMenu extends CustomMenu{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 6; ]
+    <init> {
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 9 18 ]
+        %tmp.1 = getm $.Toybox.Graphics;
+        %tmp.2 = getv %tmp.1 :COLOR_WHITE;
+        putv self :BACKGROUND_COLOR %tmp.2;
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 8; @position = 16; ]
+    private
+    var ITEM_HEIGHT = 70;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 9; @position = 18; ]
+    private
+    const BACKGROUND_COLOR;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 11; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_11_26_34_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 12 8 ]
+        %tmp.2 = getv ? :System;
+        %tmp.3 = getv function %tmp.2 :getDeviceSettings;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = getv %tmp.4 :screenHeight;
+        %tmp.6 = 0.25;
+        %tmp.7 = mul %tmp.5 %tmp.6;
+        putv self :ITEM_HEIGHT %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 13 8 ]
+        %tmp.9 = getv ? :CustomMenu;
+        %tmp.10 = getv function %tmp.9 :initialize;
+        %tmp.12 = getv ? :ITEM_HEIGHT;
+        %tmp.13 = getv function %tmp.12 :toNumber;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.16 = getv ? :BACKGROUND_COLOR;
+        %tmp.17 = newd 0;
+        invoke %tmp.9 %tmp.10(%tmp.14, %tmp.16, %tmp.17);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 15 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_8_17_8_if_stmt:
+        %tmp.19 = getv ? :CustomMenu;
+        %tmp.21 = const :setDividerType;
+        %tmp.22 = canhazplz %tmp.19 %tmp.21;
+        bf %tmp.22 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_8_17_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_8_17_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_43_17_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 16 12 ]
+        %tmp.23 = self;
+        %tmp.24 = getv function %tmp.23 :setDividerType;
+        %tmp.25 = null;
+        invoke %tmp.23 %tmp.24(%tmp.25);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_43_17_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_8_17_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_15_8_17_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 19 8 ]
+        %tmp.26 = self;
+        %tmp.27 = getv function %tmp.26 :addItem;
+        %tmp.31 = getv ? :CustomIconMenuItem;
+        %tmp.33 = const :running;
+        %tmp.34 = getm $.Toybox.WatchUi;
+        %tmp.35 = getv function %tmp.34 :loadResource;
+        %tmp.37 = getv ? :Rez;
+        %tmp.38 = getv %tmp.37 :Strings;
+        %tmp.39 = getv %tmp.38 :Running;
+        %tmp.40 = invoke %tmp.34 %tmp.35(%tmp.39);
+        %tmp.41 = "9 ";
+        %tmp.42 = getm $.Toybox.WatchUi;
+        %tmp.43 = getv function %tmp.42 :loadResource;
+        %tmp.45 = getv ? :Rez;
+        %tmp.46 = getv %tmp.45 :Strings;
+        %tmp.47 = getv %tmp.46 :Presets;
+        %tmp.48 = invoke %tmp.42 %tmp.43(%tmp.47);
+        %tmp.49 = add %tmp.41 %tmp.48;
+        %tmp.50 = getm $.Toybox.WatchUi;
+        %tmp.51 = getv function %tmp.50 :loadResource;
+        %tmp.52 = getm $;
+        %tmp.53 = getv %tmp.52 :Rez;
+        %tmp.54 = getv %tmp.53 :Drawables;
+        %tmp.55 = getv %tmp.54 :Running;
+        %tmp.56 = invoke %tmp.50 %tmp.51(%tmp.55);
+        %tmp.28 = newc %tmp.31 (%tmp.33, %tmp.40, %tmp.49, %tmp.56);
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 20 8 ]
+        %tmp.57 = self;
+        %tmp.58 = getv function %tmp.57 :addItem;
+        %tmp.62 = getv ? :CustomIconMenuItem;
+        %tmp.64 = const :cycling;
+        %tmp.65 = getm $.Toybox.WatchUi;
+        %tmp.66 = getv function %tmp.65 :loadResource;
+        %tmp.68 = getv ? :Rez;
+        %tmp.69 = getv %tmp.68 :Strings;
+        %tmp.70 = getv %tmp.69 :Cycling;
+        %tmp.71 = invoke %tmp.65 %tmp.66(%tmp.70);
+        %tmp.72 = "17 ";
+        %tmp.73 = getm $.Toybox.WatchUi;
+        %tmp.74 = getv function %tmp.73 :loadResource;
+        %tmp.76 = getv ? :Rez;
+        %tmp.77 = getv %tmp.76 :Strings;
+        %tmp.78 = getv %tmp.77 :Presets;
+        %tmp.79 = invoke %tmp.73 %tmp.74(%tmp.78);
+        %tmp.80 = add %tmp.72 %tmp.79;
+        %tmp.81 = getm $.Toybox.WatchUi;
+        %tmp.82 = getv function %tmp.81 :loadResource;
+        %tmp.83 = getm $;
+        %tmp.84 = getv %tmp.83 :Rez;
+        %tmp.85 = getv %tmp.84 :Drawables;
+        %tmp.86 = getv %tmp.85 :Cycling;
+        %tmp.87 = invoke %tmp.81 %tmp.82(%tmp.86);
+        %tmp.59 = newc %tmp.62 (%tmp.64, %tmp.71, %tmp.80, %tmp.87);
+        invoke %tmp.57 %tmp.58(%tmp.59);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 21 8 ]
+        %tmp.88 = self;
+        %tmp.89 = getv function %tmp.88 :addItem;
+        %tmp.93 = getv ? :CustomIconMenuItem;
+        %tmp.95 = const :fitness;
+        %tmp.96 = getm $.Toybox.WatchUi;
+        %tmp.97 = getv function %tmp.96 :loadResource;
+        %tmp.99 = getv ? :Rez;
+        %tmp.100 = getv %tmp.99 :Strings;
+        %tmp.101 = getv %tmp.100 :Fitness;
+        %tmp.102 = invoke %tmp.96 %tmp.97(%tmp.101);
+        %tmp.103 = "7 ";
+        %tmp.104 = getm $.Toybox.WatchUi;
+        %tmp.105 = getv function %tmp.104 :loadResource;
+        %tmp.107 = getv ? :Rez;
+        %tmp.108 = getv %tmp.107 :Strings;
+        %tmp.109 = getv %tmp.108 :Presets;
+        %tmp.110 = invoke %tmp.104 %tmp.105(%tmp.109);
+        %tmp.111 = add %tmp.103 %tmp.110;
+        %tmp.112 = getm $.Toybox.WatchUi;
+        %tmp.113 = getv function %tmp.112 :loadResource;
+        %tmp.114 = getm $;
+        %tmp.115 = getv %tmp.114 :Rez;
+        %tmp.116 = getv %tmp.115 :Drawables;
+        %tmp.117 = getv %tmp.116 :Fitness;
+        %tmp.118 = invoke %tmp.112 %tmp.113(%tmp.117);
+        %tmp.90 = newc %tmp.93 (%tmp.95, %tmp.102, %tmp.111, %tmp.118);
+        invoke %tmp.88 %tmp.89(%tmp.90);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 22 8 ]
+        %tmp.119 = self;
+        %tmp.120 = getv function %tmp.119 :addItem;
+        %tmp.124 = getv ? :CustomIconMenuItem;
+        %tmp.126 = const :swimming;
+        %tmp.127 = getm $.Toybox.WatchUi;
+        %tmp.128 = getv function %tmp.127 :loadResource;
+        %tmp.130 = getv ? :Rez;
+        %tmp.131 = getv %tmp.130 :Strings;
+        %tmp.132 = getv %tmp.131 :Swimming;
+        %tmp.133 = invoke %tmp.127 %tmp.128(%tmp.132);
+        %tmp.134 = "3 ";
+        %tmp.135 = getm $.Toybox.WatchUi;
+        %tmp.136 = getv function %tmp.135 :loadResource;
+        %tmp.138 = getv ? :Rez;
+        %tmp.139 = getv %tmp.138 :Strings;
+        %tmp.140 = getv %tmp.139 :Presets;
+        %tmp.141 = invoke %tmp.135 %tmp.136(%tmp.140);
+        %tmp.142 = add %tmp.134 %tmp.141;
+        %tmp.143 = getm $.Toybox.WatchUi;
+        %tmp.144 = getv function %tmp.143 :loadResource;
+        %tmp.145 = getm $;
+        %tmp.146 = getv %tmp.145 :Rez;
+        %tmp.147 = getv %tmp.146 :Drawables;
+        %tmp.148 = getv %tmp.147 :Swimming;
+        %tmp.149 = invoke %tmp.143 %tmp.144(%tmp.148);
+        %tmp.121 = newc %tmp.124 (%tmp.126, %tmp.133, %tmp.142, %tmp.149);
+        invoke %tmp.119 %tmp.120(%tmp.121);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 23 8 ]
+        %tmp.150 = self;
+        %tmp.151 = getv function %tmp.150 :addItem;
+        %tmp.155 = getv ? :CustomIconMenuItem;
+        %tmp.157 = const :field;
+        %tmp.158 = getm $.Toybox.WatchUi;
+        %tmp.159 = getv function %tmp.158 :loadResource;
+        %tmp.161 = getv ? :Rez;
+        %tmp.162 = getv %tmp.161 :Strings;
+        %tmp.163 = getv %tmp.162 :Field;
+        %tmp.164 = invoke %tmp.158 %tmp.159(%tmp.163);
+        %tmp.165 = "17 ";
+        %tmp.166 = getm $.Toybox.WatchUi;
+        %tmp.167 = getv function %tmp.166 :loadResource;
+        %tmp.169 = getv ? :Rez;
+        %tmp.170 = getv %tmp.169 :Strings;
+        %tmp.171 = getv %tmp.170 :Presets;
+        %tmp.172 = invoke %tmp.166 %tmp.167(%tmp.171);
+        %tmp.173 = add %tmp.165 %tmp.172;
+        %tmp.174 = getm $.Toybox.WatchUi;
+        %tmp.175 = getv function %tmp.174 :loadResource;
+        %tmp.176 = getm $;
+        %tmp.177 = getv %tmp.176 :Rez;
+        %tmp.178 = getv %tmp.177 :Drawables;
+        %tmp.179 = getv %tmp.178 :Field;
+        %tmp.180 = invoke %tmp.174 %tmp.175(%tmp.179);
+        %tmp.152 = newc %tmp.155 (%tmp.157, %tmp.164, %tmp.173, %tmp.180);
+        invoke %tmp.150 %tmp.151(%tmp.152);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 24 8 ]
+        %tmp.181 = self;
+        %tmp.182 = getv function %tmp.181 :addItem;
+        %tmp.186 = getv ? :CustomIconMenuItem;
+        %tmp.188 = const :training;
+        %tmp.189 = getm $.Toybox.WatchUi;
+        %tmp.190 = getv function %tmp.189 :loadResource;
+        %tmp.192 = getv ? :Rez;
+        %tmp.193 = getv %tmp.192 :Strings;
+        %tmp.194 = getv %tmp.193 :Training;
+        %tmp.195 = invoke %tmp.189 %tmp.190(%tmp.194);
+        %tmp.196 = "10 ";
+        %tmp.197 = getm $.Toybox.WatchUi;
+        %tmp.198 = getv function %tmp.197 :loadResource;
+        %tmp.200 = getv ? :Rez;
+        %tmp.201 = getv %tmp.200 :Strings;
+        %tmp.202 = getv %tmp.201 :Presets;
+        %tmp.203 = invoke %tmp.197 %tmp.198(%tmp.202);
+        %tmp.204 = add %tmp.196 %tmp.203;
+        %tmp.205 = getm $.Toybox.WatchUi;
+        %tmp.206 = getv function %tmp.205 :loadResource;
+        %tmp.207 = getm $;
+        %tmp.208 = getv %tmp.207 :Rez;
+        %tmp.209 = getv %tmp.208 :Drawables;
+        %tmp.210 = getv %tmp.209 :Training;
+        %tmp.211 = invoke %tmp.205 %tmp.206(%tmp.210);
+        %tmp.183 = newc %tmp.186 (%tmp.188, %tmp.195, %tmp.204, %tmp.211);
+        invoke %tmp.181 %tmp.182(%tmp.183);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 25 8 ]
+        %tmp.212 = self;
+        %tmp.213 = getv function %tmp.212 :addItem;
+        %tmp.217 = getv ? :CustomIconMenuItem;
+        %tmp.219 = const :walking;
+        %tmp.220 = getm $.Toybox.WatchUi;
+        %tmp.221 = getv function %tmp.220 :loadResource;
+        %tmp.223 = getv ? :Rez;
+        %tmp.224 = getv %tmp.223 :Strings;
+        %tmp.225 = getv %tmp.224 :Walking;
+        %tmp.226 = invoke %tmp.220 %tmp.221(%tmp.225);
+        %tmp.227 = "6 ";
+        %tmp.228 = getm $.Toybox.WatchUi;
+        %tmp.229 = getv function %tmp.228 :loadResource;
+        %tmp.231 = getv ? :Rez;
+        %tmp.232 = getv %tmp.231 :Strings;
+        %tmp.233 = getv %tmp.232 :Presets;
+        %tmp.234 = invoke %tmp.228 %tmp.229(%tmp.233);
+        %tmp.235 = add %tmp.227 %tmp.234;
+        %tmp.236 = getm $.Toybox.WatchUi;
+        %tmp.237 = getv function %tmp.236 :loadResource;
+        %tmp.238 = getm $;
+        %tmp.239 = getv %tmp.238 :Rez;
+        %tmp.240 = getv %tmp.239 :Drawables;
+        %tmp.241 = getv %tmp.240 :Walking;
+        %tmp.242 = invoke %tmp.236 %tmp.237(%tmp.241);
+        %tmp.214 = newc %tmp.217 (%tmp.219, %tmp.226, %tmp.235, %tmp.242);
+        invoke %tmp.212 %tmp.213(%tmp.214);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 26 8 ]
+        %tmp.243 = self;
+        %tmp.244 = getv function %tmp.243 :addItem;
+        %tmp.248 = getv ? :CustomIconMenuItem;
+        %tmp.250 = const :winter;
+        %tmp.251 = getm $.Toybox.WatchUi;
+        %tmp.252 = getv function %tmp.251 :loadResource;
+        %tmp.254 = getv ? :Rez;
+        %tmp.255 = getv %tmp.254 :Strings;
+        %tmp.256 = getv %tmp.255 :WinterSports;
+        %tmp.257 = invoke %tmp.251 %tmp.252(%tmp.256);
+        %tmp.258 = "9 ";
+        %tmp.259 = getm $.Toybox.WatchUi;
+        %tmp.260 = getv function %tmp.259 :loadResource;
+        %tmp.262 = getv ? :Rez;
+        %tmp.263 = getv %tmp.262 :Strings;
+        %tmp.264 = getv %tmp.263 :Presets;
+        %tmp.265 = invoke %tmp.259 %tmp.260(%tmp.264);
+        %tmp.266 = add %tmp.258 %tmp.265;
+        %tmp.267 = getm $.Toybox.WatchUi;
+        %tmp.268 = getv function %tmp.267 :loadResource;
+        %tmp.269 = getm $;
+        %tmp.270 = getv %tmp.269 :Rez;
+        %tmp.271 = getv %tmp.270 :Drawables;
+        %tmp.272 = getv %tmp.271 :Winter;
+        %tmp.273 = invoke %tmp.267 %tmp.268(%tmp.272);
+        %tmp.245 = newc %tmp.248 (%tmp.250, %tmp.257, %tmp.266, %tmp.273);
+        invoke %tmp.243 %tmp.244(%tmp.245);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 27 8 ]
+        %tmp.274 = self;
+        %tmp.275 = getv function %tmp.274 :addItem;
+        %tmp.279 = getv ? :CustomIconMenuItem;
+        %tmp.281 = const :water;
+        %tmp.282 = getm $.Toybox.WatchUi;
+        %tmp.283 = getv function %tmp.282 :loadResource;
+        %tmp.285 = getv ? :Rez;
+        %tmp.286 = getv %tmp.285 :Strings;
+        %tmp.287 = getv %tmp.286 :WaterSports;
+        %tmp.288 = invoke %tmp.282 %tmp.283(%tmp.287);
+        %tmp.289 = "15 ";
+        %tmp.290 = getm $.Toybox.WatchUi;
+        %tmp.291 = getv function %tmp.290 :loadResource;
+        %tmp.293 = getv ? :Rez;
+        %tmp.294 = getv %tmp.293 :Strings;
+        %tmp.295 = getv %tmp.294 :Presets;
+        %tmp.296 = invoke %tmp.290 %tmp.291(%tmp.295);
+        %tmp.297 = add %tmp.289 %tmp.296;
+        %tmp.298 = getm $.Toybox.WatchUi;
+        %tmp.299 = getv function %tmp.298 :loadResource;
+        %tmp.300 = getm $;
+        %tmp.301 = getv %tmp.300 :Rez;
+        %tmp.302 = getv %tmp.301 :Drawables;
+        %tmp.303 = getv %tmp.302 :Water;
+        %tmp.304 = invoke %tmp.298 %tmp.299(%tmp.303);
+        %tmp.276 = newc %tmp.279 (%tmp.281, %tmp.288, %tmp.297, %tmp.304);
+        invoke %tmp.274 %tmp.275(%tmp.276);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 28 8 ]
+        %tmp.305 = self;
+        %tmp.306 = getv function %tmp.305 :addItem;
+        %tmp.310 = getv ? :CustomIconMenuItem;
+        %tmp.312 = const :flying;
+        %tmp.313 = getm $.Toybox.WatchUi;
+        %tmp.314 = getv function %tmp.313 :loadResource;
+        %tmp.316 = getv ? :Rez;
+        %tmp.317 = getv %tmp.316 :Strings;
+        %tmp.318 = getv %tmp.317 :Flying;
+        %tmp.319 = invoke %tmp.313 %tmp.314(%tmp.318);
+        %tmp.320 = "10 ";
+        %tmp.321 = getm $.Toybox.WatchUi;
+        %tmp.322 = getv function %tmp.321 :loadResource;
+        %tmp.324 = getv ? :Rez;
+        %tmp.325 = getv %tmp.324 :Strings;
+        %tmp.326 = getv %tmp.325 :Presets;
+        %tmp.327 = invoke %tmp.321 %tmp.322(%tmp.326);
+        %tmp.328 = add %tmp.320 %tmp.327;
+        %tmp.329 = getm $.Toybox.WatchUi;
+        %tmp.330 = getv function %tmp.329 :loadResource;
+        %tmp.331 = getm $;
+        %tmp.332 = getv %tmp.331 :Rez;
+        %tmp.333 = getv %tmp.332 :Drawables;
+        %tmp.334 = getv %tmp.333 :Flying;
+        %tmp.335 = invoke %tmp.329 %tmp.330(%tmp.334);
+        %tmp.307 = newc %tmp.310 (%tmp.312, %tmp.319, %tmp.328, %tmp.335);
+        invoke %tmp.305 %tmp.306(%tmp.307);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 29 8 ]
+        %tmp.336 = self;
+        %tmp.337 = getv function %tmp.336 :addItem;
+        %tmp.341 = getv ? :CustomIconMenuItem;
+        %tmp.343 = const :motorsport;
+        %tmp.344 = getm $.Toybox.WatchUi;
+        %tmp.345 = getv function %tmp.344 :loadResource;
+        %tmp.347 = getv ? :Rez;
+        %tmp.348 = getv %tmp.347 :Strings;
+        %tmp.349 = getv %tmp.348 :Motorsports;
+        %tmp.350 = invoke %tmp.344 %tmp.345(%tmp.349);
+        %tmp.351 = "7 ";
+        %tmp.352 = getm $.Toybox.WatchUi;
+        %tmp.353 = getv function %tmp.352 :loadResource;
+        %tmp.355 = getv ? :Rez;
+        %tmp.356 = getv %tmp.355 :Strings;
+        %tmp.357 = getv %tmp.356 :Presets;
+        %tmp.358 = invoke %tmp.352 %tmp.353(%tmp.357);
+        %tmp.359 = add %tmp.351 %tmp.358;
+        %tmp.360 = getm $.Toybox.WatchUi;
+        %tmp.361 = getv function %tmp.360 :loadResource;
+        %tmp.362 = getm $;
+        %tmp.363 = getv %tmp.362 :Rez;
+        %tmp.364 = getv %tmp.363 :Drawables;
+        %tmp.365 = getv %tmp.364 :Motorsports;
+        %tmp.366 = invoke %tmp.360 %tmp.361(%tmp.365);
+        %tmp.338 = newc %tmp.341 (%tmp.343, %tmp.350, %tmp.359, %tmp.366);
+        invoke %tmp.336 %tmp.337(%tmp.338);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 30 8 ]
+        %tmp.367 = self;
+        %tmp.368 = getv function %tmp.367 :addItem;
+        %tmp.372 = getv ? :CustomIconMenuItem;
+        %tmp.374 = const :climbing;
+        %tmp.375 = getm $.Toybox.WatchUi;
+        %tmp.376 = getv function %tmp.375 :loadResource;
+        %tmp.378 = getv ? :Rez;
+        %tmp.379 = getv %tmp.378 :Strings;
+        %tmp.380 = getv %tmp.379 :Climbing;
+        %tmp.381 = invoke %tmp.375 %tmp.376(%tmp.380);
+        %tmp.382 = "4 ";
+        %tmp.383 = getm $.Toybox.WatchUi;
+        %tmp.384 = getv function %tmp.383 :loadResource;
+        %tmp.386 = getv ? :Rez;
+        %tmp.387 = getv %tmp.386 :Strings;
+        %tmp.388 = getv %tmp.387 :Presets;
+        %tmp.389 = invoke %tmp.383 %tmp.384(%tmp.388);
+        %tmp.390 = add %tmp.382 %tmp.389;
+        %tmp.391 = getm $.Toybox.WatchUi;
+        %tmp.392 = getv function %tmp.391 :loadResource;
+        %tmp.393 = getm $;
+        %tmp.394 = getv %tmp.393 :Rez;
+        %tmp.395 = getv %tmp.394 :Drawables;
+        %tmp.396 = getv %tmp.395 :Climbing;
+        %tmp.397 = invoke %tmp.391 %tmp.392(%tmp.396);
+        %tmp.369 = newc %tmp.372 (%tmp.374, %tmp.381, %tmp.390, %tmp.397);
+        invoke %tmp.367 %tmp.368(%tmp.369);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 31 8 ]
+        %tmp.398 = self;
+        %tmp.399 = getv function %tmp.398 :addItem;
+        %tmp.403 = getv ? :CustomIconMenuItem;
+        %tmp.405 = const :diving;
+        %tmp.406 = getm $.Toybox.WatchUi;
+        %tmp.407 = getv function %tmp.406 :loadResource;
+        %tmp.409 = getv ? :Rez;
+        %tmp.410 = getv %tmp.409 :Strings;
+        %tmp.411 = getv %tmp.410 :Diving;
+        %tmp.412 = invoke %tmp.406 %tmp.407(%tmp.411);
+        %tmp.413 = "6 ";
+        %tmp.414 = getm $.Toybox.WatchUi;
+        %tmp.415 = getv function %tmp.414 :loadResource;
+        %tmp.417 = getv ? :Rez;
+        %tmp.418 = getv %tmp.417 :Strings;
+        %tmp.419 = getv %tmp.418 :Presets;
+        %tmp.420 = invoke %tmp.414 %tmp.415(%tmp.419);
+        %tmp.421 = add %tmp.413 %tmp.420;
+        %tmp.422 = getm $.Toybox.WatchUi;
+        %tmp.423 = getv function %tmp.422 :loadResource;
+        %tmp.424 = getm $;
+        %tmp.425 = getv %tmp.424 :Rez;
+        %tmp.426 = getv %tmp.425 :Drawables;
+        %tmp.427 = getv %tmp.426 :Diving;
+        %tmp.428 = invoke %tmp.422 %tmp.423(%tmp.427);
+        %tmp.400 = newc %tmp.403 (%tmp.405, %tmp.412, %tmp.421, %tmp.428);
+        invoke %tmp.398 %tmp.399(%tmp.400);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 32 8 ]
+        %tmp.429 = self;
+        %tmp.430 = getv function %tmp.429 :addItem;
+        %tmp.434 = getv ? :CustomIconMenuItem;
+        %tmp.436 = const :other;
+        %tmp.437 = getm $.Toybox.WatchUi;
+        %tmp.438 = getv function %tmp.437 :loadResource;
+        %tmp.440 = getv ? :Rez;
+        %tmp.441 = getv %tmp.440 :Strings;
+        %tmp.442 = getv %tmp.441 :Other;
+        %tmp.443 = invoke %tmp.437 %tmp.438(%tmp.442);
+        %tmp.444 = "17 ";
+        %tmp.445 = getm $.Toybox.WatchUi;
+        %tmp.446 = getv function %tmp.445 :loadResource;
+        %tmp.448 = getv ? :Rez;
+        %tmp.449 = getv %tmp.448 :Strings;
+        %tmp.450 = getv %tmp.449 :Presets;
+        %tmp.451 = invoke %tmp.445 %tmp.446(%tmp.450);
+        %tmp.452 = add %tmp.444 %tmp.451;
+        %tmp.453 = getm $.Toybox.WatchUi;
+        %tmp.454 = getv function %tmp.453 :loadResource;
+        %tmp.455 = getm $;
+        %tmp.456 = getv %tmp.455 :Rez;
+        %tmp.457 = getv %tmp.456 :Drawables;
+        %tmp.458 = getv %tmp.457 :Other;
+        %tmp.459 = invoke %tmp.453 %tmp.454(%tmp.458);
+        %tmp.431 = newc %tmp.434 (%tmp.436, %tmp.443, %tmp.452, %tmp.459);
+        invoke %tmp.429 %tmp.430(%tmp.431);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 33 8 ]
+        %tmp.460 = self;
+        %tmp.461 = getv function %tmp.460 :addItem;
+        %tmp.465 = getv ? :CustomIconMenuItem;
+        %tmp.467 = const :custom;
+        %tmp.468 = getm $.Toybox.WatchUi;
+        %tmp.469 = getv function %tmp.468 :loadResource;
+        %tmp.471 = getv ? :Rez;
+        %tmp.472 = getv %tmp.471 :Strings;
+        %tmp.473 = getv %tmp.472 :Custom;
+        %tmp.474 = invoke %tmp.468 %tmp.469(%tmp.473);
+        %tmp.475 = "Available Soon!";
+        %tmp.476 = getm $.Toybox.WatchUi;
+        %tmp.477 = getv function %tmp.476 :loadResource;
+        %tmp.478 = getm $;
+        %tmp.479 = getv %tmp.478 :Rez;
+        %tmp.480 = getv %tmp.479 :Drawables;
+        %tmp.481 = getv %tmp.480 :Custom;
+        %tmp.482 = invoke %tmp.476 %tmp.477(%tmp.481);
+        %tmp.462 = newc %tmp.465 (%tmp.467, %tmp.474, %tmp.475, %tmp.482);
+        invoke %tmp.460 %tmp.461(%tmp.462);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_11_26_34_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 36; ]
+    function drawTitle(dc as Dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_36_33_43_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 37 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setAntiAlias;
+        %tmp.3 = true;
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 39 8 ]
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :setColor;
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :COLOR_BLACK;
+        %tmp.8 = getm $.Toybox.Graphics;
+        %tmp.9 = getv %tmp.8 :COLOR_BLACK;
+        invoke %tmp.4 %tmp.5(%tmp.7, %tmp.9);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 40 8 ]
+        %tmp.10 = lgetv %dc;
+        %tmp.11 = getv function %tmp.10 :clear;
+        invoke %tmp.10 %tmp.11();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 41 8 ]
+        %tmp.12 = lgetv %dc;
+        %tmp.13 = getv function %tmp.12 :setColor;
+        %tmp.14 = getm $.Toybox.Graphics;
+        %tmp.15 = getv %tmp.14 :COLOR_WHITE;
+        %tmp.16 = getm $.Toybox.Graphics;
+        %tmp.17 = getv %tmp.16 :COLOR_TRANSPARENT;
+        invoke %tmp.12 %tmp.13(%tmp.15, %tmp.17);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 42 8 ]
+        %tmp.18 = lgetv %dc;
+        %tmp.19 = getv function %tmp.18 :drawText;
+        %tmp.20 = lgetv %dc;
+        %tmp.21 = getv function %tmp.20 :getWidth;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = getv function %tmp.25 :getHeight;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = 0.7;
+        %tmp.29 = mul %tmp.27 %tmp.28;
+        %tmp.30 = getm $.Toybox.Graphics;
+        %tmp.31 = getv %tmp.30 :FONT_SMALL;
+        %tmp.32 = getm $.Toybox.WatchUi;
+        %tmp.33 = getv function %tmp.32 :loadResource;
+        %tmp.35 = getv ? :Rez;
+        %tmp.36 = getv %tmp.35 :Strings;
+        %tmp.37 = getv %tmp.36 :ActivityType;
+        %tmp.38 = invoke %tmp.32 %tmp.33(%tmp.37);
+        %tmp.39 = getm $.Toybox.Graphics;
+        %tmp.40 = getv %tmp.39 :TEXT_JUSTIFY_CENTER;
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :TEXT_JUSTIFY_VCENTER;
+        %tmp.43 = bitor %tmp.40 %tmp.42;
+        invoke %tmp.18 %tmp.19(%tmp.24, %tmp.29, %tmp.31, %tmp.38, %tmp.43);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_36_33_43_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 45; ]
+    function drawForeground(dc as Dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_45_38_52_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 46 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_45_38_52_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_45_38_52_4_stop" ]
+        %width.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 47 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_45_38_52_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_45_38_52_4_stop" ]
+        %height.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 48 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.9 = getm $.Toybox.Graphics;
+        %tmp.10 = getv %tmp.9 :COLOR_BLACK;
+        %tmp.11 = getm $.Toybox.Graphics;
+        %tmp.12 = getv %tmp.11 :COLOR_TRANSPARENT;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 49 8 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :setPenWidth;
+        %tmp.16 = lgetv %width.1;
+        %tmp.17 = 0.015;
+        %tmp.18 = mul %tmp.16 %tmp.17;
+        invoke %tmp.13 %tmp.14(%tmp.18);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 50 8 ]
+        %tmp.19 = lgetv %dc;
+        %tmp.20 = getv function %tmp.19 :drawLine;
+        %tmp.22 = lgetv %width.1;
+        %tmp.23 = 0.05;
+        %tmp.24 = mul %tmp.22 %tmp.23;
+        %tmp.26 = lgetv %height.2;
+        %tmp.27 = 2;
+        %tmp.28 = div %tmp.26 %tmp.27;
+        %tmp.30 = getv ? :ITEM_HEIGHT;
+        %tmp.31 = 0.35;
+        %tmp.32 = mul %tmp.30 %tmp.31;
+        %tmp.33 = sub %tmp.28 %tmp.32;
+        %tmp.35 = lgetv %width.1;
+        %tmp.36 = 0.05;
+        %tmp.37 = mul %tmp.35 %tmp.36;
+        %tmp.39 = lgetv %height.2;
+        %tmp.40 = 2;
+        %tmp.41 = div %tmp.39 %tmp.40;
+        %tmp.43 = getv ? :ITEM_HEIGHT;
+        %tmp.44 = 0.4;
+        %tmp.45 = mul %tmp.43 %tmp.44;
+        %tmp.46 = add %tmp.41 %tmp.45;
+        invoke %tmp.19 %tmp.20(%tmp.24, %tmp.33, %tmp.37, %tmp.46);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_45_38_52_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 64; ]
+class ActivityClassMenuDelegate extends Menu2InputDelegate{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 64; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 64; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 66; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_66_26_68_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 67 8 ]
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_66_26_68_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 70; ]
+    function onSelect(item as MenuItem) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_70_48_116_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 71 8 ]
+        %tmp.1 = lgetv %item;
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        push %tmp.3;
+        switch %tmp.3 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtBegin:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 72 12 ]
+        %tmp.4 = dup %tmp.3;
+        %tmp.6 = const :running;
+        %tmp.7 = getv function %tmp.4 :equals;
+        %tmp.8 = invoke %tmp.4 %tmp.7 (%tmp.6);
+        bt %tmp.8 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_72_12_74_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 75 12 ]
+        %tmp.9 = dup %tmp.3;
+        %tmp.11 = const :cycling;
+        %tmp.12 = getv function %tmp.9 :equals;
+        %tmp.13 = invoke %tmp.9 %tmp.12 (%tmp.11);
+        bt %tmp.13 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_75_12_77_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 78 12 ]
+        %tmp.14 = dup %tmp.3;
+        %tmp.16 = const :fitness;
+        %tmp.17 = getv function %tmp.14 :equals;
+        %tmp.18 = invoke %tmp.14 %tmp.17 (%tmp.16);
+        bt %tmp.18 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_78_12_80_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 81 12 ]
+        %tmp.19 = dup %tmp.3;
+        %tmp.21 = const :swimming;
+        %tmp.22 = getv function %tmp.19 :equals;
+        %tmp.23 = invoke %tmp.19 %tmp.22 (%tmp.21);
+        bt %tmp.23 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_81_12_83_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 84 12 ]
+        %tmp.24 = dup %tmp.3;
+        %tmp.26 = const :field;
+        %tmp.27 = getv function %tmp.24 :equals;
+        %tmp.28 = invoke %tmp.24 %tmp.27 (%tmp.26);
+        bt %tmp.28 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_84_12_86_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 87 12 ]
+        %tmp.29 = dup %tmp.3;
+        %tmp.31 = const :training;
+        %tmp.32 = getv function %tmp.29 :equals;
+        %tmp.33 = invoke %tmp.29 %tmp.32 (%tmp.31);
+        bt %tmp.33 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_87_12_89_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 90 12 ]
+        %tmp.34 = dup %tmp.3;
+        %tmp.36 = const :walking;
+        %tmp.37 = getv function %tmp.34 :equals;
+        %tmp.38 = invoke %tmp.34 %tmp.37 (%tmp.36);
+        bt %tmp.38 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_90_12_92_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 93 12 ]
+        %tmp.39 = dup %tmp.3;
+        %tmp.41 = const :winter;
+        %tmp.42 = getv function %tmp.39 :equals;
+        %tmp.43 = invoke %tmp.39 %tmp.42 (%tmp.41);
+        bt %tmp.43 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_93_12_95_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 96 12 ]
+        %tmp.44 = dup %tmp.3;
+        %tmp.46 = const :water;
+        %tmp.47 = getv function %tmp.44 :equals;
+        %tmp.48 = invoke %tmp.44 %tmp.47 (%tmp.46);
+        bt %tmp.48 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_96_12_98_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 99 12 ]
+        %tmp.49 = dup %tmp.3;
+        %tmp.51 = const :flying;
+        %tmp.52 = getv function %tmp.49 :equals;
+        %tmp.53 = invoke %tmp.49 %tmp.52 (%tmp.51);
+        bt %tmp.53 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_99_12_101_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 102 12 ]
+        %tmp.54 = dup %tmp.3;
+        %tmp.56 = const :motorsport;
+        %tmp.57 = getv function %tmp.54 :equals;
+        %tmp.58 = invoke %tmp.54 %tmp.57 (%tmp.56);
+        bt %tmp.58 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_102_12_104_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 105 12 ]
+        %tmp.59 = dup %tmp.3;
+        %tmp.61 = const :climbing;
+        %tmp.62 = getv function %tmp.59 :equals;
+        %tmp.63 = invoke %tmp.59 %tmp.62 (%tmp.61);
+        bt %tmp.63 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_105_12_107_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 108 12 ]
+        %tmp.64 = dup %tmp.3;
+        %tmp.66 = const :diving;
+        %tmp.67 = getv function %tmp.64 :equals;
+        %tmp.68 = invoke %tmp.64 %tmp.67 (%tmp.66);
+        bt %tmp.68 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_108_12_110_21_switchCase;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 111 12 ]
+        %tmp.69 = dup %tmp.3;
+        %tmp.71 = const :other;
+        %tmp.72 = getv function %tmp.69 :equals;
+        %tmp.73 = invoke %tmp.69 %tmp.72 (%tmp.71);
+        bt %tmp.73 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_111_12_113_21_switchCase;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtDefault:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_defaultCodeBegin;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_72_12_74_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 73 16 ]
+        %tmp.74 = getm $.Toybox.WatchUi;
+        %tmp.75 = getv function %tmp.74 :pushView;
+        %tmp.79 = getv ? :RunningMenu;
+        %tmp.76 = newc %tmp.79 ();
+        %tmp.83 = getv ? :SetSportMenuDelegate;
+        %tmp.80 = newc %tmp.83 ();
+        %tmp.84 = getm $.Toybox.WatchUi;
+        %tmp.85 = getv %tmp.84 :SLIDE_LEFT;
+        invoke %tmp.74 %tmp.75(%tmp.76, %tmp.80, %tmp.85);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 74 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_75_12_77_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 76 16 ]
+        %tmp.86 = getm $.Toybox.WatchUi;
+        %tmp.87 = getv function %tmp.86 :pushView;
+        %tmp.91 = getv ? :CyclingMenu;
+        %tmp.88 = newc %tmp.91 ();
+        %tmp.95 = getv ? :SetSportMenuDelegate;
+        %tmp.92 = newc %tmp.95 ();
+        %tmp.96 = getm $.Toybox.WatchUi;
+        %tmp.97 = getv %tmp.96 :SLIDE_LEFT;
+        invoke %tmp.86 %tmp.87(%tmp.88, %tmp.92, %tmp.97);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 77 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_78_12_80_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 79 16 ]
+        %tmp.98 = getm $.Toybox.WatchUi;
+        %tmp.99 = getv function %tmp.98 :pushView;
+        %tmp.103 = getv ? :FitnessMenu;
+        %tmp.100 = newc %tmp.103 ();
+        %tmp.107 = getv ? :SetSportMenuDelegate;
+        %tmp.104 = newc %tmp.107 ();
+        %tmp.108 = getm $.Toybox.WatchUi;
+        %tmp.109 = getv %tmp.108 :SLIDE_LEFT;
+        invoke %tmp.98 %tmp.99(%tmp.100, %tmp.104, %tmp.109);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 80 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_81_12_83_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 82 16 ]
+        %tmp.110 = getm $.Toybox.WatchUi;
+        %tmp.111 = getv function %tmp.110 :pushView;
+        %tmp.115 = getv ? :SwimmingMenu;
+        %tmp.112 = newc %tmp.115 ();
+        %tmp.119 = getv ? :SetSportMenuDelegate;
+        %tmp.116 = newc %tmp.119 ();
+        %tmp.120 = getm $.Toybox.WatchUi;
+        %tmp.121 = getv %tmp.120 :SLIDE_LEFT;
+        invoke %tmp.110 %tmp.111(%tmp.112, %tmp.116, %tmp.121);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 83 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_84_12_86_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 85 16 ]
+        %tmp.122 = getm $.Toybox.WatchUi;
+        %tmp.123 = getv function %tmp.122 :pushView;
+        %tmp.127 = getv ? :FieldMenu;
+        %tmp.124 = newc %tmp.127 ();
+        %tmp.131 = getv ? :SetSportMenuDelegate;
+        %tmp.128 = newc %tmp.131 ();
+        %tmp.132 = getm $.Toybox.WatchUi;
+        %tmp.133 = getv %tmp.132 :SLIDE_LEFT;
+        invoke %tmp.122 %tmp.123(%tmp.124, %tmp.128, %tmp.133);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 86 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_87_12_89_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 88 16 ]
+        %tmp.134 = getm $.Toybox.WatchUi;
+        %tmp.135 = getv function %tmp.134 :pushView;
+        %tmp.139 = getv ? :TrainingMenu;
+        %tmp.136 = newc %tmp.139 ();
+        %tmp.143 = getv ? :SetSportMenuDelegate;
+        %tmp.140 = newc %tmp.143 ();
+        %tmp.144 = getm $.Toybox.WatchUi;
+        %tmp.145 = getv %tmp.144 :SLIDE_LEFT;
+        invoke %tmp.134 %tmp.135(%tmp.136, %tmp.140, %tmp.145);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 89 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_90_12_92_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 91 16 ]
+        %tmp.146 = getm $.Toybox.WatchUi;
+        %tmp.147 = getv function %tmp.146 :pushView;
+        %tmp.151 = getv ? :WalkingMenu;
+        %tmp.148 = newc %tmp.151 ();
+        %tmp.155 = getv ? :SetSportMenuDelegate;
+        %tmp.152 = newc %tmp.155 ();
+        %tmp.156 = getm $.Toybox.WatchUi;
+        %tmp.157 = getv %tmp.156 :SLIDE_LEFT;
+        invoke %tmp.146 %tmp.147(%tmp.148, %tmp.152, %tmp.157);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 92 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_93_12_95_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 94 16 ]
+        %tmp.158 = getm $.Toybox.WatchUi;
+        %tmp.159 = getv function %tmp.158 :pushView;
+        %tmp.163 = getv ? :WinterMenu;
+        %tmp.160 = newc %tmp.163 ();
+        %tmp.167 = getv ? :SetSportMenuDelegate;
+        %tmp.164 = newc %tmp.167 ();
+        %tmp.168 = getm $.Toybox.WatchUi;
+        %tmp.169 = getv %tmp.168 :SLIDE_LEFT;
+        invoke %tmp.158 %tmp.159(%tmp.160, %tmp.164, %tmp.169);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 95 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_96_12_98_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 97 16 ]
+        %tmp.170 = getm $.Toybox.WatchUi;
+        %tmp.171 = getv function %tmp.170 :pushView;
+        %tmp.175 = getv ? :WaterMenu;
+        %tmp.172 = newc %tmp.175 ();
+        %tmp.179 = getv ? :SetSportMenuDelegate;
+        %tmp.176 = newc %tmp.179 ();
+        %tmp.180 = getm $.Toybox.WatchUi;
+        %tmp.181 = getv %tmp.180 :SLIDE_LEFT;
+        invoke %tmp.170 %tmp.171(%tmp.172, %tmp.176, %tmp.181);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 98 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_99_12_101_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 100 16 ]
+        %tmp.182 = getm $.Toybox.WatchUi;
+        %tmp.183 = getv function %tmp.182 :pushView;
+        %tmp.187 = getv ? :FlyingMenu;
+        %tmp.184 = newc %tmp.187 ();
+        %tmp.191 = getv ? :SetSportMenuDelegate;
+        %tmp.188 = newc %tmp.191 ();
+        %tmp.192 = getm $.Toybox.WatchUi;
+        %tmp.193 = getv %tmp.192 :SLIDE_LEFT;
+        invoke %tmp.182 %tmp.183(%tmp.184, %tmp.188, %tmp.193);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 101 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_102_12_104_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 103 16 ]
+        %tmp.194 = getm $.Toybox.WatchUi;
+        %tmp.195 = getv function %tmp.194 :pushView;
+        %tmp.199 = getv ? :MotorsportMenu;
+        %tmp.196 = newc %tmp.199 ();
+        %tmp.203 = getv ? :SetSportMenuDelegate;
+        %tmp.200 = newc %tmp.203 ();
+        %tmp.204 = getm $.Toybox.WatchUi;
+        %tmp.205 = getv %tmp.204 :SLIDE_LEFT;
+        invoke %tmp.194 %tmp.195(%tmp.196, %tmp.200, %tmp.205);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 104 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_105_12_107_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 106 16 ]
+        %tmp.206 = getm $.Toybox.WatchUi;
+        %tmp.207 = getv function %tmp.206 :pushView;
+        %tmp.211 = getv ? :ClimbingMenu;
+        %tmp.208 = newc %tmp.211 ();
+        %tmp.215 = getv ? :SetSportMenuDelegate;
+        %tmp.212 = newc %tmp.215 ();
+        %tmp.216 = getm $.Toybox.WatchUi;
+        %tmp.217 = getv %tmp.216 :SLIDE_LEFT;
+        invoke %tmp.206 %tmp.207(%tmp.208, %tmp.212, %tmp.217);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 107 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_108_12_110_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 109 16 ]
+        %tmp.218 = getm $.Toybox.WatchUi;
+        %tmp.219 = getv function %tmp.218 :pushView;
+        %tmp.223 = getv ? :DivingMenu;
+        %tmp.220 = newc %tmp.223 ();
+        %tmp.227 = getv ? :SetSportMenuDelegate;
+        %tmp.224 = newc %tmp.227 ();
+        %tmp.228 = getm $.Toybox.WatchUi;
+        %tmp.229 = getv %tmp.228 :SLIDE_LEFT;
+        invoke %tmp.218 %tmp.219(%tmp.220, %tmp.224, %tmp.229);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 110 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_111_12_113_21_switchCase:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 112 16 ]
+        %tmp.230 = getm $.Toybox.WatchUi;
+        %tmp.231 = getv function %tmp.230 :pushView;
+        %tmp.235 = getv ? :OtherMenu;
+        %tmp.232 = newc %tmp.235 ();
+        %tmp.239 = getv ? :SetSportMenuDelegate;
+        %tmp.236 = newc %tmp.239 ();
+        %tmp.240 = getm $.Toybox.WatchUi;
+        %tmp.241 = getv %tmp.240 :SLIDE_LEFT;
+        invoke %tmp.230 %tmp.231(%tmp.232, %tmp.236, %tmp.241);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 113 16 ]
+        goto break @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_defaultCodeBegin:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_71_8_114_8_switchStmtEnd:
+        pop;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 115 8 ]
+        %tmp.242 = getm $.Toybox.WatchUi;
+        %tmp.243 = getv function %tmp.242 :requestUpdate;
+        invoke %tmp.242 %tmp.243();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_70_48_116_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 118; ]
+    function onBack() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_118_30_120_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 119 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :popView;
+        %tmp.3 = getm $.Toybox.WatchUi;
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_118_30_120_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 122; ]
+    function onWrap(key as WatchUi.Key) as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_122_51_124_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 123 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_122_51_124_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 137; ]
+class SetSportMenuDelegate extends Menu2InputDelegate{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 137; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 137; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 139; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_139_26_141_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 140 8 ]
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_139_26_141_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 143; ]
+    function onSelect(item as MenuItem) as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 144 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_stop" ]
+        %id.1 = local;
+        %tmp.1 = lgetv %item;
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 String;
+        lputv %id.1 %tmp.4;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 146 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_stop" ]
+        %index_dot.2 = local;
+        %tmp.5 = lgetv %id.1;
+        %tmp.6 = getv function %tmp.5 :find;
+        %tmp.7 = ".";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %index_dot.2 %tmp.8;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 147 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_stop" ]
+        %index_comma.3 = local;
+        %tmp.9 = lgetv %id.1;
+        %tmp.10 = getv function %tmp.9 :find;
+        %tmp.11 = ",";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        lputv %index_comma.3 %tmp.12;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 149 8 ]
+        %tmp.14 = getv ? :Properties;
+        %tmp.15 = getv function %tmp.14 :setValue;
+        %tmp.16 = "Sport";
+        %tmp.17 = lgetv %id.1;
+        %tmp.18 = getv function %tmp.17 :substring;
+        %tmp.19 = 0;
+        %tmp.21 = lgetv %index_dot.2;
+        %tmp.22 = invoke %tmp.17 %tmp.18(%tmp.19, %tmp.21);
+        %tmp.23 = getv function %tmp.22 :toNumber;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        invoke %tmp.14 %tmp.15(%tmp.16, %tmp.24);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 150 8 ]
+        %tmp.26 = getv ? :Properties;
+        %tmp.27 = getv function %tmp.26 :setValue;
+        %tmp.28 = "SubSport";
+        %tmp.29 = lgetv %id.1;
+        %tmp.30 = getv function %tmp.29 :substring;
+        %tmp.32 = lgetv %index_dot.2;
+        %tmp.33 = 1;
+        %tmp.34 = add %tmp.32 %tmp.33;
+        %tmp.36 = lgetv %index_comma.3;
+        %tmp.37 = invoke %tmp.29 %tmp.30(%tmp.34, %tmp.36);
+        %tmp.38 = getv function %tmp.37 :toNumber;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        invoke %tmp.26 %tmp.27(%tmp.28, %tmp.39);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 151 8 ]
+        %tmp.41 = getv ? :Properties;
+        %tmp.42 = getv function %tmp.41 :setValue;
+        %tmp.43 = "Name";
+        %tmp.44 = lgetv %id.1;
+        %tmp.45 = getv function %tmp.44 :substring;
+        %tmp.47 = lgetv %index_comma.3;
+        %tmp.48 = 1;
+        %tmp.49 = add %tmp.47 %tmp.48;
+        %tmp.50 = lgetv %id.1;
+        %tmp.51 = getv function %tmp.50 :length;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        %tmp.53 = invoke %tmp.44 %tmp.45(%tmp.49, %tmp.52);
+        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.53);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 153 8 ]
+        %tmp.54 = self;
+        %tmp.55 = getv function %tmp.54 :onBack;
+        invoke %tmp.54 %tmp.55();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 154 8 ]
+        %tmp.56 = self;
+        %tmp.57 = getv function %tmp.56 :onBack;
+        invoke %tmp.56 %tmp.57();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 155 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_stop" ]
+        %menu.4 = local;
+        %tmp.61 = getv ? :MainMenu;
+        %tmp.58 = newc %tmp.61 ();
+        lputv %menu.4 %tmp.58;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 156 8 ]
+        %tmp.62 = lgetv %menu.4;
+        %tmp.63 = getv function %tmp.62 :setFocus;
+        %tmp.64 = lgetv %menu.4;
+        %tmp.65 = getv function %tmp.64 :findItemById;
+        %tmp.67 = const :class;
+        %tmp.68 = invoke %tmp.64 %tmp.65(%tmp.67);
+        invoke %tmp.62 %tmp.63(%tmp.68);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 157 8 ]
+        %tmp.69 = getm $.Toybox.WatchUi;
+        %tmp.70 = getv function %tmp.69 :switchToView;
+        %tmp.72 = lgetv %menu.4;
+        %tmp.76 = getv ? :MainMenuDelegate;
+        %tmp.73 = newc %tmp.76 ();
+        %tmp.77 = getm $.Toybox.WatchUi;
+        %tmp.78 = getv %tmp.77 :SLIDE_RIGHT;
+        invoke %tmp.69 %tmp.70(%tmp.72, %tmp.73, %tmp.78);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 158 8 ]
+        %tmp.79 = getm $.Toybox.WatchUi;
+        %tmp.80 = getv function %tmp.79 :requestUpdate;
+        invoke %tmp.79 %tmp.80();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_143_48_159_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 161; ]
+    function onBack() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_161_30_163_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 162 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :popView;
+        %tmp.3 = getm $.Toybox.WatchUi;
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_161_30_163_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 165; ]
+    function onWrap(key as WatchUi.Key) as Boolean {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_165_51_167_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc" 166 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_ActivityClassMenu_mc_165_51_167_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/ActivityClassMenu.mc"; @line = 1; ]
+<init> {
+}

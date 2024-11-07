@@ -1,0 +1,132 @@
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 4; ]
+import Toybox.Lang;
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 6; ]
+class Datafield{
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 8; @position = 8; ]
+    var width = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 9; @position = 8; ]
+    var x = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 10; @position = 8; ]
+    var height = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 11; @position = 8; ]
+    var y = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 12; @position = 8; ]
+    var title = "";
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 13; @position = 8; ]
+    var value = "";
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 15; @position = 8; ]
+    var foregroundColor = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 16; @position = 8; ]
+    var backgroundColor = 0;
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 18; ]
+    function initialize(param_x, param_y, param_width, param_height, param_title, param_value) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_18_95_33_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 19 8 ]
+        %tmp.2 = lgetv %param_width;
+        putv self :width %tmp.2;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 20 8 ]
+        %tmp.4 = lgetv %param_height;
+        putv self :height %tmp.4;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 21 8 ]
+        %tmp.6 = lgetv %param_x;
+        putv self :x %tmp.6;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 22 8 ]
+        %tmp.8 = lgetv %param_y;
+        putv self :y %tmp.8;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 23 8 ]
+        %tmp.10 = lgetv %param_title;
+        putv self :title %tmp.10;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 24 8 ]
+        %tmp.12 = lgetv %param_value;
+        putv self :value %tmp.12;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 27 8 ]
+        [ "C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_18_95_33_4_start" "C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_18_95_33_4_stop" ]
+        %theme.1 = local;
+        %tmp.14 = getv ? :Properties;
+        %tmp.15 = getv function %tmp.14 :getValue;
+        %tmp.16 = "theme";
+        %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+        lputv %theme.1 %tmp.17;
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 28 8 ]
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_8_32_8_if_stmt:
+        %tmp.19 = lgetv %theme.1;
+        %tmp.20 = 0;
+        %tmp.21 = eq %tmp.19 %tmp.20;
+        bf %tmp.21 @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_8_32_8_if_false;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_8_32_8_if_true:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_23_30_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 29 12 ]
+        %tmp.22 = getm $.Toybox.Graphics;
+        %tmp.23 = getv %tmp.22 :COLOR_WHITE;
+        putv self :foregroundColor %tmp.23;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_23_30_8_stop:
+        goto @C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_8_32_8_if_end;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_8_32_8_if_false:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_30_15_32_8_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 31 12 ]
+        %tmp.24 = getm $.Toybox.Graphics;
+        %tmp.25 = getv %tmp.24 :COLOR_BLACK;
+        putv self :foregroundColor %tmp.25;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_30_15_32_8_stop:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_28_8_32_8_if_end:
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_18_95_33_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 35; ]
+    function updateValue(param_value as String) as Void {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_35_56_37_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 36 8 ]
+        %tmp.2 = lgetv %param_value;
+        putv self :value %tmp.2;
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_35_56_37_4_stop:
+    }
+    [ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 40; ]
+    function draw(dc as Dc) {
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_40_28_43_4_start:
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 41 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setColor;
+        %tmp.4 = getv ? :foregroundColor;
+        %tmp.5 = getm $.Toybox.Graphics;
+        %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc" 42 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :drawText;
+        %tmp.10 = getv ? :x;
+        %tmp.12 = getv ? :width;
+        %tmp.13 = 2;
+        %tmp.14 = div %tmp.12 %tmp.13;
+        %tmp.15 = add %tmp.10 %tmp.14;
+        %tmp.17 = getv ? :y;
+        %tmp.19 = getv ? :height;
+        %tmp.20 = 0.15;
+        %tmp.21 = mul %tmp.19 %tmp.20;
+        %tmp.22 = add %tmp.17 %tmp.21;
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :FONT_XTINY;
+        %tmp.26 = getv ? :title;
+        %tmp.27 = getm $.Toybox.Graphics;
+        %tmp.28 = getv %tmp.27 :TEXT_JUSTIFY_CENTER;
+        %tmp.29 = getm $.Toybox.Graphics;
+        %tmp.30 = getv %tmp.29 :TEXT_JUSTIFY_VCENTER;
+        %tmp.31 = bitor %tmp.28 %tmp.30;
+        invoke %tmp.7 %tmp.8(%tmp.15, %tmp.22, %tmp.24, %tmp.26, %tmp.31);
+C_Users_luca__Documents_Garmin_newAnySportPro_source_datafields_Datafield_mc_40_28_43_4_stop:
+    }
+}
+[ @file = "C:\Users\luca_\Documents\Garmin\newAnySportPro\source\datafields\Datafield.mc"; @line = 1; ]
+<init> {
+}

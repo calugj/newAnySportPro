@@ -1,0 +1,482 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 1; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 2; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 5; ]
+class WaterMenu extends CustomMenu{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 5; ]
+    <init> {
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 8 18 ]
+        %tmp.1 = getm $.Toybox.Graphics;
+        %tmp.2 = getv %tmp.1 :COLOR_WHITE;
+        putv self :BACKGROUND_COLOR %tmp.2;
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 7; @position = 16; ]
+    private
+    var ITEM_HEIGHT = 70;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 8; @position = 18; ]
+    private
+    const BACKGROUND_COLOR;
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 10; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_10_26_40_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 11 8 ]
+        %tmp.2 = getv ? :System;
+        %tmp.3 = getv function %tmp.2 :getDeviceSettings;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = getv %tmp.4 :screenHeight;
+        %tmp.6 = 0.15;
+        %tmp.7 = mul %tmp.5 %tmp.6;
+        putv self :ITEM_HEIGHT %tmp.7;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 12 8 ]
+        %tmp.9 = getv ? :CustomMenu;
+        %tmp.10 = getv function %tmp.9 :initialize;
+        %tmp.12 = getv ? :ITEM_HEIGHT;
+        %tmp.13 = getv function %tmp.12 :toNumber;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.16 = getv ? :BACKGROUND_COLOR;
+        %tmp.17 = newd 0;
+        invoke %tmp.9 %tmp.10(%tmp.14, %tmp.16, %tmp.17);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 14 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_8_16_8_if_stmt:
+        %tmp.19 = getv ? :CustomMenu;
+        %tmp.21 = const :setDividerType;
+        %tmp.22 = canhazplz %tmp.19 %tmp.21;
+        bf %tmp.22 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_8_16_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_8_16_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_43_16_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 15 12 ]
+        %tmp.23 = self;
+        %tmp.24 = getv function %tmp.23 :setDividerType;
+        %tmp.25 = null;
+        invoke %tmp.23 %tmp.24(%tmp.25);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_43_16_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_8_16_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_14_8_16_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 19 8 ]
+        %tmp.26 = self;
+        %tmp.27 = getv function %tmp.26 :addItem;
+        %tmp.31 = getv ? :CustomLabelMenuItem;
+        %tmp.32 = "32.0,";
+        %tmp.33 = getm $.Toybox.WatchUi;
+        %tmp.34 = getv function %tmp.33 :loadResource;
+        %tmp.36 = getv ? :Rez;
+        %tmp.37 = getv %tmp.36 :Strings;
+        %tmp.38 = getv %tmp.37 :Water_Sail;
+        %tmp.39 = invoke %tmp.33 %tmp.34(%tmp.38);
+        %tmp.40 = add %tmp.32 %tmp.39;
+        %tmp.41 = getm $.Toybox.WatchUi;
+        %tmp.42 = getv function %tmp.41 :loadResource;
+        %tmp.44 = getv ? :Rez;
+        %tmp.45 = getv %tmp.44 :Strings;
+        %tmp.46 = getv %tmp.45 :Water_Sail;
+        %tmp.47 = invoke %tmp.41 %tmp.42(%tmp.46);
+        %tmp.28 = newc %tmp.31 (%tmp.40, %tmp.47);
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 20 8 ]
+        %tmp.48 = self;
+        %tmp.49 = getv function %tmp.48 :addItem;
+        %tmp.53 = getv ? :CustomLabelMenuItem;
+        %tmp.54 = "41.0,";
+        %tmp.55 = getm $.Toybox.WatchUi;
+        %tmp.56 = getv function %tmp.55 :loadResource;
+        %tmp.58 = getv ? :Rez;
+        %tmp.59 = getv %tmp.58 :Strings;
+        %tmp.60 = getv %tmp.59 :Water_Kayak;
+        %tmp.61 = invoke %tmp.55 %tmp.56(%tmp.60);
+        %tmp.62 = add %tmp.54 %tmp.61;
+        %tmp.63 = getm $.Toybox.WatchUi;
+        %tmp.64 = getv function %tmp.63 :loadResource;
+        %tmp.66 = getv ? :Rez;
+        %tmp.67 = getv %tmp.66 :Strings;
+        %tmp.68 = getv %tmp.67 :Water_Kayak;
+        %tmp.69 = invoke %tmp.63 %tmp.64(%tmp.68);
+        %tmp.50 = newc %tmp.53 (%tmp.62, %tmp.69);
+        invoke %tmp.48 %tmp.49(%tmp.50);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 21 8 ]
+        %tmp.70 = self;
+        %tmp.71 = getv function %tmp.70 :addItem;
+        %tmp.75 = getv ? :CustomLabelMenuItem;
+        %tmp.76 = "19.0,";
+        %tmp.77 = getm $.Toybox.WatchUi;
+        %tmp.78 = getv function %tmp.77 :loadResource;
+        %tmp.80 = getv ? :Rez;
+        %tmp.81 = getv %tmp.80 :Strings;
+        %tmp.82 = getv %tmp.81 :Water_Paddle;
+        %tmp.83 = invoke %tmp.77 %tmp.78(%tmp.82);
+        %tmp.84 = add %tmp.76 %tmp.83;
+        %tmp.85 = getm $.Toybox.WatchUi;
+        %tmp.86 = getv function %tmp.85 :loadResource;
+        %tmp.88 = getv ? :Rez;
+        %tmp.89 = getv %tmp.88 :Strings;
+        %tmp.90 = getv %tmp.89 :Water_Paddle;
+        %tmp.91 = invoke %tmp.85 %tmp.86(%tmp.90);
+        %tmp.72 = newc %tmp.75 (%tmp.84, %tmp.91);
+        invoke %tmp.70 %tmp.71(%tmp.72);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 22 8 ]
+        %tmp.92 = self;
+        %tmp.93 = getv function %tmp.92 :addItem;
+        %tmp.97 = getv ? :CustomLabelMenuItem;
+        %tmp.98 = "37.0,";
+        %tmp.99 = getm $.Toybox.WatchUi;
+        %tmp.100 = getv function %tmp.99 :loadResource;
+        %tmp.102 = getv ? :Rez;
+        %tmp.103 = getv %tmp.102 :Strings;
+        %tmp.104 = getv %tmp.103 :Water_SUP;
+        %tmp.105 = invoke %tmp.99 %tmp.100(%tmp.104);
+        %tmp.106 = add %tmp.98 %tmp.105;
+        %tmp.107 = getm $.Toybox.WatchUi;
+        %tmp.108 = getv function %tmp.107 :loadResource;
+        %tmp.110 = getv ? :Rez;
+        %tmp.111 = getv %tmp.110 :Strings;
+        %tmp.112 = getv %tmp.111 :Water_SUP;
+        %tmp.113 = invoke %tmp.107 %tmp.108(%tmp.112);
+        %tmp.94 = newc %tmp.97 (%tmp.106, %tmp.113);
+        invoke %tmp.92 %tmp.93(%tmp.94);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 23 8 ]
+        %tmp.114 = self;
+        %tmp.115 = getv function %tmp.114 :addItem;
+        %tmp.119 = getv ? :CustomLabelMenuItem;
+        %tmp.120 = "42.0,";
+        %tmp.121 = getm $.Toybox.WatchUi;
+        %tmp.122 = getv function %tmp.121 :loadResource;
+        %tmp.124 = getv ? :Rez;
+        %tmp.125 = getv %tmp.124 :Strings;
+        %tmp.126 = getv %tmp.125 :Water_Raft;
+        %tmp.127 = invoke %tmp.121 %tmp.122(%tmp.126);
+        %tmp.128 = add %tmp.120 %tmp.127;
+        %tmp.129 = getm $.Toybox.WatchUi;
+        %tmp.130 = getv function %tmp.129 :loadResource;
+        %tmp.132 = getv ? :Rez;
+        %tmp.133 = getv %tmp.132 :Strings;
+        %tmp.134 = getv %tmp.133 :Water_Raft;
+        %tmp.135 = invoke %tmp.129 %tmp.130(%tmp.134);
+        %tmp.116 = newc %tmp.119 (%tmp.128, %tmp.135);
+        invoke %tmp.114 %tmp.115(%tmp.116);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 24 8 ]
+        %tmp.136 = self;
+        %tmp.137 = getv function %tmp.136 :addItem;
+        %tmp.141 = getv ? :CustomLabelMenuItem;
+        %tmp.142 = "42.41,";
+        %tmp.143 = getm $.Toybox.WatchUi;
+        %tmp.144 = getv function %tmp.143 :loadResource;
+        %tmp.146 = getv ? :Rez;
+        %tmp.147 = getv %tmp.146 :Strings;
+        %tmp.148 = getv %tmp.147 :Water_Whitewater;
+        %tmp.149 = invoke %tmp.143 %tmp.144(%tmp.148);
+        %tmp.150 = add %tmp.142 %tmp.149;
+        %tmp.151 = getm $.Toybox.WatchUi;
+        %tmp.152 = getv function %tmp.151 :loadResource;
+        %tmp.154 = getv ? :Rez;
+        %tmp.155 = getv %tmp.154 :Strings;
+        %tmp.156 = getv %tmp.155 :Water_Whitewater;
+        %tmp.157 = invoke %tmp.151 %tmp.152(%tmp.156);
+        %tmp.138 = newc %tmp.141 (%tmp.150, %tmp.157);
+        invoke %tmp.136 %tmp.137(%tmp.138);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 25 8 ]
+        %tmp.158 = self;
+        %tmp.159 = getv function %tmp.158 :addItem;
+        %tmp.163 = getv ? :CustomLabelMenuItem;
+        %tmp.164 = "15.0,";
+        %tmp.165 = getm $.Toybox.WatchUi;
+        %tmp.166 = getv function %tmp.165 :loadResource;
+        %tmp.168 = getv ? :Rez;
+        %tmp.169 = getv %tmp.168 :Strings;
+        %tmp.170 = getv %tmp.169 :Water_Row;
+        %tmp.171 = invoke %tmp.165 %tmp.166(%tmp.170);
+        %tmp.172 = add %tmp.164 %tmp.171;
+        %tmp.173 = getm $.Toybox.WatchUi;
+        %tmp.174 = getv function %tmp.173 :loadResource;
+        %tmp.176 = getv ? :Rez;
+        %tmp.177 = getv %tmp.176 :Strings;
+        %tmp.178 = getv %tmp.177 :Water_Row;
+        %tmp.179 = invoke %tmp.173 %tmp.174(%tmp.178);
+        %tmp.160 = newc %tmp.163 (%tmp.172, %tmp.179);
+        invoke %tmp.158 %tmp.159(%tmp.160);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 26 8 ]
+        %tmp.180 = self;
+        %tmp.181 = getv function %tmp.180 :addItem;
+        %tmp.185 = getv ? :CustomLabelMenuItem;
+        %tmp.186 = "43.0,";
+        %tmp.187 = getm $.Toybox.WatchUi;
+        %tmp.188 = getv function %tmp.187 :loadResource;
+        %tmp.190 = getv ? :Rez;
+        %tmp.191 = getv %tmp.190 :Strings;
+        %tmp.192 = getv %tmp.191 :Water_Windsurf;
+        %tmp.193 = invoke %tmp.187 %tmp.188(%tmp.192);
+        %tmp.194 = add %tmp.186 %tmp.193;
+        %tmp.195 = getm $.Toybox.WatchUi;
+        %tmp.196 = getv function %tmp.195 :loadResource;
+        %tmp.198 = getv ? :Rez;
+        %tmp.199 = getv %tmp.198 :Strings;
+        %tmp.200 = getv %tmp.199 :Water_Windsurf;
+        %tmp.201 = invoke %tmp.195 %tmp.196(%tmp.200);
+        %tmp.182 = newc %tmp.185 (%tmp.194, %tmp.201);
+        invoke %tmp.180 %tmp.181(%tmp.182);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 27 8 ]
+        %tmp.202 = self;
+        %tmp.203 = getv function %tmp.202 :addItem;
+        %tmp.207 = getv ? :CustomLabelMenuItem;
+        %tmp.208 = "44.0,";
+        %tmp.209 = getm $.Toybox.WatchUi;
+        %tmp.210 = getv function %tmp.209 :loadResource;
+        %tmp.212 = getv ? :Rez;
+        %tmp.213 = getv %tmp.212 :Strings;
+        %tmp.214 = getv %tmp.213 :Water_Kitesurf;
+        %tmp.215 = invoke %tmp.209 %tmp.210(%tmp.214);
+        %tmp.216 = add %tmp.208 %tmp.215;
+        %tmp.217 = getm $.Toybox.WatchUi;
+        %tmp.218 = getv function %tmp.217 :loadResource;
+        %tmp.220 = getv ? :Rez;
+        %tmp.221 = getv %tmp.220 :Strings;
+        %tmp.222 = getv %tmp.221 :Water_Kitesurf;
+        %tmp.223 = invoke %tmp.217 %tmp.218(%tmp.222);
+        %tmp.204 = newc %tmp.207 (%tmp.216, %tmp.223);
+        invoke %tmp.202 %tmp.203(%tmp.204);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 28 8 ]
+        %tmp.224 = self;
+        %tmp.225 = getv function %tmp.224 :addItem;
+        %tmp.229 = getv ? :CustomLabelMenuItem;
+        %tmp.230 = "39.0,";
+        %tmp.231 = getm $.Toybox.WatchUi;
+        %tmp.232 = getv function %tmp.231 :loadResource;
+        %tmp.234 = getv ? :Rez;
+        %tmp.235 = getv %tmp.234 :Strings;
+        %tmp.236 = getv %tmp.235 :Water_Wakeboard;
+        %tmp.237 = invoke %tmp.231 %tmp.232(%tmp.236);
+        %tmp.238 = add %tmp.230 %tmp.237;
+        %tmp.239 = getm $.Toybox.WatchUi;
+        %tmp.240 = getv function %tmp.239 :loadResource;
+        %tmp.242 = getv ? :Rez;
+        %tmp.243 = getv %tmp.242 :Strings;
+        %tmp.244 = getv %tmp.243 :Water_Wakeboard;
+        %tmp.245 = invoke %tmp.239 %tmp.240(%tmp.244);
+        %tmp.226 = newc %tmp.229 (%tmp.238, %tmp.245);
+        invoke %tmp.224 %tmp.225(%tmp.226);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 29 8 ]
+        %tmp.246 = self;
+        %tmp.247 = getv function %tmp.246 :addItem;
+        %tmp.251 = getv ? :CustomLabelMenuItem;
+        %tmp.252 = "77.0,";
+        %tmp.253 = getm $.Toybox.WatchUi;
+        %tmp.254 = getv function %tmp.253 :loadResource;
+        %tmp.256 = getv ? :Rez;
+        %tmp.257 = getv %tmp.256 :Strings;
+        %tmp.258 = getv %tmp.257 :Water_Wakesurf;
+        %tmp.259 = invoke %tmp.253 %tmp.254(%tmp.258);
+        %tmp.260 = add %tmp.252 %tmp.259;
+        %tmp.261 = getm $.Toybox.WatchUi;
+        %tmp.262 = getv function %tmp.261 :loadResource;
+        %tmp.264 = getv ? :Rez;
+        %tmp.265 = getv %tmp.264 :Strings;
+        %tmp.266 = getv %tmp.265 :Water_Wakesurf;
+        %tmp.267 = invoke %tmp.261 %tmp.262(%tmp.266);
+        %tmp.248 = newc %tmp.251 (%tmp.260, %tmp.267);
+        invoke %tmp.246 %tmp.247(%tmp.248);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 30 8 ]
+        %tmp.268 = self;
+        %tmp.269 = getv function %tmp.268 :addItem;
+        %tmp.273 = getv ? :CustomLabelMenuItem;
+        %tmp.274 = "40.0,";
+        %tmp.275 = getm $.Toybox.WatchUi;
+        %tmp.276 = getv function %tmp.275 :loadResource;
+        %tmp.278 = getv ? :Rez;
+        %tmp.279 = getv %tmp.278 :Strings;
+        %tmp.280 = getv %tmp.279 :Water_Ski;
+        %tmp.281 = invoke %tmp.275 %tmp.276(%tmp.280);
+        %tmp.282 = add %tmp.274 %tmp.281;
+        %tmp.283 = getm $.Toybox.WatchUi;
+        %tmp.284 = getv function %tmp.283 :loadResource;
+        %tmp.286 = getv ? :Rez;
+        %tmp.287 = getv %tmp.286 :Strings;
+        %tmp.288 = getv %tmp.287 :Water_Ski;
+        %tmp.289 = invoke %tmp.283 %tmp.284(%tmp.288);
+        %tmp.270 = newc %tmp.273 (%tmp.282, %tmp.289);
+        invoke %tmp.268 %tmp.269(%tmp.270);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 31 8 ]
+        %tmp.290 = self;
+        %tmp.291 = getv function %tmp.290 :addItem;
+        %tmp.295 = getv ? :CustomLabelMenuItem;
+        %tmp.296 = "38.0,";
+        %tmp.297 = getm $.Toybox.WatchUi;
+        %tmp.298 = getv function %tmp.297 :loadResource;
+        %tmp.300 = getv ? :Rez;
+        %tmp.301 = getv %tmp.300 :Strings;
+        %tmp.302 = getv %tmp.301 :Water_Surf;
+        %tmp.303 = invoke %tmp.297 %tmp.298(%tmp.302);
+        %tmp.304 = add %tmp.296 %tmp.303;
+        %tmp.305 = getm $.Toybox.WatchUi;
+        %tmp.306 = getv function %tmp.305 :loadResource;
+        %tmp.308 = getv ? :Rez;
+        %tmp.309 = getv %tmp.308 :Strings;
+        %tmp.310 = getv %tmp.309 :Water_Surf;
+        %tmp.311 = invoke %tmp.305 %tmp.306(%tmp.310);
+        %tmp.292 = newc %tmp.295 (%tmp.304, %tmp.311);
+        invoke %tmp.290 %tmp.291(%tmp.292);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 32 8 ]
+        %tmp.312 = self;
+        %tmp.313 = getv function %tmp.312 :addItem;
+        %tmp.317 = getv ? :CustomLabelMenuItem;
+        %tmp.318 = "82.0,";
+        %tmp.319 = getm $.Toybox.WatchUi;
+        %tmp.320 = getv function %tmp.319 :loadResource;
+        %tmp.322 = getv ? :Rez;
+        %tmp.323 = getv %tmp.322 :Strings;
+        %tmp.324 = getv %tmp.323 :Water_Snorkel;
+        %tmp.325 = invoke %tmp.319 %tmp.320(%tmp.324);
+        %tmp.326 = add %tmp.318 %tmp.325;
+        %tmp.327 = getm $.Toybox.WatchUi;
+        %tmp.328 = getv function %tmp.327 :loadResource;
+        %tmp.330 = getv ? :Rez;
+        %tmp.331 = getv %tmp.330 :Strings;
+        %tmp.332 = getv %tmp.331 :Water_Snorkel;
+        %tmp.333 = invoke %tmp.327 %tmp.328(%tmp.332);
+        %tmp.314 = newc %tmp.317 (%tmp.326, %tmp.333);
+        invoke %tmp.312 %tmp.313(%tmp.314);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 33 8 ]
+        %tmp.334 = self;
+        %tmp.335 = getv function %tmp.334 :addItem;
+        %tmp.339 = getv ? :CustomLabelMenuItem;
+        %tmp.340 = "76.0,";
+        %tmp.341 = getm $.Toybox.WatchUi;
+        %tmp.342 = getv function %tmp.341 :loadResource;
+        %tmp.344 = getv ? :Rez;
+        %tmp.345 = getv %tmp.344 :Strings;
+        %tmp.346 = getv %tmp.345 :Water_Tube;
+        %tmp.347 = invoke %tmp.341 %tmp.342(%tmp.346);
+        %tmp.348 = add %tmp.340 %tmp.347;
+        %tmp.349 = getm $.Toybox.WatchUi;
+        %tmp.350 = getv function %tmp.349 :loadResource;
+        %tmp.352 = getv ? :Rez;
+        %tmp.353 = getv %tmp.352 :Strings;
+        %tmp.354 = getv %tmp.353 :Water_Tube;
+        %tmp.355 = invoke %tmp.349 %tmp.350(%tmp.354);
+        %tmp.336 = newc %tmp.339 (%tmp.348, %tmp.355);
+        invoke %tmp.334 %tmp.335(%tmp.336);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_10_26_40_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 42; ]
+    function drawTitle(dc as Dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_42_33_49_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 43 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setAntiAlias;
+        %tmp.3 = true;
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 45 8 ]
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :setColor;
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :COLOR_BLACK;
+        %tmp.8 = getm $.Toybox.Graphics;
+        %tmp.9 = getv %tmp.8 :COLOR_BLACK;
+        invoke %tmp.4 %tmp.5(%tmp.7, %tmp.9);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 46 8 ]
+        %tmp.10 = lgetv %dc;
+        %tmp.11 = getv function %tmp.10 :clear;
+        invoke %tmp.10 %tmp.11();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 47 8 ]
+        %tmp.12 = lgetv %dc;
+        %tmp.13 = getv function %tmp.12 :setColor;
+        %tmp.14 = getm $.Toybox.Graphics;
+        %tmp.15 = getv %tmp.14 :COLOR_WHITE;
+        %tmp.16 = getm $.Toybox.Graphics;
+        %tmp.17 = getv %tmp.16 :COLOR_TRANSPARENT;
+        invoke %tmp.12 %tmp.13(%tmp.15, %tmp.17);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 48 8 ]
+        %tmp.18 = lgetv %dc;
+        %tmp.19 = getv function %tmp.18 :drawText;
+        %tmp.20 = lgetv %dc;
+        %tmp.21 = getv function %tmp.20 :getWidth;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = getv function %tmp.25 :getHeight;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = 0.7;
+        %tmp.29 = mul %tmp.27 %tmp.28;
+        %tmp.30 = getm $.Toybox.Graphics;
+        %tmp.31 = getv %tmp.30 :FONT_SMALL;
+        %tmp.32 = getm $.Toybox.WatchUi;
+        %tmp.33 = getv function %tmp.32 :loadResource;
+        %tmp.35 = getv ? :Rez;
+        %tmp.36 = getv %tmp.35 :Strings;
+        %tmp.37 = getv %tmp.36 :WaterSports;
+        %tmp.38 = invoke %tmp.32 %tmp.33(%tmp.37);
+        %tmp.39 = getm $.Toybox.Graphics;
+        %tmp.40 = getv %tmp.39 :TEXT_JUSTIFY_CENTER;
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :TEXT_JUSTIFY_VCENTER;
+        %tmp.43 = bitor %tmp.40 %tmp.42;
+        invoke %tmp.18 %tmp.19(%tmp.24, %tmp.29, %tmp.31, %tmp.38, %tmp.43);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_42_33_49_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 51; ]
+    function drawForeground(dc as Dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_51_38_58_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 52 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_51_38_58_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_51_38_58_4_stop" ]
+        %width.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %width.1 %tmp.3;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 53 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_51_38_58_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_51_38_58_4_stop" ]
+        %height.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %height.2 %tmp.6;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 54 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.9 = getm $.Toybox.Graphics;
+        %tmp.10 = getv %tmp.9 :COLOR_BLACK;
+        %tmp.11 = getm $.Toybox.Graphics;
+        %tmp.12 = getv %tmp.11 :COLOR_TRANSPARENT;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 55 8 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :setPenWidth;
+        %tmp.16 = lgetv %width.1;
+        %tmp.17 = 0.015;
+        %tmp.18 = mul %tmp.16 %tmp.17;
+        invoke %tmp.13 %tmp.14(%tmp.18);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc" 56 8 ]
+        %tmp.19 = lgetv %dc;
+        %tmp.20 = getv function %tmp.19 :drawLine;
+        %tmp.22 = lgetv %width.1;
+        %tmp.23 = 0.05;
+        %tmp.24 = mul %tmp.22 %tmp.23;
+        %tmp.26 = lgetv %height.2;
+        %tmp.27 = 2;
+        %tmp.28 = div %tmp.26 %tmp.27;
+        %tmp.30 = getv ? :ITEM_HEIGHT;
+        %tmp.31 = 0.35;
+        %tmp.32 = mul %tmp.30 %tmp.31;
+        %tmp.33 = sub %tmp.28 %tmp.32;
+        %tmp.35 = lgetv %width.1;
+        %tmp.36 = 0.05;
+        %tmp.37 = mul %tmp.35 %tmp.36;
+        %tmp.39 = lgetv %height.2;
+        %tmp.40 = 2;
+        %tmp.41 = div %tmp.39 %tmp.40;
+        %tmp.43 = getv ? :ITEM_HEIGHT;
+        %tmp.44 = 0.4;
+        %tmp.45 = mul %tmp.43 %tmp.44;
+        %tmp.46 = add %tmp.41 %tmp.45;
+        invoke %tmp.19 %tmp.20(%tmp.24, %tmp.33, %tmp.37, %tmp.46);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_menus_classes_WaterMenu_mc_51_38_58_4_stop:
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/menus/classes/WaterMenu.mc"; @line = 1; ]
+<init> {
+}

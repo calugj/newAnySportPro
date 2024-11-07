@@ -1,0 +1,438 @@
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 3; ]
+import Toybox.Application;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 4; ]
+import Toybox.Lang;
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 6; ]
+class DevView extends WatchUi.View{
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 8; ]
+    function initialize() as Void {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_8_26_11_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 9 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_8_26_11_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 14; ]
+    function onLayout(dc as Dc) as Void {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 21; ]
+    function onShow() as Void {
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 26; ]
+    public
+    function onUpdate(dc) {
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 27 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 29 8 ]
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_8_31_8_if_stmt:
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :Dc;
+        %tmp.9 = const :setAntiAlias;
+        %tmp.10 = canhazplz %tmp.7 %tmp.9;
+        bf %tmp.10 @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_8_31_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_8_31_8_if_true:
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_49_31_8_start:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 30 12 ]
+        %tmp.11 = lgetv %dc;
+        %tmp.12 = getv function %tmp.11 :setAntiAlias;
+        %tmp.13 = true;
+        invoke %tmp.11 %tmp.12(%tmp.13);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_49_31_8_stop:
+        goto @_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_8_31_8_if_end;
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_29_8_31_8_if_end:
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 33 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %width.1 = local;
+        %tmp.14 = lgetv %dc;
+        %tmp.15 = getv function %tmp.14 :getWidth;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        lputv %width.1 %tmp.16;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 34 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %height.2 = local;
+        %tmp.17 = lgetv %dc;
+        %tmp.18 = getv function %tmp.17 :getHeight;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        lputv %height.2 %tmp.19;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 35 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %dev.3 = local;
+        %tmp.21 = getv ? :System;
+        %tmp.22 = getv function %tmp.21 :getDeviceSettings;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        lputv %dev.3 %tmp.23;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 36 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %stat.4 = local;
+        %tmp.25 = getv ? :System;
+        %tmp.26 = getv function %tmp.25 :getSystemStats;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        lputv %stat.4 %tmp.27;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 38 8 ]
+        %tmp.28 = lgetv %dc;
+        %tmp.29 = getv function %tmp.28 :setColor;
+        %tmp.30 = getm $.Toybox.Graphics;
+        %tmp.31 = getv %tmp.30 :COLOR_BLACK;
+        %tmp.32 = getm $.Toybox.Graphics;
+        %tmp.33 = getv %tmp.32 :COLOR_BLACK;
+        invoke %tmp.28 %tmp.29(%tmp.31, %tmp.33);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 39 8 ]
+        %tmp.34 = lgetv %dc;
+        %tmp.35 = getv function %tmp.34 :clear;
+        invoke %tmp.34 %tmp.35();
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 41 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %y.5 = local;
+        %tmp.37 = lgetv %height.2;
+        %tmp.38 = 0.3;
+        %tmp.39 = mul %tmp.37 %tmp.38;
+        lputv %y.5 %tmp.39;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 42 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %x.6 = local;
+        %tmp.41 = lgetv %width.1;
+        %tmp.42 = 0.15;
+        %tmp.43 = mul %tmp.41 %tmp.42;
+        lputv %x.6 %tmp.43;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 44 8 ]
+        %tmp.44 = lgetv %dc;
+        %tmp.45 = getv function %tmp.44 :setColor;
+        %tmp.46 = getm $.Toybox.Graphics;
+        %tmp.47 = getv %tmp.46 :COLOR_WHITE;
+        %tmp.48 = getm $.Toybox.Graphics;
+        %tmp.49 = getv %tmp.48 :COLOR_TRANSPARENT;
+        invoke %tmp.44 %tmp.45(%tmp.47, %tmp.49);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 45 8 ]
+        %tmp.50 = lgetv %dc;
+        %tmp.51 = getv function %tmp.50 :drawText;
+        %tmp.53 = lgetv %x.6;
+        %tmp.55 = lgetv %y.5;
+        %tmp.56 = getm $.Toybox.Graphics;
+        %tmp.57 = getv %tmp.56 :FONT_XTINY;
+        %tmp.58 = getm $.Toybox.WatchUi;
+        %tmp.59 = getv function %tmp.58 :loadResource;
+        %tmp.61 = getv ? :Rez;
+        %tmp.62 = getv %tmp.61 :Strings;
+        %tmp.63 = getv %tmp.62 :Firmware;
+        %tmp.64 = invoke %tmp.58 %tmp.59(%tmp.63);
+        %tmp.65 = getm $.Toybox.Lang;
+        %tmp.66 = getv function %tmp.65 :format;
+        %tmp.67 = "$1$.$2$";
+        %tmp.68 = lgetv %dev.3;
+        %tmp.69 = getv %tmp.68 :firmwareVersion;
+        %tmp.70 = invoke %tmp.65 %tmp.66(%tmp.67, %tmp.69);
+        %tmp.71 = add %tmp.64 %tmp.70;
+        %tmp.72 = getm $.Toybox.Graphics;
+        %tmp.73 = getv %tmp.72 :TEXT_JUSTIFY_LEFT;
+        %tmp.74 = getm $.Toybox.Graphics;
+        %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_VCENTER;
+        %tmp.76 = bitor %tmp.73 %tmp.75;
+        invoke %tmp.50 %tmp.51(%tmp.53, %tmp.55, %tmp.57, %tmp.71, %tmp.76);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 46 8 ]
+        %tmp.77 = lgetv %dc;
+        %tmp.78 = getv function %tmp.77 :drawText;
+        %tmp.80 = lgetv %x.6;
+        %tmp.82 = lgetv %y.5;
+        %tmp.83 = getm $.Toybox.Graphics;
+        %tmp.84 = getv function %tmp.83 :getFontHeight;
+        %tmp.85 = getm $.Toybox.Graphics;
+        %tmp.86 = getv %tmp.85 :FONT_XTINY;
+        %tmp.87 = invoke %tmp.83 %tmp.84(%tmp.86);
+        %tmp.88 = add %tmp.82 %tmp.87;
+        %tmp.89 = getm $.Toybox.Graphics;
+        %tmp.90 = getv %tmp.89 :FONT_XTINY;
+        %tmp.91 = getm $.Toybox.WatchUi;
+        %tmp.92 = getv function %tmp.91 :loadResource;
+        %tmp.94 = getv ? :Rez;
+        %tmp.95 = getv %tmp.94 :Strings;
+        %tmp.96 = getv %tmp.95 :Monkey;
+        %tmp.97 = invoke %tmp.91 %tmp.92(%tmp.96);
+        %tmp.98 = getm $.Toybox.Lang;
+        %tmp.99 = getv function %tmp.98 :format;
+        %tmp.100 = "$1$.$2$.$3$";
+        %tmp.101 = lgetv %dev.3;
+        %tmp.102 = getv %tmp.101 :monkeyVersion;
+        %tmp.103 = invoke %tmp.98 %tmp.99(%tmp.100, %tmp.102);
+        %tmp.104 = add %tmp.97 %tmp.103;
+        %tmp.105 = getm $.Toybox.Graphics;
+        %tmp.106 = getv %tmp.105 :TEXT_JUSTIFY_LEFT;
+        %tmp.107 = getm $.Toybox.Graphics;
+        %tmp.108 = getv %tmp.107 :TEXT_JUSTIFY_VCENTER;
+        %tmp.109 = bitor %tmp.106 %tmp.108;
+        invoke %tmp.77 %tmp.78(%tmp.80, %tmp.88, %tmp.90, %tmp.104, %tmp.109);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 47 8 ]
+        %tmp.110 = lgetv %dc;
+        %tmp.111 = getv function %tmp.110 :drawText;
+        %tmp.113 = lgetv %x.6;
+        %tmp.115 = lgetv %y.5;
+        %tmp.116 = 2;
+        %tmp.117 = getm $.Toybox.Graphics;
+        %tmp.118 = getv function %tmp.117 :getFontHeight;
+        %tmp.119 = getm $.Toybox.Graphics;
+        %tmp.120 = getv %tmp.119 :FONT_XTINY;
+        %tmp.121 = invoke %tmp.117 %tmp.118(%tmp.120);
+        %tmp.122 = mul %tmp.116 %tmp.121;
+        %tmp.123 = add %tmp.115 %tmp.122;
+        %tmp.124 = getm $.Toybox.Graphics;
+        %tmp.125 = getv %tmp.124 :FONT_XTINY;
+        %tmp.126 = getm $.Toybox.WatchUi;
+        %tmp.127 = getv function %tmp.126 :loadResource;
+        %tmp.129 = getv ? :Rez;
+        %tmp.130 = getv %tmp.129 :Strings;
+        %tmp.131 = getv %tmp.130 :App;
+        %tmp.132 = invoke %tmp.126 %tmp.127(%tmp.131);
+        %tmp.133 = getm $.Toybox.WatchUi;
+        %tmp.134 = getv function %tmp.133 :loadResource;
+        %tmp.136 = getv ? :Rez;
+        %tmp.137 = getv %tmp.136 :Strings;
+        %tmp.138 = getv %tmp.137 :Version;
+        %tmp.139 = invoke %tmp.133 %tmp.134(%tmp.138);
+        %tmp.140 = add %tmp.132 %tmp.139;
+        %tmp.141 = getm $.Toybox.Graphics;
+        %tmp.142 = getv %tmp.141 :TEXT_JUSTIFY_LEFT;
+        %tmp.143 = getm $.Toybox.Graphics;
+        %tmp.144 = getv %tmp.143 :TEXT_JUSTIFY_VCENTER;
+        %tmp.145 = bitor %tmp.142 %tmp.144;
+        invoke %tmp.110 %tmp.111(%tmp.113, %tmp.123, %tmp.125, %tmp.140, %tmp.145);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 48 8 ]
+        %tmp.146 = lgetv %dc;
+        %tmp.147 = getv function %tmp.146 :drawText;
+        %tmp.149 = lgetv %x.6;
+        %tmp.151 = lgetv %y.5;
+        %tmp.152 = 3;
+        %tmp.153 = getm $.Toybox.Graphics;
+        %tmp.154 = getv function %tmp.153 :getFontHeight;
+        %tmp.155 = getm $.Toybox.Graphics;
+        %tmp.156 = getv %tmp.155 :FONT_XTINY;
+        %tmp.157 = invoke %tmp.153 %tmp.154(%tmp.156);
+        %tmp.158 = mul %tmp.152 %tmp.157;
+        %tmp.159 = add %tmp.151 %tmp.158;
+        %tmp.160 = getm $.Toybox.Graphics;
+        %tmp.161 = getv %tmp.160 :FONT_XTINY;
+        %tmp.162 = lgetv %dev.3;
+        %tmp.163 = getv %tmp.162 :screenWidth;
+        %tmp.164 = getv function %tmp.163 :toString;
+        %tmp.165 = invoke %tmp.163 %tmp.164();
+        %tmp.166 = "×";
+        %tmp.167 = add %tmp.165 %tmp.166;
+        %tmp.168 = lgetv %dev.3;
+        %tmp.169 = getv %tmp.168 :screenHeight;
+        %tmp.170 = getv function %tmp.169 :toString;
+        %tmp.171 = invoke %tmp.169 %tmp.170();
+        %tmp.172 = add %tmp.167 %tmp.171;
+        %tmp.173 = getm $.Toybox.Graphics;
+        %tmp.174 = getv %tmp.173 :TEXT_JUSTIFY_LEFT;
+        %tmp.175 = getm $.Toybox.Graphics;
+        %tmp.176 = getv %tmp.175 :TEXT_JUSTIFY_VCENTER;
+        %tmp.177 = bitor %tmp.174 %tmp.176;
+        invoke %tmp.146 %tmp.147(%tmp.149, %tmp.159, %tmp.161, %tmp.172, %tmp.177);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 49 8 ]
+        %tmp.178 = lgetv %dc;
+        %tmp.179 = getv function %tmp.178 :drawText;
+        %tmp.181 = lgetv %x.6;
+        %tmp.183 = lgetv %y.5;
+        %tmp.184 = 4;
+        %tmp.185 = getm $.Toybox.Graphics;
+        %tmp.186 = getv function %tmp.185 :getFontHeight;
+        %tmp.187 = getm $.Toybox.Graphics;
+        %tmp.188 = getv %tmp.187 :FONT_XTINY;
+        %tmp.189 = invoke %tmp.185 %tmp.186(%tmp.188);
+        %tmp.190 = mul %tmp.184 %tmp.189;
+        %tmp.191 = add %tmp.183 %tmp.190;
+        %tmp.192 = getm $.Toybox.Graphics;
+        %tmp.193 = getv %tmp.192 :FONT_XTINY;
+        %tmp.194 = getm $.Toybox.WatchUi;
+        %tmp.195 = getv function %tmp.194 :loadResource;
+        %tmp.197 = getv ? :Rez;
+        %tmp.198 = getv %tmp.197 :Strings;
+        %tmp.199 = getv %tmp.198 :Part;
+        %tmp.200 = invoke %tmp.194 %tmp.195(%tmp.199);
+        %tmp.201 = lgetv %dev.3;
+        %tmp.202 = getv %tmp.201 :partNumber;
+        %tmp.203 = add %tmp.200 %tmp.202;
+        %tmp.204 = getm $.Toybox.Graphics;
+        %tmp.205 = getv %tmp.204 :TEXT_JUSTIFY_LEFT;
+        %tmp.206 = getm $.Toybox.Graphics;
+        %tmp.207 = getv %tmp.206 :TEXT_JUSTIFY_VCENTER;
+        %tmp.208 = bitor %tmp.205 %tmp.207;
+        invoke %tmp.178 %tmp.179(%tmp.181, %tmp.191, %tmp.193, %tmp.203, %tmp.208);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 50 8 ]
+        %tmp.209 = lgetv %dc;
+        %tmp.210 = getv function %tmp.209 :drawText;
+        %tmp.212 = lgetv %x.6;
+        %tmp.214 = lgetv %y.5;
+        %tmp.215 = 5;
+        %tmp.216 = getm $.Toybox.Graphics;
+        %tmp.217 = getv function %tmp.216 :getFontHeight;
+        %tmp.218 = getm $.Toybox.Graphics;
+        %tmp.219 = getv %tmp.218 :FONT_XTINY;
+        %tmp.220 = invoke %tmp.216 %tmp.217(%tmp.219);
+        %tmp.221 = mul %tmp.215 %tmp.220;
+        %tmp.222 = add %tmp.214 %tmp.221;
+        %tmp.223 = getm $.Toybox.Graphics;
+        %tmp.224 = getv %tmp.223 :FONT_XTINY;
+        %tmp.225 = getm $.Toybox.WatchUi;
+        %tmp.226 = getv function %tmp.225 :loadResource;
+        %tmp.228 = getv ? :Rez;
+        %tmp.229 = getv %tmp.228 :Strings;
+        %tmp.230 = getv %tmp.229 :UID;
+        %tmp.231 = invoke %tmp.225 %tmp.226(%tmp.230);
+        %tmp.232 = lgetv %dev.3;
+        %tmp.233 = getv %tmp.232 :uniqueIdentifier;
+        %tmp.234 = add %tmp.231 %tmp.233;
+        %tmp.235 = getm $.Toybox.Graphics;
+        %tmp.236 = getv %tmp.235 :TEXT_JUSTIFY_LEFT;
+        %tmp.237 = getm $.Toybox.Graphics;
+        %tmp.238 = getv %tmp.237 :TEXT_JUSTIFY_VCENTER;
+        %tmp.239 = bitor %tmp.236 %tmp.238;
+        invoke %tmp.209 %tmp.210(%tmp.212, %tmp.222, %tmp.224, %tmp.234, %tmp.239);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 55 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %barWidth.7 = local;
+        %tmp.241 = lgetv %width.1;
+        %tmp.242 = 0.6;
+        %tmp.243 = mul %tmp.241 %tmp.242;
+        lputv %barWidth.7 %tmp.243;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 56 8 ]
+        [ "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_start" "_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop" ]
+        %barHeight.8 = local;
+        %tmp.245 = lgetv %height.2;
+        %tmp.246 = 0.04;
+        %tmp.247 = mul %tmp.245 %tmp.246;
+        lputv %barHeight.8 %tmp.247;
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 57 8 ]
+        %tmp.248 = lgetv %dc;
+        %tmp.249 = getv function %tmp.248 :setColor;
+        %tmp.250 = getm $.Toybox.Graphics;
+        %tmp.251 = getv %tmp.250 :COLOR_WHITE;
+        %tmp.252 = getm $.Toybox.Graphics;
+        %tmp.253 = getv %tmp.252 :COLOR_TRANSPARENT;
+        invoke %tmp.248 %tmp.249(%tmp.251, %tmp.253);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 58 8 ]
+        %tmp.254 = lgetv %dc;
+        %tmp.255 = getv function %tmp.254 :fillRectangle;
+        %tmp.257 = lgetv %width.1;
+        %tmp.258 = 2;
+        %tmp.259 = div %tmp.257 %tmp.258;
+        %tmp.261 = lgetv %barWidth.7;
+        %tmp.262 = 2;
+        %tmp.263 = div %tmp.261 %tmp.262;
+        %tmp.264 = sub %tmp.259 %tmp.263;
+        %tmp.266 = lgetv %height.2;
+        %tmp.267 = 0.82;
+        %tmp.268 = mul %tmp.266 %tmp.267;
+        %tmp.270 = lgetv %barHeight.8;
+        %tmp.271 = 2;
+        %tmp.272 = div %tmp.270 %tmp.271;
+        %tmp.273 = sub %tmp.268 %tmp.272;
+        %tmp.275 = lgetv %barWidth.7;
+        %tmp.277 = lgetv %barHeight.8;
+        invoke %tmp.254 %tmp.255(%tmp.264, %tmp.273, %tmp.275, %tmp.277);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 59 8 ]
+        %tmp.278 = lgetv %dc;
+        %tmp.279 = getv function %tmp.278 :setColor;
+        %tmp.280 = getm $.Toybox.Graphics;
+        %tmp.281 = getv %tmp.280 :COLOR_DK_GREEN;
+        %tmp.282 = getm $.Toybox.Graphics;
+        %tmp.283 = getv %tmp.282 :COLOR_TRANSPARENT;
+        invoke %tmp.278 %tmp.279(%tmp.281, %tmp.283);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 60 8 ]
+        %tmp.284 = lgetv %dc;
+        %tmp.285 = getv function %tmp.284 :fillRectangle;
+        %tmp.287 = lgetv %width.1;
+        %tmp.288 = 2;
+        %tmp.289 = div %tmp.287 %tmp.288;
+        %tmp.291 = lgetv %barWidth.7;
+        %tmp.292 = 2;
+        %tmp.293 = div %tmp.291 %tmp.292;
+        %tmp.294 = sub %tmp.289 %tmp.293;
+        %tmp.296 = lgetv %height.2;
+        %tmp.297 = 0.82;
+        %tmp.298 = mul %tmp.296 %tmp.297;
+        %tmp.300 = lgetv %barHeight.8;
+        %tmp.301 = 2;
+        %tmp.302 = div %tmp.300 %tmp.301;
+        %tmp.303 = sub %tmp.298 %tmp.302;
+        %tmp.305 = lgetv %barWidth.7;
+        %tmp.306 = lgetv %stat.4;
+        %tmp.307 = getv %tmp.306 :usedMemory;
+        %tmp.308 = mul %tmp.305 %tmp.307;
+        %tmp.309 = lgetv %stat.4;
+        %tmp.310 = getv %tmp.309 :totalMemory;
+        %tmp.311 = div %tmp.308 %tmp.310;
+        %tmp.313 = lgetv %barHeight.8;
+        invoke %tmp.284 %tmp.285(%tmp.294, %tmp.303, %tmp.311, %tmp.313);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 63 8 ]
+        %tmp.314 = lgetv %dc;
+        %tmp.315 = getv function %tmp.314 :setColor;
+        %tmp.316 = getm $.Toybox.Graphics;
+        %tmp.317 = getv %tmp.316 :COLOR_WHITE;
+        %tmp.318 = getm $.Toybox.Graphics;
+        %tmp.319 = getv %tmp.318 :COLOR_TRANSPARENT;
+        invoke %tmp.314 %tmp.315(%tmp.317, %tmp.319);
+[ "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc" 64 8 ]
+        %tmp.320 = lgetv %dc;
+        %tmp.321 = getv function %tmp.320 :drawText;
+        %tmp.323 = lgetv %width.1;
+        %tmp.324 = 2;
+        %tmp.325 = div %tmp.323 %tmp.324;
+        %tmp.327 = lgetv %height.2;
+        %tmp.328 = 0.88;
+        %tmp.329 = mul %tmp.327 %tmp.328;
+        %tmp.330 = getm $.Toybox.Graphics;
+        %tmp.331 = getv %tmp.330 :FONT_XTINY;
+        %tmp.332 = getm $.Toybox.WatchUi;
+        %tmp.333 = getv function %tmp.332 :loadResource;
+        %tmp.335 = getv ? :Rez;
+        %tmp.336 = getv %tmp.335 :Strings;
+        %tmp.337 = getv %tmp.336 :Memory;
+        %tmp.338 = invoke %tmp.332 %tmp.333(%tmp.337);
+        %tmp.339 = getm $.Toybox.Lang;
+        %tmp.340 = getv function %tmp.339 :format;
+        %tmp.341 = "$1$/$2$";
+        %tmp.342 = newa 2;
+        %tmp.343 = lgetv %stat.4;
+        %tmp.344 = getv %tmp.343 :usedMemory;
+        %tmp.345 = 1024;
+        %tmp.346 = div %tmp.344 %tmp.345;
+        %tmp.347 = dup %tmp.342;
+        %tmp.348 = aputv %tmp.347 0 %tmp.346;
+        %tmp.349 = lgetv %stat.4;
+        %tmp.350 = getv %tmp.349 :totalMemory;
+        %tmp.351 = 1024;
+        %tmp.352 = div %tmp.350 %tmp.351;
+        %tmp.353 = dup %tmp.348;
+        %tmp.354 = aputv %tmp.353 1 %tmp.352;
+        %tmp.355 = invoke %tmp.339 %tmp.340(%tmp.341, %tmp.354);
+        %tmp.356 = add %tmp.338 %tmp.355;
+        %tmp.357 = getm $.Toybox.Graphics;
+        %tmp.358 = getv %tmp.357 :TEXT_JUSTIFY_CENTER;
+        %tmp.359 = getm $.Toybox.Graphics;
+        %tmp.360 = getv %tmp.359 :TEXT_JUSTIFY_VCENTER;
+        %tmp.361 = bitor %tmp.358 %tmp.360;
+        invoke %tmp.320 %tmp.321(%tmp.325, %tmp.329, %tmp.331, %tmp.356, %tmp.361);
+_home_luca_Documenti_Garmin_Sources_newAnySportPro_source_views_DevView_mc_26_33_66_4_stop:
+    }
+    [ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 71; ]
+    function onHide() as Void {
+    }
+}
+[ @file = "/home/luca/Documenti/Garmin Sources/newAnySportPro/source/views/DevView.mc"; @line = 1; ]
+<init> {
+}
